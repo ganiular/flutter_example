@@ -132,8 +132,11 @@ _Debounceable<S, T> _debounce<S, T>(_Debounceable<S?, T> function) {
     debounceTimer = _DebounceTimer();
     try {
       await debounceTimer!.future;
-    } on _CancelException {
-      return null;
+    } catch (error) {
+      if (error is _CancelException) {
+        return null;
+      }
+      rethrow;
     }
     return function(parameter);
   };

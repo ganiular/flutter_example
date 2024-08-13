@@ -120,12 +120,14 @@ class _SwitchThemeAdaptation extends Adaptation<SwitchThemeData> {
         return defaultValue;
       case TargetPlatform.iOS:
       case TargetPlatform.macOS:
-        return const SwitchThemeData(
-          thumbColor: WidgetStateProperty<Color?>.fromMap(<WidgetState, Color>{
-            WidgetState.selected: Colors.yellow,
-            // Resolves to null if not selected, deferring to default values.
+        return SwitchThemeData(
+          thumbColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+            if (states.contains(MaterialState.selected)) {
+              return Colors.yellow;
+            }
+            return null; // Use the default.
           }),
-          trackColor: WidgetStatePropertyAll<Color>(Colors.brown),
+          trackColor: const MaterialStatePropertyAll<Color>(Colors.brown),
         );
     }
   }

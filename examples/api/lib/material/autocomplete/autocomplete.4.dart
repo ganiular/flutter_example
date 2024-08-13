@@ -71,13 +71,14 @@ class _AsyncAutocompleteState extends State<_AsyncAutocomplete > {
     late final Iterable<String> options;
     try {
       options = await _FakeAPI.search(_currentQuery!, _networkEnabled);
-    } on _NetworkException {
-      if (mounted) {
+    } catch (error) {
+      if (error is _NetworkException) {
         setState(() {
           _networkError = true;
         });
+        return <String>[];
       }
-      return <String>[];
+      rethrow;
     }
 
     // If another search happened after this one, throw away these options.
@@ -188,8 +189,11 @@ _Debounceable<S, T> _debounce<S, T>(_Debounceable<S?, T> function) {
     debounceTimer = _DebounceTimer();
     try {
       await debounceTimer!.future;
-    } on _CancelException {
-      return null;
+    } catch (error) {
+      if (error is _CancelException) {
+        return null;
+      }
+      rethrow;
     }
     return function(parameter);
   };

@@ -4,7 +4,7 @@
 
 import 'package:flutter/widgets.dart';
 
-/// Flutter code sample for [FontFeature.denominator].
+/// Flutter code sample for [FontFeature.FontFeature.denominator].
 
 void main() => runApp(const ExampleApp());
 
