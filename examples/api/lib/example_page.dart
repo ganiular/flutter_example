@@ -16,7 +16,7 @@ class ExamplePage extends StatelessWidget {
         appBar: AppBar(
           title: const Text('Flutter Examples'),
           bottom: const TabBar(
-            tabs: [
+            tabs: <Widget>[
               Tab(
                 text: 'Preview',
               ),

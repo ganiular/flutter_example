@@ -25,11 +25,11 @@ class Example {
   final String? scripPath;
 
   String _toTitle(String name) {
-    return name.split('_').map((e) => e[0].toUpperCase() + e.substring(1)).join(' ');
+    return name.split('_').map((String e) => e[0].toUpperCase() + e.substring(1)).join(' ');
   }
 }
 
-final List<Example> examples = [
+final List<Example> examples = <Example>[
   Example(name: 'animation'),
   Example(name: 'cupertino'),
   Example(name: 'gestures'),
@@ -39,8 +39,8 @@ final List<Example> examples = [
   Example(name: 'sample_templates'),
   Example(name: 'services'),
   Example(name: 'ui'),
-  Example(name: 'widgets', subExamples: [
-    Example(name: 'actions', subExamples: [
+  Example(name: 'widgets', subExamples: <Example>[
+    Example(name: 'actions', subExamples: <Example>[
       Example(
           name: 'ActionListener Sample',
           widget: const ActionListenerExampleApp(),
@@ -58,7 +58,7 @@ final List<Example> examples = [
           widget: const FocusableActionDetectorExampleApp(),
           scripPath: 'assets/scripts/widgets/actions/focusable_action_detector.0.dart'),
     ]),
-    Example(name: 'animated_grid', subExamples: [
+    Example(name: 'animated_grid', subExamples: <Example>[
       Example(
           name: 'animated_grid.0.dart',
           widget: const AnimatedGridSample(),
@@ -68,7 +68,7 @@ final List<Example> examples = [
           widget: const SliverAnimatedGridSample(),
           scripPath: 'assets/scripts/widgets/animated_grid/sliver_animated_grid.0.dart'),
     ]),
-    Example(name: 'animated_list', subExamples: [
+    Example(name: 'animated_list', subExamples: <Example>[
       Example(
           name: 'animated_list.0.dart',
           widget: const AnimatedListSeparatedSample(),
@@ -83,25 +83,25 @@ final List<Example> examples = [
           scripPath:
               '/home/ganiular/Programs/Projects/me/flutter_example/examples/api/assets/scripts/widgets/animated_list/sliver_animated_list.0.dart'),
     ]),
-    Example(name: 'animated_size', subExamples: [
+    Example(name: 'animated_size', subExamples: <Example>[
       Example(
           name: 'animated_size.0.dart',
           widget: const AnimatedSizeExampleApp(),
           scripPath: 'assets/scripts/widgets/animated_size/animated_size.0.dart')
     ]),
-    Example(name: 'animated_switcher', subExamples: [
+    Example(name: 'animated_switcher', subExamples: <Example>[
       Example(
           name: 'animated_switcher.0.dart',
           widget: const AnimatedSwitcherExampleApp(),
           scripPath: 'assets/scripts/widgets/animated_switcher/animated_switcher.0.dart')
     ]),
-    Example(name: 'app', subExamples: [
+    Example(name: 'app', subExamples: <Example>[
       Example(
           name: 'widgets_app.widgets_app.0.dart',
           widget: const WidgetsAppExampleApp(),
           scripPath: 'assets/scripts/widgets/app/widgets_app.widgets_app.0.dart')
     ]),
-    Example(name: 'app_lifecycle_listener', subExamples: [
+    Example(name: 'app_lifecycle_listener', subExamples: <Example>[
       Example(
           name: 'app_lifecycle_listener.0.dart',
           widget: const AppLifecycleListenerExample(),
