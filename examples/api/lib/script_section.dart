@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
+import 'package:flutter_highlight/flutter_highlight.dart';
+import 'package:flutter_highlight/themes/monokai-sublime.dart';
 
 class ScriptSection extends StatefulWidget {
   const ScriptSection({super.key, required this.scriptPath});
@@ -38,9 +40,15 @@ class _ScriptSectionState extends State<ScriptSection> with AutomaticKeepAliveCl
   Widget build(BuildContext context) {
     super.build(context);
     return SingleChildScrollView(
-        child: Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Text(_script),
-    ));
+      child: HighlightView(
+        _script,
+        language: 'dart',
+        theme: monokaiSublimeTheme,
+        padding: const EdgeInsets.all(8),
+        textStyle: const TextStyle(
+          fontFamily: 'SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace',
+        ),
+      ),
+    );
   }
 }
