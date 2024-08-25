@@ -8,7 +8,6 @@ import 'package:flutter/material.dart';
 /// Flutter code sample for [GestureDetector].
 
 void main() {
-  debugPrintGestureArenaDiagnostics = true;
   runApp(const NestedGestureDetectorsApp());
 }
 
@@ -41,6 +40,12 @@ class _NestedGestureDetectorsExampleState extends State<NestedGestureDetectorsEx
   final Border highlightBorder = Border.all(color: Colors.red, width: 5);
 
   @override
+  void initState() {
+    debugPrintGestureArenaDiagnostics = true;
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
@@ -65,7 +70,8 @@ class _NestedGestureDetectorsExampleState extends State<NestedGestureDetectorsEx
                 // parent-child hit testing. A tap on 'Yellow' is also in
                 // 'Green' bounds. Both enter the gesture arena, 'Yellow' wins
                 // because it is in front.
-                behavior: _isYellowTranslucent ? HitTestBehavior.translucent : HitTestBehavior.opaque,
+                behavior:
+                    _isYellowTranslucent ? HitTestBehavior.translucent : HitTestBehavior.opaque,
                 onTap: () {
                   debugPrint('Yellow onTap');
                   setState(() {

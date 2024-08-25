@@ -12,14 +12,25 @@ import 'package:flutter/services.dart';
 
 void main() {
   runApp(
-    const MaterialApp(
+    const FallbackDemoApp(),
+  );
+}
+
+class FallbackDemoApp extends StatelessWidget {
+  const FallbackDemoApp({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
       home: Scaffold(
         body: Center(
           child: FallbackDemo(),
         ),
       ),
-    ),
-  );
+    );
+  }
 }
 
 class FallbackDemo extends StatefulWidget {
@@ -106,14 +117,16 @@ class FallbackKeyEventRegistrar {
   static FallbackKeyEventRegistrar get instance {
     if (!_initialized) {
       // Get the global handler.
-      final KeyMessageHandler? existing = ServicesBinding.instance.keyEventManager.keyMessageHandler;
+      final KeyMessageHandler? existing =
+          ServicesBinding.instance.keyEventManager.keyMessageHandler;
       // The handler is guaranteed non-null since
       // `FallbackKeyEventRegistrar.instance` is only called during
       // `Focus.onFocusChange`, at which time `ServicesBinding.instance` must
       // have been called somewhere.
       assert(existing != null);
       // Assign the global handler with a patched handler.
-      ServicesBinding.instance.keyEventManager.keyMessageHandler = _instance._buildHandler(existing!);
+      ServicesBinding.instance.keyEventManager.keyMessageHandler =
+          _instance._buildHandler(existing!);
       _initialized = true;
     }
     return _instance;
