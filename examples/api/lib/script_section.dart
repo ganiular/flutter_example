@@ -39,16 +39,20 @@ class _ScriptSectionState extends State<ScriptSection> with AutomaticKeepAliveCl
   @override
   Widget build(BuildContext context) {
     super.build(context);
-    return SingleChildScrollView(
-      child: HighlightView(
-        _script,
-        language: 'dart',
-        theme: monokaiSublimeTheme,
-        padding: const EdgeInsets.all(8),
-        textStyle: const TextStyle(
-          fontFamily: 'SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace',
+    return LayoutBuilder(builder: (BuildContext context, BoxConstraints constraints) {
+      return SingleChildScrollView(
+          child: ConstrainedBox(
+        constraints: BoxConstraints(minHeight: constraints.maxHeight),
+        child: HighlightView(
+          _script,
+          language: 'dart',
+          theme: monokaiSublimeTheme,
+          padding: const EdgeInsets.all(8),
+          textStyle: const TextStyle(
+            fontFamily: 'SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace',
+          ),
         ),
-      ),
-    );
+      ));
+    });
   }
 }
