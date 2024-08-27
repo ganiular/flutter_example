@@ -17,7 +17,7 @@ class ExamplePage extends StatelessWidget {
         appBar: AppBar(
           title: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
+            children: <Widget>[
               const Text('Flutter Examples'),
               const SizedBox(height: 4),
               Text(
