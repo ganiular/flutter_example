@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'example_page.dart';
 import 'examples.dart';
+import 'search_page.dart';
 
 class ExampleFolders extends StatefulWidget {
   const ExampleFolders({
@@ -26,8 +27,24 @@ class _ExampleFoldersState extends State<ExampleFolders> {
     return Scaffold(
       appBar: AppBar(
         title: Column(
-          children: [Text(widget.title), if (widget.subTitle != null) Text(widget.subTitle!)],
+          children: <Widget>[
+            Text(widget.title),
+            if (widget.subTitle != null) Text(widget.subTitle!)
+          ],
         ),
+        actions: <Widget>[
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (BuildContext context) => const SearchPage(),
+                  ));
+            },
+            icon: const Icon(Icons.search),
+            tooltip: 'Search',
+          )
+        ],
       ),
       body: ListView.builder(
           padding: const EdgeInsets.only(top: 8, bottom: 8),
@@ -37,7 +54,7 @@ class _ExampleFoldersState extends State<ExampleFolders> {
   }
 
   Widget? _buildItem(BuildContext context, int index) {
-    final colors = Theme.of(context).colorScheme;
+    final ColorScheme colors = Theme.of(context).colorScheme;
     final Example example = widget.examples[index];
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
