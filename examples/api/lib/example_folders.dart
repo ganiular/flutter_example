@@ -37,7 +37,7 @@ class _ExampleFoldersState extends State<ExampleFolders> {
             onPressed: () {
               Navigator.push(
                   context,
-                  MaterialPageRoute(
+                  MaterialPageRoute<void>(
                     builder: (BuildContext context) => const SearchPage(),
                   ));
             },

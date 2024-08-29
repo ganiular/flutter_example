@@ -189,11 +189,14 @@ import 'widgets/undo_history/undo_history_controller.0.dart';
 import 'widgets/value_listenable_builder/value_listenable_builder.0.dart';
 
 class Example {
-  Example({required this.name, this.widget, this.subExamples, this.scripPath}) {
+  Example({required this.name, this.widget, this.subExamples = const <Example>[], this.scripPath}) {
     name = _toTitle(name);
+    id = ++count;
   }
+  late final int id;
+  static int count = 0;
   String name;
-  final List<Example>? subExamples;
+  final List<Example> subExamples;
   final Widget? widget;
   final String? scripPath;
 
@@ -253,8 +256,7 @@ final List<Example> examples = <Example>[
       Example(
           name: 'sliver_animated_list.0.dart',
           widget: const SliverAnimatedListSample(),
-          scripPath:
-              '/home/ganiular/Programs/Projects/me/flutter_example/examples/api/assets/scripts/widgets/animated_list/sliver_animated_list.0.dart'),
+          scripPath: 'assets/scripts/widgets/animated_list/sliver_animated_list.0.dart'),
     ]),
     Example(name: 'animated_size', subExamples: <Example>[
       Example(
