@@ -78,78 +78,89 @@ class _SearchPageState extends State<SearchPage> {
               ),
             ),
           ),
-          Expanded(
-              child: ListView.builder(
-            itemCount: _searchItems.length,
-            itemBuilder: (BuildContext context, int index) {
-              final SearchItem item = _searchItems[index];
-              late Widget text;
-              if (item.line == null) {
-                text = Text.rich(
-                  item.highlight!,
-                  softWrap: false,
-                  overflow: TextOverflow.ellipsis,
-                  style: const TextStyle(fontSize: 13),
-                );
-              } else {
-                const EdgeInsets codePadding = EdgeInsets.symmetric(horizontal: 4, vertical: 6);
-                text = Row(
-                  children: <Widget>[
-                    Container(
-                        color: _hoverIndex == index
-                            ? const Color.fromARGB(255, 34, 93, 141)
-                            : const Color(0xFF00457D),
-                        padding: codePadding,
-                        child: ConstrainedBox(
-                          constraints: const BoxConstraints(
-                            minWidth: 16,
+          Expanded(child: Builder(builder: (BuildContext context) {
+            if (_searchItems.isEmpty) {
+              return const Padding(
+                padding: EdgeInsets.only(top: 40, left: 24, right: 24),
+                child: Text(
+                  'No search result',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400, color: Colors.grey),
+                ),
+              );
+            }
+            return ListView.builder(
+              itemCount: _searchItems.length,
+              itemBuilder: (BuildContext context, int index) {
+                final SearchItem item = _searchItems[index];
+                late Widget text;
+                if (item.line == null) {
+                  text = Text.rich(
+                    item.highlight!,
+                    softWrap: false,
+                    overflow: TextOverflow.ellipsis,
+                    style: const TextStyle(fontSize: 13),
+                  );
+                } else {
+                  const EdgeInsets codePadding = EdgeInsets.symmetric(horizontal: 4, vertical: 8);
+                  text = Row(
+                    children: <Widget>[
+                      Container(
+                          color: _hoverIndex == index
+                              ? const Color.fromARGB(255, 34, 93, 141)
+                              : const Color(0xFF00457D),
+                          padding: codePadding,
+                          child: ConstrainedBox(
+                            constraints: const BoxConstraints(
+                              minWidth: 24,
+                            ),
+                            child: Text('${item.line}',
+                                textAlign: TextAlign.center,
+                                style: const TextStyle(
+                                    fontSize: 13,
+                                    fontWeight: FontWeight.w500,
+                                    color: Color.fromARGB(255, 208, 205, 205))),
+                          )),
+                      Expanded(
+                        child: Container(
+                          color: _hoverIndex == index
+                              ? const Color.fromARGB(255, 70, 71, 62)
+                              : const Color(0xff23241f),
+                          padding: codePadding,
+                          child: Text.rich(
+                            item.highlight!,
+                            softWrap: false,
+                            overflow: TextOverflow.ellipsis,
+                            style: const TextStyle(fontSize: 13, color: Color(0xfff8f8f2)),
                           ),
-                          child: Text('${item.line}',
-                              textAlign: TextAlign.center,
-                              style: const TextStyle(
-                                  fontSize: 13,
-                                  fontWeight: FontWeight.w500,
-                                  color: Color.fromARGB(255, 208, 205, 205))),
-                        )),
-                    Expanded(
-                      child: Container(
-                        color: _hoverIndex == index
-                            ? const Color.fromARGB(255, 70, 71, 62)
-                            : const Color(0xff23241f),
-                        padding: codePadding,
-                        child: Text.rich(
-                          item.highlight!,
-                          softWrap: false,
-                          overflow: TextOverflow.ellipsis,
-                          style: const TextStyle(fontSize: 13, color: Color(0xfff8f8f2)),
                         ),
                       ),
-                    ),
-                  ],
-                );
-              }
-              if (index == 0 || _searchItems[index - 1].directory != item.directory) {
-                return Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: <Widget>[
-                    Container(
-                      padding: const EdgeInsets.all(10),
-                      color: const Color.fromARGB(255, 216, 214, 214),
-                      child: Text(
-                        item.directory!,
-                        softWrap: false,
-                        overflow: TextOverflow.ellipsis,
-                        style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w500),
+                    ],
+                  );
+                }
+                if (index == 0 || _searchItems[index - 1].directory != item.directory) {
+                  return Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: <Widget>[
+                      Container(
+                        padding: const EdgeInsets.all(10),
+                        color: const Color.fromARGB(255, 216, 214, 214),
+                        child: Text(
+                          item.directory!,
+                          softWrap: false,
+                          overflow: TextOverflow.ellipsis,
+                          style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w500),
+                        ),
                       ),
-                    ),
-                    _buildItem(index, item, text, colors),
-                  ],
-                );
-              }
+                      _buildItem(index, item, text, colors),
+                    ],
+                  );
+                }
 
-              return _buildItem(index, item, text, colors);
-            },
-          ))
+                return _buildItem(index, item, text, colors);
+              },
+            );
+          }))
         ],
       ),
     );
@@ -159,6 +170,10 @@ class _SearchPageState extends State<SearchPage> {
     if (item.line == null) {
       return ListTile(
         onTap: () => _onClick(index, item),
+        leading: Icon(item.example!.subExamples.isEmpty
+            ? Icons.play_arrow
+            : Icons.format_list_bulleted_outlined),
+        horizontalTitleGap: 0,
         title: text,
         selected: item == _selectedSearchItem,
         selectedTileColor: colors.primary,
@@ -299,13 +314,14 @@ class _SearchPageState extends State<SearchPage> {
   }
 }
 
+@immutable
 class SearchItem {
-  SearchItem({this.directory, this.example, this.highlight, this.line});
+  const SearchItem({this.directory, this.example, this.highlight, this.line});
 
-  String? directory;
-  Example? example;
-  TextSpan? highlight;
-  int? line;
+  final String? directory;
+  final Example? example;
+  final TextSpan? highlight;
+  final int? line;
 
   @override
   bool operator ==(Object other) {

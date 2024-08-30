@@ -101,7 +101,7 @@ class _ExampleFoldersState extends State<ExampleFolders> {
         } else {
           return ExampleFolders(
             title: example.name,
-            examples: example.subExamples ?? <Example>[],
+            examples: example.subExamples,
           );
         }
       },
