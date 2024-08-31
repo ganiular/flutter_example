@@ -1,5 +1,63 @@
 import 'package:flutter/material.dart';
 
+import 'material/about/about_list_tile.0.dart';
+import 'material/action_buttons/action_icon_theme.0.dart';
+import 'material/action_chip/action_chip.0.dart';
+import 'material/animated_icon/animated_icon.0.dart';
+import 'material/animated_icon/animated_icons_data.0.dart' as material_animated_icon_1;
+import 'material/app/app.0.dart';
+import 'material/app_bar/app_bar.0.dart';
+import 'material/app_bar/app_bar.1.dart' as material_app_bar_1;
+import 'material/app_bar/app_bar.2.dart' as material_app_bar_2;
+import 'material/app_bar/app_bar.3.dart' as material_app_bar_3;
+import 'material/app_bar/app_bar.4.dart' as material_app_bar_4;
+import 'material/app_bar/sliver_app_bar.1.dart' as material_app_bar_5;
+import 'material/app_bar/sliver_app_bar.2.dart' as material_app_bar_6;
+import 'material/app_bar/sliver_app_bar.3.dart' as material_app_bar_7;
+import 'material/app_bar/sliver_app_bar.4.dart' as material_app_bar_8;
+import 'material/autocomplete/autocomplete.0.dart' as material_autocomplete_0;
+import 'material/autocomplete/autocomplete.1.dart' as material_autocomplete_1;
+import 'material/autocomplete/autocomplete.2.dart' as material_autocomplete_2;
+import 'material/autocomplete/autocomplete.3.dart' as material_autocomplete_3;
+import 'material/autocomplete/autocomplete.4.dart' as material_autocomplete_4;
+import 'material/badge/badge.0.dart';
+import 'material/banner/material_banner.0.dart';
+import 'material/banner/material_banner.1.dart' as material_banner_1;
+import 'material/bottom_app_bar/bottom_app_bar.1.dart';
+import 'material/bottom_app_bar/bottom_app_bar.2.dart' as material_bottom_app_bar;
+import 'material/bottom_navigation_bar/bottom_navigation_bar.0.dart';
+import 'material/bottom_navigation_bar/bottom_navigation_bar.1.dart' as material_bottom_nav_1;
+import 'material/bottom_navigation_bar/bottom_navigation_bar.2.dart' as material_bottom_nav_2;
+import 'material/bottom_sheet/show_bottom_sheet.0.dart';
+import 'material/bottom_sheet/show_modal_bottom_sheet.0.dart' as material_bottom_sheet_1;
+import 'material/bottom_sheet/show_modal_bottom_sheet.1.dart' as material_bottom_sheet_2;
+import 'material/bottom_sheet/show_modal_bottom_sheet.2.dart' as material_bottom_sheet_3;
+import 'material/button_style/button_style.0.dart';
+import 'material/button_style_button/button_style_button.icon_alignment.0.dart';
+import 'material/card/card.0.dart';
+import 'material/card/card.0.dart' as material_card_1;
+import 'material/card/card.0.dart' as material_card_2;
+import 'material/carousel/carousel.0.dart';
+import 'material/checkbox/checkbox.0.dart';
+import 'material/checkbox/checkbox.1.dart' as material_checkbox_1;
+import 'material/checkbox_list_tile/checkbox_list_tile.0.dart';
+import 'material/checkbox_list_tile/checkbox_list_tile.1.dart' as material_checkbox_list_tile_1;
+import 'material/checkbox_list_tile/custom_labeled_checkbox.0.dart'
+    as material_checkbox_list_tile_2;
+import 'material/checkbox_list_tile/custom_labeled_checkbox.0.dart'
+    as material_checkbox_list_tile_3;
+import 'material/chip/chip_attributes.avatar_box_constraints.0.dart';
+import 'material/chip/chip_attributes.chip_animation_style.0.dart';
+import 'material/chip/deletable_chip_attributes.delete_icon_box_constraints.0.dart';
+import 'material/chip/deletable_chip_attributes.on_deleted.0.dart';
+import 'material/choice_chip/choice_chip.0.dart' as material_choice_chip;
+import 'material/color_scheme/color_scheme.0.dart';
+import 'material/color_scheme/dynamic_content_color.0.dart';
+import 'material/context_menu/context_menu_controller.0.dart';
+import 'material/context_menu/editable_text_toolbar_builder.0.dart';
+import 'material/context_menu/editable_text_toolbar_builder.1.dart' as material_context_menu_1;
+import 'material/context_menu/editable_text_toolbar_builder.2.dart' as material_context_menu_2;
+import 'material/context_menu/selectable_region_toolbar_builder.0.dart';
 import 'widgets/actions/action.action_overridable.0.dart';
 import 'widgets/actions/action_listener.0.dart';
 import 'widgets/actions/actions.0.dart';
@@ -209,7 +267,218 @@ final List<Example> examples = <Example>[
   Example(name: 'animation'),
   Example(name: 'cupertino'),
   Example(name: 'gestures'),
-  Example(name: 'material'),
+  Example(name: 'material', subExamples: [
+    Example(name: 'about', subExamples: [
+      Example(name: 'about_list_tile.0.dart', widget: const AboutListTileExampleApp()),
+    ]),
+    Example(name: 'action_buttons', subExamples: [
+      Example(name: 'action_icon_theme.0.dart', widget: const ActionIconThemeExampleApp())
+    ]),
+    Example(
+        name: 'action_chip',
+        subExamples: [Example(name: 'action_chip.0.dart', widget: const ChipApp())]),
+    Example(name: 'animated_icon', subExamples: [
+      Example(name: 'animated_icon.0.dart', widget: const AnimatedIconApp()),
+      Example(
+          name: 'animated_icons_data.0.dart',
+          widget: const material_animated_icon_1.AnimatedIconApp()),
+    ]),
+    Example(
+        name: 'app',
+        subExamples: [Example(name: 'app.0.dart', widget: const MaterialAppExample())]),
+    Example(name: 'app_bar', subExamples: [
+      Example(name: 'app_bar.0.dart', widget: const AppBarApp()),
+      Example(name: 'app_bar.1.dart', widget: const material_app_bar_1.AppBarApp()),
+      Example(name: 'app_bar.2.dart', widget: const material_app_bar_2.AppBarApp()),
+      Example(name: 'app_bar.3.dart', widget: const material_app_bar_3.AppBarApp()),
+      Example(name: 'app_bar.4.dart', widget: const material_app_bar_4.AppBarExampleApp()),
+      Example(name: 'sliver_app_bar.1.dart', widget: const material_app_bar_5.AppBarApp()),
+      Example(name: 'sliver_app_bar.2.dart', widget: const material_app_bar_6.AppBarMediumApp()),
+      Example(name: 'sliver_app_bar.3.dart', widget: const material_app_bar_7.AppBarLargeApp()),
+      Example(
+          name: 'sliver_app_bar.4.dart',
+          widget: const material_app_bar_8.StretchableSliverAppBar()),
+    ]),
+    Example(name: 'autocomplete', subExamples: [
+      Example(
+          name: 'autocomplete.0.dart',
+          widget: const material_autocomplete_0.AutocompleteExampleApp()),
+      Example(
+          name: 'autocomplete.1.dart',
+          widget: const material_autocomplete_1.AutocompleteExampleApp()),
+      Example(
+          name: 'autocomplete.2.dart',
+          widget: const material_autocomplete_2.AutocompleteExampleApp()),
+      Example(
+          name: 'autocomplete.3.dart',
+          widget: const material_autocomplete_3.AutocompleteExampleApp()),
+      Example(
+          name: 'autocomplete.4.dart',
+          widget: const material_autocomplete_4.AutocompleteExampleApp()),
+    ]),
+    Example(
+        name: 'badge',
+        subExamples: [Example(name: 'badge.0.dart', widget: const BadgeExampleApp())]),
+    Example(name: 'banner', subExamples: [
+      Example(name: 'material_banner.0.dart', widget: const MaterialBannerExampleApp()),
+      Example(
+          name: 'material_banner.1.dart',
+          widget: const material_banner_1.MaterialBannerExampleApp()),
+    ]),
+    Example(name: 'bottom_app_bar', subExamples: [
+      Example(name: 'bottom_app_bar.1.dart', widget: const BottomAppBarDemo()),
+      Example(
+          name: 'bottom_app_bar.2.dart', widget: const material_bottom_app_bar.BottomAppBarDemo()),
+    ]),
+    Example(name: 'bottom_navigation_bar', subExamples: [
+      Example(name: 'bottom_navigation_bar.0.dart', widget: const BottomNavigationBarExampleApp()),
+      Example(
+          name: 'bottom_navigation_bar.1.dart',
+          widget: const material_bottom_nav_1.BottomNavigationBarExampleApp()),
+      Example(
+          name: 'bottom_navigation_bar.2.dart',
+          widget: const material_bottom_nav_2.BottomNavigationBarExampleApp()),
+    ]),
+    Example(name: 'bottom_sheet', subExamples: [
+      Example(name: 'show_bottom_sheet.0.dart', widget: const BottomSheetExampleApp()),
+      Example(
+          name: 'show_modal_bottom_sheet.0.dart',
+          widget: const material_bottom_sheet_1.BottomSheetApp()),
+      Example(
+          name: 'show_modal_bottom_sheet.1.dart',
+          widget: const material_bottom_sheet_2.BottomSheetApp()),
+      Example(
+          name: 'show_modal_bottom_sheet.2.dart',
+          widget: const material_bottom_sheet_3.ModalBottomSheetApp()),
+    ]),
+    Example(
+        name: 'button_style',
+        subExamples: [Example(name: 'button_style.0.dart', widget: const ButtonApp())]),
+    Example(name: 'button_style_button', subExamples: [
+      Example(
+          name: 'button_style_button.icon_alignment.0.dart',
+          widget: const ButtonStyleButtonIconAlignmentApp())
+    ]),
+    Example(name: 'card', subExamples: [
+      Example(name: 'card.0.dart', widget: const CardExampleApp()),
+      Example(name: 'card.1.dart', widget: const material_card_1.CardExampleApp()),
+      Example(name: 'card.2.dart', widget: const material_card_2.CardExampleApp()),
+    ]),
+    Example(
+        name: 'carousel',
+        subExamples: [Example(name: 'carousel.0.dart', widget: const CarouselExampleApp())]),
+    Example(name: 'checkbox', subExamples: [
+      Example(name: 'checkbox.0.dart', widget: const CheckboxExampleApp()),
+      Example(name: 'checkbox.1.dart', widget: const material_checkbox_1.CheckboxExampleApp()),
+    ]),
+    Example(name: 'checkbox_list_tile', subExamples: [
+      Example(name: 'checkbox_list_tile.0.dart', widget: const CheckboxListTileApp()),
+      Example(
+          name: 'checkbox_list_tile.1.dart',
+          widget: const material_checkbox_list_tile_1.CheckboxListTileApp()),
+      Example(
+          name: 'custom_labeled_checkbox.0.dart',
+          widget: const material_checkbox_list_tile_2.LabeledCheckboxApp()),
+      Example(
+          name: 'custom_labeled_checkbox.1.dart',
+          widget: const material_checkbox_list_tile_3.LabeledCheckboxApp()),
+    ]),
+    Example(name: 'chip', subExamples: [
+      Example(
+          name: 'chip_attributes.avatar_box_constraints.0.dart',
+          widget: const AvatarBoxConstraintsApp()),
+      Example(
+          name: 'chip_attributes.chip_animation_style.0.dart',
+          widget: const ChipAnimationStyleExampleApp()),
+      Example(
+          name: 'deletable_chip_attributes.delete_icon_box_constraints.0.dart',
+          widget: const DeleteIconBoxConstraintsApp()),
+      Example(
+          name: 'deletable_chip_attributes.on_deleted.0.dart', widget: const OnDeletedExampleApp()),
+    ]),
+    Example(name: 'choice_chip', subExamples: [
+      Example(name: 'choice_chip.0.dart', widget: const material_choice_chip.ChipApp())
+    ]),
+    Example(name: 'color_scheme', subExamples: [
+      Example(name: 'color_scheme.0.dart', widget: const ColorSchemeExample()),
+      Example(name: 'dynamic_content_color.0.dart', widget: DynamicColorExample()),
+    ]),
+    Example(name: 'context_menu', subExamples: [
+      Example(
+          name: 'context_menu_controller.0.dart', widget: const ContextMenuControllerExampleApp()),
+      Example(
+          name: 'editable_text_toolbar_builder.0.dart',
+          widget: const EditableTextToolbarBuilderExampleApp()),
+      Example(
+          name: 'editable_text_toolbar_builder.1.dart',
+          widget: const material_context_menu_1.EditableTextToolbarBuilderExampleApp()),
+      Example(
+          name: 'editable_text_toolbar_builder.2.dart',
+          widget: const material_context_menu_2.EditableTextToolbarBuilderExampleApp()),
+      Example(
+          name: 'selectable_region_toolbar_builder.0.dart',
+          widget: const SelectableRegionToolbarBuilderExampleApp()),
+    ]),
+    Example(name: 'data_table', subExamples: []),
+    Example(name: 'date_picker', subExamples: []),
+    Example(name: 'dialog', subExamples: []),
+    Example(name: 'divider', subExamples: []),
+    Example(name: 'drawer', subExamples: []),
+    Example(name: 'dropdown', subExamples: []),
+    Example(name: 'dropdown_menu', subExamples: []),
+    Example(name: 'elevated_button', subExamples: []),
+    Example(name: 'expansion_panel', subExamples: []),
+    Example(name: 'expansion_tile', subExamples: []),
+    Example(name: 'filled_button', subExamples: []),
+    Example(name: 'filter_chip', subExamples: []),
+    Example(name: 'flexible_space_bar', subExamples: []),
+    Example(name: 'floating_action_button', subExamples: []),
+    Example(name: 'floating_action_button_location', subExamples: []),
+    Example(name: 'icon_button', subExamples: []),
+    Example(name: 'ink', subExamples: []),
+    Example(name: 'ink_well', subExamples: []),
+    Example(name: 'input_chip', subExamples: []),
+    Example(name: 'input_decorator', subExamples: []),
+    Example(name: 'list_tile', subExamples: []),
+    Example(name: 'material_state', subExamples: []),
+    Example(name: 'menu_anchor', subExamples: []),
+    Example(name: 'navigation_bar', subExamples: []),
+    Example(name: 'navigation_drawer', subExamples: []),
+    Example(name: 'navigation_rail', subExamples: []),
+    Example(name: 'outlined_button', subExamples: []),
+    Example(name: 'page_transitions_theme', subExamples: []),
+    Example(name: 'paginated_data_table', subExamples: []),
+    Example(name: 'platform_menu_bar', subExamples: []),
+    Example(name: 'popup_menu', subExamples: []),
+    Example(name: 'progress_indicator', subExamples: []),
+    Example(name: 'radio', subExamples: []),
+    Example(name: 'radio_list_tile', subExamples: []),
+    Example(name: 'range_slider', subExamples: []),
+    Example(name: 'refresh_indicator', subExamples: []),
+    Example(name: 'reorderable_list', subExamples: []),
+    Example(name: 'scaffold', subExamples: []),
+    Example(name: 'scrollbar', subExamples: []),
+    Example(name: 'search_anchor', subExamples: []),
+    Example(name: 'segmented_button', subExamples: []),
+    Example(name: 'selectable_region', subExamples: []),
+    Example(name: 'selection_area', subExamples: []),
+    Example(name: 'selection_container', subExamples: []),
+    Example(name: 'slider', subExamples: []),
+    Example(name: 'snack_bar', subExamples: []),
+    Example(name: 'stepper', subExamples: []),
+    Example(name: 'switch', subExamples: []),
+    Example(name: 'switch_list_tile', subExamples: []),
+    Example(name: 'tab_controller', subExamples: []),
+    Example(name: 'tabs', subExamples: []),
+    Example(name: 'text_button', subExamples: []),
+    Example(name: 'text_field', subExamples: []),
+    Example(name: 'text_form_field', subExamples: []),
+    Example(name: 'theme', subExamples: []),
+    Example(name: 'theme_data', subExamples: []),
+    Example(name: 'time_picker', subExamples: []),
+    Example(name: 'toggle_buttons', subExamples: []),
+    Example(name: 'tooltip', subExamples: []),
+  ]),
   Example(name: 'painting'),
   Example(name: 'rendering'),
   Example(name: 'sample_templates'),
