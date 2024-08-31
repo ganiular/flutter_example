@@ -146,7 +146,7 @@ class _SearchPageState extends State<SearchPage> {
                         padding: const EdgeInsets.all(10),
                         color: const Color.fromARGB(255, 216, 214, 214),
                         child: Text(
-                          item.directory!,
+                          item.directory,
                           softWrap: false,
                           overflow: TextOverflow.ellipsis,
                           style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w500),
@@ -214,7 +214,7 @@ class _SearchPageState extends State<SearchPage> {
           return ExamplePage(
               view: example.widget!,
               name: example.name,
-              scriptPath: '${item.directory}/${example.path}',
+              scriptPath: '/${item.directory}',
               directToScriptLine: item.line);
         } else {
           return ExampleFolders(
@@ -245,7 +245,7 @@ class _SearchPageState extends State<SearchPage> {
     }
     for (final Example example in examples) {
       for (final Example subExample in example.subExamples) {
-        _searchExample(subExample, query, example.name);
+        _searchExample(subExample, query, example.path);
       }
     }
   }
@@ -260,7 +260,8 @@ class _SearchPageState extends State<SearchPage> {
 
     if (example.widget != null) {
       try {
-        final String script = await rootBundle.loadString('$directory/${example.path}');
+        final String script =
+            await rootBundle.loadString('assets/scripts/$directory/${example.path}');
         final List<String> lines = script.split('\n');
         for (int i = 0; i < lines.length; i++) {
           final TextSpan? highlight = _searchText(lines[i].trim(), query, pattern);
