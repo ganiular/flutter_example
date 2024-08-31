@@ -247,7 +247,8 @@ import 'widgets/undo_history/undo_history_controller.0.dart';
 import 'widgets/value_listenable_builder/value_listenable_builder.0.dart';
 
 class Example {
-  Example({required this.name, this.widget, this.subExamples = const <Example>[], this.scripPath}) {
+  Example({required this.name, this.widget, this.subExamples = const <Example>[]}) {
+    path = name;
     name = _toTitle(name);
     id = ++count;
   }
@@ -256,7 +257,7 @@ class Example {
   String name;
   final List<Example> subExamples;
   final Widget? widget;
-  final String? scripPath;
+  late final String path;
 
   String _toTitle(String name) {
     return name.split('_').map((String e) => e[0].toUpperCase() + e.substring(1)).join(' ');
@@ -487,901 +488,880 @@ final List<Example> examples = <Example>[
   Example(name: 'widgets', subExamples: <Example>[
     Example(name: 'actions', subExamples: <Example>[
       Example(
-          name: 'ActionListener Sample',
-          widget: const ActionListenerExampleApp(),
-          scripPath: 'assets/scripts/widgets/actions/action_listener.0.dart'),
+        name: 'action_listener.0.dart',
+        widget: const ActionListenerExampleApp(),
+      ),
       Example(
-          name: 'action_listener.0.dart',
-          widget: const VerificationCodeGeneratorExampleApp(),
-          scripPath: 'assets/scripts/widgets/actions/action.action_overridable.0.dart'),
+        name: 'action_listener.0.dart',
+        widget: const VerificationCodeGeneratorExampleApp(),
+      ),
       Example(
-          name: 'actions.0.dart',
-          widget: const ActionsExampleApp(),
-          scripPath: 'assets/scripts/widgets/actions/actions.0.dart'),
+        name: 'actions.0.dart',
+        widget: const ActionsExampleApp(),
+      ),
       Example(
-          name: 'focusable_action_detector.0.dart',
-          widget: const FocusableActionDetectorExampleApp(),
-          scripPath: 'assets/scripts/widgets/actions/focusable_action_detector.0.dart'),
+        name: 'focusable_action_detector.0.dart',
+        widget: const FocusableActionDetectorExampleApp(),
+      ),
     ]),
     Example(name: 'animated_grid', subExamples: <Example>[
       Example(
-          name: 'animated_grid.0.dart',
-          widget: const AnimatedGridSample(),
-          scripPath: 'assets/scripts/widgets/animated_grid/animated_grid.0.dart'),
+        name: 'animated_grid.0.dart',
+        widget: const AnimatedGridSample(),
+      ),
       Example(
-          name: 'sliver_animated_grid.0.dart',
-          widget: const SliverAnimatedGridSample(),
-          scripPath: 'assets/scripts/widgets/animated_grid/sliver_animated_grid.0.dart'),
+        name: 'sliver_animated_grid.0.dart',
+        widget: const SliverAnimatedGridSample(),
+      ),
     ]),
     Example(name: 'animated_list', subExamples: <Example>[
       Example(
-          name: 'animated_list.0.dart',
-          widget: const AnimatedListSeparatedSample(),
-          scripPath: 'assets/scripts/widgets/animated_list/animated_list_separated.0.dart'),
+        name: 'animated_list.0.dart',
+        widget: const AnimatedListSeparatedSample(),
+      ),
       Example(
-          name: 'animated_list_separated.0.dart',
-          widget: const AnimatedListSample(),
-          scripPath: 'assets/scripts/widgets/animated_list/animated_list.0.dart'),
+        name: 'animated_list_separated.0.dart',
+        widget: const AnimatedListSample(),
+      ),
       Example(
-          name: 'sliver_animated_list.0.dart',
-          widget: const SliverAnimatedListSample(),
-          scripPath: 'assets/scripts/widgets/animated_list/sliver_animated_list.0.dart'),
+        name: 'sliver_animated_list.0.dart',
+        widget: const SliverAnimatedListSample(),
+      ),
     ]),
     Example(name: 'animated_size', subExamples: <Example>[
       Example(
-          name: 'animated_size.0.dart',
-          widget: const AnimatedSizeExampleApp(),
-          scripPath: 'assets/scripts/widgets/animated_size/animated_size.0.dart')
+        name: 'animated_size.0.dart',
+        widget: const AnimatedSizeExampleApp(),
+      )
     ]),
     Example(name: 'animated_switcher', subExamples: <Example>[
       Example(
-          name: 'animated_switcher.0.dart',
-          widget: const AnimatedSwitcherExampleApp(),
-          scripPath: 'assets/scripts/widgets/animated_switcher/animated_switcher.0.dart')
+        name: 'animated_switcher.0.dart',
+        widget: const AnimatedSwitcherExampleApp(),
+      )
     ]),
     Example(name: 'app', subExamples: <Example>[
       Example(
-          name: 'widgets_app.widgets_app.0.dart',
-          widget: const WidgetsAppExampleApp(),
-          scripPath: 'assets/scripts/widgets/app/widgets_app.widgets_app.0.dart')
+        name: 'widgets_app.widgets_app.0.dart',
+        widget: const WidgetsAppExampleApp(),
+      )
     ]),
     Example(name: 'app_lifecycle_listener', subExamples: <Example>[
       Example(
-          name: 'app_lifecycle_listener.0.dart',
-          widget: const AppLifecycleListenerExample(),
-          scripPath: 'assets/scripts/widgets/app_lifecycle_listener/app_lifecycle_listener.0.dart'),
+        name: 'app_lifecycle_listener.0.dart',
+        widget: const AppLifecycleListenerExample(),
+      ),
       Example(
-          name: 'app_lifecycle_listener.1.dart',
-          widget: const app_lifecycle_listener_1.AppLifecycleListenerExample(),
-          scripPath: 'assets/scripts/widgets/app_lifecycle_listener/app_lifecycle_listener.1.dart'),
+        name: 'app_lifecycle_listener.1.dart',
+        widget: const app_lifecycle_listener_1.AppLifecycleListenerExample(),
+      ),
     ]),
     Example(name: 'async', subExamples: <Example>[
       Example(
-          name: 'future_builder.0.dart',
-          widget: const FutureBuilderExampleApp(),
-          scripPath: 'assets/scripts/widgets/async/future_builder.0.dart'),
+        name: 'future_builder.0.dart',
+        widget: const FutureBuilderExampleApp(),
+      ),
       Example(
-          name: 'stream_builder.0.dart',
-          widget: const StreamBuilderExampleApp(),
-          scripPath: 'assets/scripts/widgets/async/stream_builder.0.dart'),
+        name: 'stream_builder.0.dart',
+        widget: const StreamBuilderExampleApp(),
+      ),
     ]),
     Example(name: 'autocomplete', subExamples: <Example>[
       Example(
-          name: 'raw_autocomplete.0.dart',
-          widget: const AutocompleteExampleApp(),
-          scripPath: 'assets/scripts/widgets/autocomplete/raw_autocomplete.0.dart'),
+        name: 'raw_autocomplete.0.dart',
+        widget: const AutocompleteExampleApp(),
+      ),
       Example(
-          name: 'raw_autocomplete.1.dart',
-          widget: const widget_autocomplete_1.AutocompleteExampleApp(),
-          scripPath: 'assets/scripts/widgets/autocomplete/raw_autocomplete.1.dart'),
+        name: 'raw_autocomplete.1.dart',
+        widget: const widget_autocomplete_1.AutocompleteExampleApp(),
+      ),
       Example(
-          name: 'raw_autocomplete.2.dart',
-          widget: const widget_autocomplete_2.AutocompleteExampleApp(),
-          scripPath: 'assets/scripts/widgets/autocomplete/raw_autocomplete.2.dart'),
+        name: 'raw_autocomplete.2.dart',
+        widget: const widget_autocomplete_2.AutocompleteExampleApp(),
+      ),
       Example(
-          name: 'raw_autocomplete.focus_node.0.dart',
-          widget: const widget_autocomplete_3.AutocompleteExampleApp(),
-          scripPath: 'assets/scripts/widgets/autocomplete/raw_autocomplete.focus_node.0.dart'),
+        name: 'raw_autocomplete.focus_node.0.dart',
+        widget: const widget_autocomplete_3.AutocompleteExampleApp(),
+      ),
     ]),
     Example(name: 'autofill', subExamples: <Example>[
       Example(
-          name: 'autofill_group.0.dart',
-          widget: const AutofillGroupExampleApp(),
-          scripPath: 'assets/scripts/widgets/autofill/autofill_group.0.dart')
+        name: 'autofill_group.0.dart',
+        widget: const AutofillGroupExampleApp(),
+      )
     ]),
     Example(name: 'basic', subExamples: <Example>[
       Example(
-          name: 'absorb_pointer.0.dart',
-          widget: const AbsorbPointerApp(),
-          scripPath: 'assets/scripts/widgets/basic/absorb_pointer.0.dart'),
+        name: 'absorb_pointer.0.dart',
+        widget: const AbsorbPointerApp(),
+      ),
       Example(
-          name: 'aspect_ratio.0.dart',
-          widget: const AspectRatioApp(),
-          scripPath: 'assets/scripts/widgets/basic/aspect_ratio.0.dart'),
+        name: 'aspect_ratio.0.dart',
+        widget: const AspectRatioApp(),
+      ),
       Example(
-          name: 'aspect_ratio.1.dart',
-          widget: const widget_aspect_ratio_1.AspectRatioApp(),
-          scripPath: 'assets/scripts/widgets/basic/aspect_ratio.1.dart'),
+        name: 'aspect_ratio.1.dart',
+        widget: const widget_aspect_ratio_1.AspectRatioApp(),
+      ),
       Example(
-          name: 'aspect_ratio.2.dart',
-          widget: const widget_aspect_ratio_2.AspectRatioApp(),
-          scripPath: 'assets/scripts/widgets/basic/aspect_ratio.2.dart'),
+        name: 'aspect_ratio.2.dart',
+        widget: const widget_aspect_ratio_2.AspectRatioApp(),
+      ),
       Example(
-          name: 'clip_rrect.0.dart',
-          widget: const ClipRRectApp(),
-          scripPath: 'assets/scripts/widgets/basic/clip_rrect.0.dart'),
+        name: 'clip_rrect.0.dart',
+        widget: const ClipRRectApp(),
+      ),
       Example(
-          name: 'clip_rrect.1.dart',
-          widget: const widget_clip_rrect_1.ClipRRectApp(),
-          scripPath: 'assets/scripts/widgets/basic/clip_rrect.1.dart'),
+        name: 'clip_rrect.1.dart',
+        widget: const widget_clip_rrect_1.ClipRRectApp(),
+      ),
       Example(
-          name: 'custom_multi_child_layout.0.dart',
-          widget: const CustomMultiChildLayoutApp(),
-          scripPath: 'assets/scripts/widgets/basic/custom_multi_child_layout.0.dart'),
+        name: 'custom_multi_child_layout.0.dart',
+        widget: const CustomMultiChildLayoutApp(),
+      ),
       Example(
-          name: 'expanded.0.dart',
-          widget: const ExpandedApp(),
-          scripPath: 'assets/scripts/widgets/basic/expanded.0.dart'),
+        name: 'expanded.0.dart',
+        widget: const ExpandedApp(),
+      ),
       Example(
-          name: 'expanded.1.dart',
-          widget: const widget_expanded_1.ExpandedApp(),
-          scripPath: 'assets/scripts/widgets/basic/expanded.1.dart'),
+        name: 'expanded.1.dart',
+        widget: const widget_expanded_1.ExpandedApp(),
+      ),
       Example(
-          name: 'fitted_box.0.dart',
-          widget: const FittedBoxApp(),
-          scripPath: 'assets/scripts/widgets/basic/fitted_box.0.dart'),
+        name: 'fitted_box.0.dart',
+        widget: const FittedBoxApp(),
+      ),
       Example(
-          name: 'flow.0.dart',
-          widget: const FlowApp(),
-          scripPath: 'assets/scripts/widgets/basic/flow.0.dart'),
+        name: 'flow.0.dart',
+        widget: const FlowApp(),
+      ),
       Example(
-          name: 'fractionally_sized_box.0.dart',
-          widget: const FractionallySizedBoxApp(),
-          scripPath: 'assets/scripts/widgets/basic/fractionally_sized_box.0.dart'),
+        name: 'fractionally_sized_box.0.dart',
+        widget: const FractionallySizedBoxApp(),
+      ),
       Example(
-          name: 'ignore_pointer.0.dart',
-          widget: const IgnorePointerApp(),
-          scripPath: 'assets/scripts/widgets/basic/ignore_pointer.0.dart'),
+        name: 'ignore_pointer.0.dart',
+        widget: const IgnorePointerApp(),
+      ),
       Example(
-          name: 'indexed_stack.0.dart',
-          widget: const IndexedStackApp(),
-          scripPath: 'assets/scripts/widgets/basic/indexed_stack.0.dart'),
+        name: 'indexed_stack.0.dart',
+        widget: const IndexedStackApp(),
+      ),
       Example(
-          name: 'listener.0.dart',
-          widget: const ListenerApp(),
-          scripPath: 'assets/scripts/widgets/basic/listener.0.dart'),
+        name: 'listener.0.dart',
+        widget: const ListenerApp(),
+      ),
       Example(
-          name: 'mouse_region.0.dart',
-          widget: const MouseRegionApp(),
-          scripPath: 'assets/scripts/widgets/basic/mouse_region.0.dart'),
+        name: 'mouse_region.0.dart',
+        widget: const MouseRegionApp(),
+      ),
       Example(
-          name: 'mouse_region.on_exit.0.dart',
-          widget: const widget_mouse_gegion_1.MouseRegionApp(),
-          scripPath: 'assets/scripts/widgets/basic/mouse_region.on_exit.0.dart'),
+        name: 'mouse_region.on_exit.0.dart',
+        widget: const widget_mouse_gegion_1.MouseRegionApp(),
+      ),
       Example(
-          name: 'mouse_region.on_exit.1.dart',
-          widget: const widget_mouse_gegion_2.MouseRegionApp(),
-          scripPath: 'assets/scripts/widgets/basic/mouse_region.on_exit.1.dart'),
+        name: 'mouse_region.on_exit.1.dart',
+        widget: const widget_mouse_gegion_2.MouseRegionApp(),
+      ),
       Example(
-          name: 'offstage.0.dart',
-          widget: const OffstageApp(),
-          scripPath: 'assets/scripts/widgets/basic/offstage.0.dart'),
+        name: 'offstage.0.dart',
+        widget: const OffstageApp(),
+      ),
       Example(
-          name: 'overflowbox.0.dart',
-          widget: const OverflowBoxApp(),
-          scripPath: 'assets/scripts/widgets/basic/overflowbox.0.dart'),
+        name: 'overflowbox.0.dart',
+        widget: const OverflowBoxApp(),
+      ),
       Example(
-          name: 'physical_shape.0.dart',
-          widget: const PhysicalShapeApp(),
-          scripPath: 'assets/scripts/widgets/basic/physical_shape.0.dart'),
+        name: 'physical_shape.0.dart',
+        widget: const PhysicalShapeApp(),
+      ),
     ]),
     Example(name: 'binding', subExamples: <Example>[
       Example(
-          name: 'widget_binding_observer.0.dart',
-          widget: const WidgetBindingObserverExampleApp(),
-          scripPath: 'assets/scripts/widgets/binding/widget_binding_observer.0.dart'),
+        name: 'widget_binding_observer.0.dart',
+        widget: const WidgetBindingObserverExampleApp(),
+      ),
     ]),
     Example(name: 'color_filter', subExamples: <Example>[
       Example(
-          name: 'color_filtered.0.dart',
-          widget: const ColorFilteredExampleApp(),
-          scripPath: 'assets/scripts/widgets/color_filter/color_filtered.0.dart')
+        name: 'color_filtered.0.dart',
+        widget: const ColorFilteredExampleApp(),
+      )
     ]),
     Example(name: 'dismissible', subExamples: <Example>[
       Example(
-          name: 'dismissible.0.dart',
-          widget: const DismissibleExampleApp(),
-          scripPath: 'assets/scripts/widgets/dismissible/dismissible.0.dart')
+        name: 'dismissible.0.dart',
+        widget: const DismissibleExampleApp(),
+      )
     ]),
     Example(name: 'draggable_scrollable_sheet', subExamples: <Example>[
       Example(
-          name: 'draggable_scrollable_sheet.0.dart',
-          widget: const DraggableScrollableSheetExampleApp(),
-          scripPath:
-              'assets/scripts/widgets/draggable_scrollable_sheet/draggable_scrollable_sheet.0.dart')
+        name: 'draggable_scrollable_sheet.0.dart',
+        widget: const DraggableScrollableSheetExampleApp(),
+      )
     ]),
     Example(name: 'drag_target', subExamples: <Example>[
       Example(
-          name: 'draggable.0.dart',
-          widget: const DraggableExampleApp(),
-          scripPath: 'assets/scripts/widgets/drag_target/draggable.0.dart')
+        name: 'draggable.0.dart',
+        widget: const DraggableExampleApp(),
+      )
     ]),
     Example(name: 'editable_text', subExamples: <Example>[
       Example(
-          name: 'editable_text.on_changed.0.dart',
-          widget: const OnChangedExampleApp(),
-          scripPath: 'assets/scripts/widgets/editable_text/editable_text.on_changed.0.dart'),
+        name: 'editable_text.on_changed.0.dart',
+        widget: const OnChangedExampleApp(),
+      ),
       Example(
-          name: 'editable_text.on_content_inserted.0.dart',
-          widget: const KeyboardInsertedContentApp(),
-          scripPath:
-              'assets/scripts/widgets/editable_text/editable_text.on_content_inserted.0.dart'),
+        name: 'editable_text.on_content_inserted.0.dart',
+        widget: const KeyboardInsertedContentApp(),
+      ),
       Example(
-          name: 'text_editing_controller.0.dart',
-          widget: const TextEditingControllerExampleApp(),
-          scripPath: 'assets/scripts/widgets/editable_text/text_editing_controller.0.dart'),
+        name: 'text_editing_controller.0.dart',
+        widget: const TextEditingControllerExampleApp(),
+      ),
       Example(
-          name: 'text_editing_controller.1.dart',
-          widget: const widget_editable_text_1.TextEditingControllerExampleApp(),
-          scripPath: 'assets/scripts/widgets/editable_text/text_editing_controller.1.dart'),
+        name: 'text_editing_controller.1.dart',
+        widget: const widget_editable_text_1.TextEditingControllerExampleApp(),
+      ),
     ]),
     Example(name: 'focus_manager', subExamples: <Example>[
       Example(
-          name: 'focus_node.0.dart',
-          widget: const FocusNodeExampleApp(),
-          scripPath: 'assets/scripts/widgets/focus_manager/focus_node.0.dart'),
+        name: 'focus_node.0.dart',
+        widget: const FocusNodeExampleApp(),
+      ),
       Example(
-          name: 'focus_node.unfocus.0.dart',
-          widget: const UnfocusExampleApp(),
-          scripPath: 'assets/scripts/widgets/focus_manager/focus_node.unfocus.0.dart'),
+        name: 'focus_node.unfocus.0.dart',
+        widget: const UnfocusExampleApp(),
+      ),
     ]),
     Example(name: 'focus_scope', subExamples: <Example>[
       Example(
-          name: 'focus.0.dart',
-          widget: const FocusExampleApp(),
-          scripPath: 'assets/scripts/widgets/focus_scope/focus.0.dart'),
+        name: 'focus.0.dart',
+        widget: const FocusExampleApp(),
+      ),
       Example(
-          name: 'focus.1.dart',
-          widget: const widget_focus_scope_1.FocusExampleApp(),
-          scripPath: 'assets/scripts/widgets/focus_scope/focus.1.dart'),
+        name: 'focus.1.dart',
+        widget: const widget_focus_scope_1.FocusExampleApp(),
+      ),
       Example(
-          name: 'focus.2.dart',
-          widget: const widget_focus_scope_2.FocusExampleApp(),
-          scripPath: 'assets/scripts/widgets/focus_scope/focus.2.dart'),
+        name: 'focus.2.dart',
+        widget: const widget_focus_scope_2.FocusExampleApp(),
+      ),
       Example(
-          name: 'focus_scope.0.dart',
-          widget: const FocusScopeExampleApp(),
-          scripPath: 'assets/scripts/widgets/focus_scope/focus_scope.0.dart'),
+        name: 'focus_scope.0.dart',
+        widget: const FocusScopeExampleApp(),
+      ),
     ]),
     Example(name: 'focus_traversal', subExamples: <Example>[
       Example(
-          name: 'focus_traversal_group.0.dart',
-          widget: const FocusTraversalGroupExampleApp(),
-          scripPath: 'assets/scripts/widgets/focus_traversal/focus_traversal_group.0.dart'),
+        name: 'focus_traversal_group.0.dart',
+        widget: const FocusTraversalGroupExampleApp(),
+      ),
       Example(
-          name: 'ordered_traversal_policy.0.dart',
-          widget: const OrderedTraversalPolicyExampleApp(),
-          scripPath: 'assets/scripts/widgets/focus_traversal/ordered_traversal_policy.0.dart'),
+        name: 'ordered_traversal_policy.0.dart',
+        widget: const OrderedTraversalPolicyExampleApp(),
+      ),
     ]),
     Example(name: 'form', subExamples: <Example>[
       Example(
-          name: 'form.0.dart',
-          widget: const FormExampleApp(),
-          scripPath: 'assets/scripts/widgets/form/form.0.dart'),
+        name: 'form.0.dart',
+        widget: const FormExampleApp(),
+      ),
       Example(
-          name: 'form.1.dart',
-          widget: const FormApp(),
-          scripPath: 'assets/scripts/widgets/form/form.1.dart'),
+        name: 'form.1.dart',
+        widget: const FormApp(),
+      ),
     ]),
     // Example(name: 'framework'),
     Example(name: 'gesture_detector', subExamples: <Example>[
       Example(
-          name: 'gesture_detector.0.dart',
-          widget: const GestureDetectorExampleApp(),
-          scripPath: 'assets/scripts/widgets/gesture_detector/gesture_detector.0.dart'),
+        name: 'gesture_detector.0.dart',
+        widget: const GestureDetectorExampleApp(),
+      ),
       Example(
-          name: 'gesture_detector.1.dart',
-          widget: const widget_gesture_1.GestureDetectorExampleApp(),
-          scripPath: 'assets/scripts/widgets/gesture_detector/gesture_detector.1.dart'),
+        name: 'gesture_detector.1.dart',
+        widget: const widget_gesture_1.GestureDetectorExampleApp(),
+      ),
       Example(
-          name: 'gesture_detector.2.dart',
-          widget: const widget_gesture_2.NestedGestureDetectorsApp(),
-          scripPath: 'assets/scripts/widgets/gesture_detector/gesture_detector.2.dart'),
+        name: 'gesture_detector.2.dart',
+        widget: const widget_gesture_2.NestedGestureDetectorsApp(),
+      ),
     ]),
     Example(name: 'hardware_keyboard', subExamples: <Example>[
       Example(
-          name: 'key_event_manager.0.dart',
-          widget: const FallbackDemoApp(),
-          scripPath: 'assets/scripts/widgets/hardware_keyboard/key_event_manager.0.dart'),
+        name: 'key_event_manager.0.dart',
+        widget: const FallbackDemoApp(),
+      ),
     ]),
     Example(name: 'heroes', subExamples: <Example>[
       Example(
-          name: 'hero.0.dart',
-          widget: const HeroApp(),
-          scripPath: 'assets/scripts/widgets/heroes/hero.0.dart'),
+        name: 'hero.0.dart',
+        widget: const HeroApp(),
+      ),
       Example(
-          name: 'hero.1.dart',
-          widget: const widget_hero_1.HeroApp(),
-          scripPath: 'assets/scripts/widgets/heroes/hero.1.dart'),
+        name: 'hero.1.dart',
+        widget: const widget_hero_1.HeroApp(),
+      ),
     ]),
     Example(name: 'image', subExamples: <Example>[
       Example(
-          name: 'image.error_builder.0.dart',
-          widget: const ErrorBuilderExampleApp(),
-          scripPath: 'assets/scripts/widgets/image/image.error_builder.0.dart'),
+        name: 'image.error_builder.0.dart',
+        widget: const ErrorBuilderExampleApp(),
+      ),
       Example(
-          name: 'image.frame_builder.0.dart',
-          widget: const FrameBuilderExampleApp(),
-          scripPath: 'assets/scripts/widgets/image/image.frame_builder.0.dart'),
+        name: 'image.frame_builder.0.dart',
+        widget: const FrameBuilderExampleApp(),
+      ),
       Example(
-          name: 'image.loading_builder.0.dart',
-          widget: const LoadingBuilderExampleApp(),
-          scripPath: 'assets/scripts/widgets/image/image.loading_builder.0.dart'),
+        name: 'image.loading_builder.0.dart',
+        widget: const LoadingBuilderExampleApp(),
+      ),
     ]),
     Example(name: 'implicit_animations', subExamples: <Example>[
       Example(
-          name: 'animated_align.0.dart',
-          widget: const AnimatedAlignExampleApp(),
-          scripPath: 'assets/scripts/widgets/implicit_animations/animated_align.0.dart'),
+        name: 'animated_align.0.dart',
+        widget: const AnimatedAlignExampleApp(),
+      ),
       Example(
-          name: 'animated_container.0.dart',
-          widget: const AnimatedContainerExampleApp(),
-          scripPath: 'assets/scripts/widgets/implicit_animations/animated_container.0.dart'),
+        name: 'animated_container.0.dart',
+        widget: const AnimatedContainerExampleApp(),
+      ),
       Example(
-          name: 'animated_fractionally_sized_box.0.dart',
-          widget: const AnimatedFractionallySizedBoxExampleApp(),
-          scripPath:
-              'assets/scripts/widgets/implicit_animations/animated_fractionally_sized_box.0.dart'),
+        name: 'animated_fractionally_sized_box.0.dart',
+        widget: const AnimatedFractionallySizedBoxExampleApp(),
+      ),
       Example(
-          name: 'animated_padding.0.dart',
-          widget: const AnimatedPaddingExampleApp(),
-          scripPath: 'assets/scripts/widgets/implicit_animations/animated_padding.0.dart'),
+        name: 'animated_padding.0.dart',
+        widget: const AnimatedPaddingExampleApp(),
+      ),
       Example(
-          name: 'animated_positioned.0.dart',
-          widget: const AnimatedPositionedExampleApp(),
-          scripPath: 'assets/scripts/widgets/implicit_animations/animated_positioned.0.dart'),
+        name: 'animated_positioned.0.dart',
+        widget: const AnimatedPositionedExampleApp(),
+      ),
       Example(
-          name: 'animated_slide.0.dart',
-          widget: const AnimatedSlideApp(),
-          scripPath: 'assets/scripts/widgets/implicit_animations/animated_slide.0.dart'),
+        name: 'animated_slide.0.dart',
+        widget: const AnimatedSlideApp(),
+      ),
       Example(
-          name: 'sliver_animated_opacity.0.dart',
-          widget: const SliverAnimatedOpacityExampleApp(),
-          scripPath: 'assets/scripts/widgets/implicit_animations/sliver_animated_opacity.0.dart'),
+        name: 'sliver_animated_opacity.0.dart',
+        widget: const SliverAnimatedOpacityExampleApp(),
+      ),
     ]),
     Example(name: 'inherited_model', subExamples: <Example>[
       Example(
-          name: 'inherited_model.0.dart',
-          widget: const InheritedModelApp(),
-          scripPath: 'assets/scripts/widgets/inherited_model/inherited_model.0.dart')
+        name: 'inherited_model.0.dart',
+        widget: const InheritedModelApp(),
+      )
     ]),
     Example(name: 'inherited_notifier', subExamples: <Example>[
       Example(
-          name: 'inherited_notifier.0.dart',
-          widget: const InheritedNotifierExampleApp(),
-          scripPath: 'assets/scripts/widgets/inherited_notifier/inherited_notifier.0.dart')
+        name: 'inherited_notifier.0.dart',
+        widget: const InheritedNotifierExampleApp(),
+      )
     ]),
     Example(name: 'inherited_theme', subExamples: <Example>[
       Example(
-          name: 'inherited_theme.0.dart',
-          widget: const InheritedThemeExampleApp(),
-          scripPath: 'assets/scripts/widgets/inherited_theme/inherited_theme.0.dart')
+        name: 'inherited_theme.0.dart',
+        widget: const InheritedThemeExampleApp(),
+      )
     ]),
     Example(name: 'interactive_viewer', subExamples: <Example>[
       Example(
-          name: 'interactive_viewer.0.dart',
-          widget: const InteractiveViewerExampleApp(),
-          scripPath: 'assets/scripts/widgets/interactive_viewer/interactive_viewer.0.dart'),
+        name: 'interactive_viewer.0.dart',
+        widget: const InteractiveViewerExampleApp(),
+      ),
       Example(
-          name: 'interactive_viewer.builder.0.dart',
-          widget: const IVBuilderExampleApp(),
-          scripPath: 'assets/scripts/widgets/interactive_viewer/interactive_viewer.builder.0.dart'),
+        name: 'interactive_viewer.builder.0.dart',
+        widget: const IVBuilderExampleApp(),
+      ),
       Example(
-          name: 'interactive_viewer.constrained.0.dart',
-          widget: const ConstrainedExampleApp(),
-          scripPath:
-              'assets/scripts/widgets/interactive_viewer/interactive_viewer.constrained.0.dart'),
+        name: 'interactive_viewer.constrained.0.dart',
+        widget: const ConstrainedExampleApp(),
+      ),
       Example(
-          name: 'interactive_viewer.transformation_controller.0.dart',
-          widget: const TransformationControllerExampleApp(),
-          scripPath:
-              'assets/scripts/widgets/interactive_viewer/interactive_viewer.transformation_controller.0.dart'),
+        name: 'interactive_viewer.transformation_controller.0.dart',
+        widget: const TransformationControllerExampleApp(),
+      ),
     ]),
     Example(name: 'layout_builder', subExamples: <Example>[
       Example(
-          name: 'layout_builder.0.dart',
-          widget: const LayoutBuilderExampleApp(),
-          scripPath: 'assets/scripts/widgets/layout_builder/layout_builder.0.dart')
+        name: 'layout_builder.0.dart',
+        widget: const LayoutBuilderExampleApp(),
+      )
     ]),
     Example(name: 'magnifier', subExamples: <Example>[
       Example(
-          name: 'magnifier.0.dart',
-          widget: const MagnifierExampleApp(),
-          scripPath: 'assets/scripts/widgets/magnifier/magnifier.0.dart')
+        name: 'magnifier.0.dart',
+        widget: const MagnifierExampleApp(),
+      )
     ]),
     Example(name: 'media_query', subExamples: <Example>[
       Example(
-          name: 'media_query_data.system_gesture_insets.0.dart',
-          widget: const SystemGestureInsetsExampleApp(),
-          scripPath:
-              'assets/scripts/widgets/media_query/media_query_data.system_gesture_insets.0.dart')
+        name: 'media_query_data.system_gesture_insets.0.dart',
+        widget: const SystemGestureInsetsExampleApp(),
+      )
     ]),
     Example(name: 'navigator', subExamples: <Example>[
       Example(
-          name: 'navigator.0.dart',
-          widget: const NavigatorExampleApp(),
-          scripPath: 'assets/scripts/widgets/navigator/navigator.0.dart'),
+        name: 'navigator.0.dart',
+        widget: const NavigatorExampleApp(),
+      ),
       Example(
-          name: 'navigator.restorable_push.0.dart',
-          widget: const RestorablePushExampleApp(),
-          scripPath: 'assets/scripts/widgets/navigator/navigator.restorable_push.0.dart'),
+        name: 'navigator.restorable_push.0.dart',
+        widget: const RestorablePushExampleApp(),
+      ),
       Example(
-          name: 'navigator.restorable_push_and_remove_until.0.dart',
-          widget: const RestorablePushAndRemoveUntilExampleApp(),
-          scripPath:
-              'assets/scripts/widgets/navigator/navigator.restorable_push_and_remove_until.0.dart'),
+        name: 'navigator.restorable_push_and_remove_until.0.dart',
+        widget: const RestorablePushAndRemoveUntilExampleApp(),
+      ),
       Example(
-          name: 'navigator.restorable_push_replacement.0.dart',
-          widget: const RestorablePushReplacementExampleApp(),
-          scripPath:
-              'assets/scripts/widgets/navigator/navigator.restorable_push_replacement.0.dart'),
+        name: 'navigator.restorable_push_replacement.0.dart',
+        widget: const RestorablePushReplacementExampleApp(),
+      ),
       Example(
-          name: 'navigator_state.restorable_push.0.dart',
-          widget: const widget_nav_state_1.RestorablePushExampleApp(),
-          scripPath: 'assets/scripts/widgets/navigator/navigator_state.restorable_push.0.dart'),
+        name: 'navigator_state.restorable_push.0.dart',
+        widget: const widget_nav_state_1.RestorablePushExampleApp(),
+      ),
       Example(
-          name: 'navigator_state.restorable_push_and_remove_until.0.dart',
-          widget: const widget_nav_state_2.RestorablePushAndRemoveUntilExampleApp(),
-          scripPath:
-              'assets/scripts/widgets/navigator/navigator_state.restorable_push_and_remove_until.0.dart'),
+        name: 'navigator_state.restorable_push_and_remove_until.0.dart',
+        widget: const widget_nav_state_2.RestorablePushAndRemoveUntilExampleApp(),
+      ),
       Example(
-          name: 'navigator_state.restorable_push_replacement.0.dart',
-          widget: const widget_nav_state_3.RestorablePushReplacementExampleApp(),
-          scripPath:
-              'assets/scripts/widgets/navigator/navigator_state.restorable_push_replacement.0.dart'),
+        name: 'navigator_state.restorable_push_replacement.0.dart',
+        widget: const widget_nav_state_3.RestorablePushReplacementExampleApp(),
+      ),
       Example(
-          name: 'restorable_route_future.0.dart',
-          widget: const RestorableRouteFutureExampleApp(),
-          scripPath: 'assets/scripts/widgets/navigator/restorable_route_future.0.dart'),
+        name: 'restorable_route_future.0.dart',
+        widget: const RestorableRouteFutureExampleApp(),
+      ),
     ]),
     Example(name: 'navigator_pop_handler', subExamples: <Example>[
       Example(
-          name: 'navigator_pop_handler.0.dart',
-          widget: const NavigatorPopHandlerApp(),
-          scripPath: 'assets/scripts/widgets/navigator_pop_handler/navigator_pop_handler.0.dart'),
+        name: 'navigator_pop_handler.0.dart',
+        widget: const NavigatorPopHandlerApp(),
+      ),
       Example(
-          name: 'navigator_pop_handler.1.dart',
-          widget: const widget_nav_pop_1.NavigatorPopHandlerApp(),
-          scripPath: 'assets/scripts/widgets/navigator_pop_handler/navigator_pop_handler.1.dart'),
+        name: 'navigator_pop_handler.1.dart',
+        widget: const widget_nav_pop_1.NavigatorPopHandlerApp(),
+      ),
     ]),
     Example(name: 'nested_scroll_view', subExamples: <Example>[
       Example(
-          name: 'nested_scroll_view.0.dart',
-          widget: const NestedScrollViewExampleApp(),
-          scripPath: 'assets/scripts/widgets/nested_scroll_view/nested_scroll_view.0.dart'),
+        name: 'nested_scroll_view.0.dart',
+        widget: const NestedScrollViewExampleApp(),
+      ),
       Example(
-          name: 'nested_scroll_view.1.dart',
-          widget: const widget_nested_scroll_1.NestedScrollViewExampleApp(),
-          scripPath: 'assets/scripts/widgets/nested_scroll_view/nested_scroll_view.1.dart'),
+        name: 'nested_scroll_view.1.dart',
+        widget: const widget_nested_scroll_1.NestedScrollViewExampleApp(),
+      ),
       Example(
-          name: 'nested_scroll_view.2.dart',
-          widget: const widget_nested_scroll_2.NestedScrollViewExampleApp(),
-          scripPath: 'assets/scripts/widgets/nested_scroll_view/nested_scroll_view.2.dart'),
+        name: 'nested_scroll_view.2.dart',
+        widget: const widget_nested_scroll_2.NestedScrollViewExampleApp(),
+      ),
       Example(
-          name: 'nested_scroll_view_state.0.dart',
-          widget: const NestedScrollViewStateExampleApp(),
-          scripPath: 'assets/scripts/widgets/nested_scroll_view/nested_scroll_view_state.0.dart'),
+        name: 'nested_scroll_view_state.0.dart',
+        widget: const NestedScrollViewStateExampleApp(),
+      ),
     ]),
     Example(name: 'notification_listener', subExamples: <Example>[
       Example(
-          name: 'notification.0.dart',
-          widget: const NotificationExampleApp(),
-          scripPath: 'assets/scripts/widgets/notification_listener/notification.0.dart')
+        name: 'notification.0.dart',
+        widget: const NotificationExampleApp(),
+      )
     ]),
     Example(name: 'overflow_bar', subExamples: <Example>[
       Example(
-          name: 'overflow_bar.0.dart',
-          widget: const OverflowBarExampleApp(),
-          scripPath: 'assets/scripts/widgets/overflow_bar/overflow_bar.0.dart')
+        name: 'overflow_bar.0.dart',
+        widget: const OverflowBarExampleApp(),
+      )
     ]),
     Example(name: 'overlay', subExamples: <Example>[
       Example(
-          name: 'overlay.0.dart',
-          widget: const OverlayApp(),
-          scripPath: 'assets/scripts/widgets/overlay/overlay.0.dart'),
+        name: 'overlay.0.dart',
+        widget: const OverlayApp(),
+      ),
       Example(
-          name: 'overlay_portal.0.dart ',
-          widget: const OverlayPortalExampleApp(),
-          scripPath: 'assets/scripts/widgets/overlay/overlay_portal.0.dart'),
+        name: 'overlay_portal.0.dart ',
+        widget: const OverlayPortalExampleApp(),
+      ),
     ]),
     Example(name: 'overscroll_indicator', subExamples: <Example>[
       Example(
-          name: 'glowing_overscroll_indicator.0.dart',
-          widget: const GlowingOverscrollIndicatorExampleApp(),
-          scripPath:
-              'assets/scripts/widgets/overscroll_indicator/glowing_overscroll_indicator.0.dart'),
+        name: 'glowing_overscroll_indicator.0.dart',
+        widget: const GlowingOverscrollIndicatorExampleApp(),
+      ),
       Example(
-          name: 'glowing_overscroll_indicator.1.dart',
-          widget: const widget_overscroll_1.GlowingOverscrollIndicatorExampleApp(),
-          scripPath:
-              'assets/scripts/widgets/overscroll_indicator/glowing_overscroll_indicator.1.dart'),
+        name: 'glowing_overscroll_indicator.1.dart',
+        widget: const widget_overscroll_1.GlowingOverscrollIndicatorExampleApp(),
+      ),
     ]),
     Example(name: 'page', subExamples: <Example>[
       Example(
-          name: 'page_can_pop.0.dart',
-          widget: const PageApiExampleApp(),
-          scripPath: 'assets/scripts/widgets/page/page_can_pop.0.dart')
+        name: 'page_can_pop.0.dart',
+        widget: const PageApiExampleApp(),
+      )
     ]),
     Example(name: 'page_storage', subExamples: <Example>[
       Example(
-          name: 'page_storage.0.dart',
-          widget: const PageStorageExampleApp(),
-          scripPath: 'assets/scripts/widgets/page_storage/page_storage.0.dart')
+        name: 'page_storage.0.dart',
+        widget: const PageStorageExampleApp(),
+      )
     ]),
     Example(name: 'page_view', subExamples: <Example>[
       Example(
-          name: 'page_view.0.dart',
-          widget: const PageViewExampleApp(),
-          scripPath: 'assets/scripts/widgets/page_view/page_view.0.dart'),
+        name: 'page_view.0.dart',
+        widget: const PageViewExampleApp(),
+      ),
       Example(
-          name: 'page_view.1.dart',
-          widget: const widget_page_view_1.PageViewExampleApp(),
-          scripPath: 'assets/scripts/widgets/page_view/page_view.1.dart'),
+        name: 'page_view.1.dart',
+        widget: const widget_page_view_1.PageViewExampleApp(),
+      ),
     ]),
     Example(name: 'pop_scope', subExamples: <Example>[
       Example(
-          name: 'pop_scope.0.dart',
-          widget: const widget_pop_scope_0.NavigatorPopHandlerApp(),
-          scripPath: 'assets/scripts/widgets/pop_scope/pop_scope.0.dart'),
+        name: 'pop_scope.0.dart',
+        widget: const widget_pop_scope_0.NavigatorPopHandlerApp(),
+      ),
       Example(
-          name: 'pop_scope.1.dart',
-          widget: const widget_pop_scope_1.NavigatorPopHandlerApp(),
-          scripPath: 'assets/scripts/widgets/pop_scope/pop_scope.1.dart'),
+        name: 'pop_scope.1.dart',
+        widget: const widget_pop_scope_1.NavigatorPopHandlerApp(),
+      ),
     ]),
     Example(name: 'preferred_size', subExamples: <Example>[
       Example(
-          name: 'preferred_size.0.dart',
-          widget: const PreferredSizeExampleApp(),
-          scripPath: 'assets/scripts/widgets/preferred_size/preferred_size.0.dart')
+        name: 'preferred_size.0.dart',
+        widget: const PreferredSizeExampleApp(),
+      )
     ]),
     Example(name: 'restoration', subExamples: <Example>[
       Example(
-          name: 'restoration_mixin.0.dart',
-          widget: const RestorationExampleApp(),
-          scripPath: 'assets/scripts/widgets/restoration/restoration_mixin.0.dart')
+        name: 'restoration_mixin.0.dart',
+        widget: const RestorationExampleApp(),
+      )
     ]),
     Example(name: 'restoration_properties', subExamples: <Example>[
       Example(
-          name: 'restorable_value.0.dart',
-          widget: const RestorableValueExampleApp(),
-          scripPath: 'assets/scripts/widgets/restoration_properties/restorable_value.0.dart')
+        name: 'restorable_value.0.dart',
+        widget: const RestorableValueExampleApp(),
+      )
     ]),
     Example(name: 'routes', subExamples: <Example>[
       Example(
-          name: 'popup_route.0.dart',
-          widget: const PopupRouteApp(),
-          scripPath: 'assets/scripts/widgets/routes/popup_route.0.dart'),
+        name: 'popup_route.0.dart',
+        widget: const PopupRouteApp(),
+      ),
       Example(
-          name: 'route_observer.0.dart',
-          widget: const RouteObserverApp(),
-          scripPath: 'assets/scripts/widgets/routes/route_observer.0.dart'),
+        name: 'route_observer.0.dart',
+        widget: const RouteObserverApp(),
+      ),
       Example(
-          name: 'show_general_dialog.0.dart',
-          widget: const GeneralDialogApp(),
-          scripPath: 'assets/scripts/widgets/routes/show_general_dialog.0.dart'),
+        name: 'show_general_dialog.0.dart',
+        widget: const GeneralDialogApp(),
+      ),
     ]),
     Example(name: 'scrollbar', subExamples: <Example>[
       Example(
-          name: 'raw_scrollbar.0.dart',
-          widget: const RawScrollbarExampleApp(),
-          scripPath: 'assets/scripts/widgets/scrollbar/raw_scrollbar.0.dart'),
+        name: 'raw_scrollbar.0.dart',
+        widget: const RawScrollbarExampleApp(),
+      ),
       Example(
-          name: 'raw_scrollbar.1.dart',
-          widget: const widget_scrollbar_1.RawScrollbarExampleApp(),
-          scripPath: 'assets/scripts/widgets/scrollbar/raw_scrollbar.1.dart'),
+        name: 'raw_scrollbar.1.dart',
+        widget: const widget_scrollbar_1.RawScrollbarExampleApp(),
+      ),
       Example(
-          name: 'raw_scrollbar.2.dart',
-          widget: const widget_scrollbar_2.RawScrollbarExampleApp(),
-          scripPath: 'assets/scripts/widgets/scrollbar/raw_scrollbar.2.dart'),
+        name: 'raw_scrollbar.2.dart',
+        widget: const widget_scrollbar_2.RawScrollbarExampleApp(),
+      ),
       Example(
-          name: 'raw_scrollbar.desktop.0.dart',
-          widget: const widget_scrollbar_3.ScrollbarApp(),
-          scripPath: 'assets/scripts/widgets/scrollbar/raw_scrollbar.desktop.0.dart'),
+        name: 'raw_scrollbar.desktop.0.dart',
+        widget: const widget_scrollbar_3.ScrollbarApp(),
+      ),
       Example(
-          name: 'raw_scrollbar.shape.0.dart',
-          widget: const ShapeExampleApp(),
-          scripPath: 'assets/scripts/widgets/scrollbar/raw_scrollbar.shape.0.dart'),
+        name: 'raw_scrollbar.shape.0.dart',
+        widget: const ShapeExampleApp(),
+      ),
     ]),
     Example(name: 'scroll_end_notification', subExamples: <Example>[
       Example(
-          name: 'scroll_end_notification.0.dart',
-          widget: const ScrollEndNotificationApp(),
-          scripPath:
-              'assets/scripts/widgets/scroll_end_notification/scroll_end_notification.0.dart'),
+        name: 'scroll_end_notification.0.dart',
+        widget: const ScrollEndNotificationApp(),
+      ),
       Example(
-          name: 'scroll_end_notification.1.dart',
-          widget: const SliverAutoScrollExampleApp(),
-          scripPath:
-              'assets/scripts/widgets/scroll_end_notification/scroll_end_notification.1.dart'),
+        name: 'scroll_end_notification.1.dart',
+        widget: const SliverAutoScrollExampleApp(),
+      ),
     ]),
     Example(name: 'scroll_notification_observer', subExamples: <Example>[
       Example(
-          name: 'scroll_notification_observer.0.dart',
-          widget: const ScrollNotificationObserverApp(),
-          scripPath:
-              'assets/scripts/widgets/scroll_notification_observer/scroll_notification_observer.0.dart')
+        name: 'scroll_notification_observer.0.dart',
+        widget: const ScrollNotificationObserverApp(),
+      )
     ]),
     Example(name: 'scroll_position', subExamples: <Example>[
       Example(
-          name: 'is_scrolling_listener.0.dart',
-          widget: const IsScrollingListenerApp(),
-          scripPath: 'assets/scripts/widgets/scroll_position/is_scrolling_listener.0.dart'),
+        name: 'is_scrolling_listener.0.dart',
+        widget: const IsScrollingListenerApp(),
+      ),
       Example(
-          name: 'scroll_controller_notification.0.dart',
-          widget: const ScrollNotificationDemo(),
-          scripPath:
-              'assets/scripts/widgets/scroll_position/scroll_controller_notification.0.dart'),
+        name: 'scroll_controller_notification.0.dart',
+        widget: const ScrollNotificationDemo(),
+      ),
       Example(
-          name: 'scroll_controller_on_attach.0.dart',
-          widget: const ScrollControllerDemo(),
-          scripPath: 'assets/scripts/widgets/scroll_position/scroll_controller_on_attach.0.dart'),
+        name: 'scroll_controller_on_attach.0.dart',
+        widget: const ScrollControllerDemo(),
+      ),
       Example(
-          name: 'scroll_metrics_notification.0.dart',
-          widget: const ScrollMetricsDemo(),
-          scripPath: 'assets/scripts/widgets/scroll_position/scroll_metrics_notification.0.dart'),
+        name: 'scroll_metrics_notification.0.dart',
+        widget: const ScrollMetricsDemo(),
+      ),
     ]),
     Example(name: 'scroll_view', subExamples: <Example>[
       Example(
-          name: 'custom_scroll_view.1.dart',
-          widget: const CustomScrollViewExampleApp(),
-          scripPath: 'assets/scripts/widgets/scroll_view/custom_scroll_view.1.dart'),
+        name: 'custom_scroll_view.1.dart',
+        widget: const CustomScrollViewExampleApp(),
+      ),
       Example(
-          name: 'grid_view.0.dart',
-          widget: const GridViewExampleApp(),
-          scripPath: 'assets/scripts/widgets/scroll_view/grid_view.0.dart'),
+        name: 'grid_view.0.dart',
+        widget: const GridViewExampleApp(),
+      ),
       Example(
-          name: 'list_view.0.dart',
-          widget: const ListViewExampleApp(),
-          scripPath: 'assets/scripts/widgets/scroll_view/list_view.0.dart'),
+        name: 'list_view.0.dart',
+        widget: const ListViewExampleApp(),
+      ),
       Example(
-          name: 'list_view.1.dart',
-          widget: const widget_scrollview_1.ListViewExampleApp(),
-          scripPath: 'assets/scripts/widgets/scroll_view/list_view.1.dart'),
+        name: 'list_view.1.dart',
+        widget: const widget_scrollview_1.ListViewExampleApp(),
+      ),
     ]),
     Example(name: 'shared_app_data', subExamples: <Example>[
       Example(
-          name: 'shared_app_data.0.dart',
-          widget: const SharedAppDataExampleApp(),
-          scripPath: 'assets/scripts/widgets/shared_app_data/shared_app_data.0.dart'),
+        name: 'shared_app_data.0.dart',
+        widget: const SharedAppDataExampleApp(),
+      ),
       Example(
-          name: 'shared_app_data.1.dart',
-          widget: const widget_shared_data_1.SharedAppDataExampleApp(),
-          scripPath: 'assets/scripts/widgets/shared_app_data/shared_app_data.1.dart'),
+        name: 'shared_app_data.1.dart',
+        widget: const widget_shared_data_1.SharedAppDataExampleApp(),
+      ),
     ]),
     Example(name: 'shortcuts', subExamples: <Example>[
       Example(
-          name: 'callback_shortcuts.0.dart',
-          widget: const CallbackShortcutsApp(),
-          scripPath: 'assets/scripts/widgets/shortcuts/callback_shortcuts.0.dart'),
+        name: 'callback_shortcuts.0.dart',
+        widget: const CallbackShortcutsApp(),
+      ),
       Example(
-          name: 'character_activator.0.dart',
-          widget: const CharacterActivatorExampleApp(),
-          scripPath: 'assets/scripts/widgets/shortcuts/character_activator.0.dart'),
+        name: 'character_activator.0.dart',
+        widget: const CharacterActivatorExampleApp(),
+      ),
       Example(
-          name: 'logical_key_set.0.dart',
-          widget: const LogicalKeySetExampleApp(),
-          scripPath: 'assets/scripts/widgets/shortcuts/logical_key_set.0.dart'),
+        name: 'logical_key_set.0.dart',
+        widget: const LogicalKeySetExampleApp(),
+      ),
       Example(
-          name: 'shortcuts.0.dart',
-          widget: const ShortcutsExampleApp(),
-          scripPath: 'assets/scripts/widgets/shortcuts/shortcuts.0.dart'),
+        name: 'shortcuts.0.dart',
+        widget: const ShortcutsExampleApp(),
+      ),
       Example(
-          name: 'shortcuts.1.dart',
-          widget: const widget_shortcut_1.ShortcutsExampleApp(),
-          scripPath: 'assets/scripts/widgets/shortcuts/shortcuts.1.dart'),
+        name: 'shortcuts.1.dart',
+        widget: const widget_shortcut_1.ShortcutsExampleApp(),
+      ),
       Example(
-          name: 'single_activator.0.dart',
-          widget: const SingleActivatorExampleApp(),
-          scripPath: 'assets/scripts/widgets/shortcuts/single_activator.0.dart'),
+        name: 'single_activator.0.dart',
+        widget: const SingleActivatorExampleApp(),
+      ),
     ]),
     Example(name: 'single_child_scroll_view', subExamples: <Example>[
       Example(
-          name: 'single_child_scroll_view.0.dart',
-          widget: const SingleChildScrollViewExampleApp(),
-          scripPath:
-              'assets/scripts/widgets/single_child_scroll_view/single_child_scroll_view.0.dart'),
+        name: 'single_child_scroll_view.0.dart',
+        widget: const SingleChildScrollViewExampleApp(),
+      ),
       Example(
-          name: 'single_child_scroll_view.1.dart',
-          widget: const widget_scroll_view_1.SingleChildScrollViewExampleApp(),
-          scripPath:
-              'assets/scripts/widgets/single_child_scroll_view/single_child_scroll_view.1.dart'),
+        name: 'single_child_scroll_view.1.dart',
+        widget: const widget_scroll_view_1.SingleChildScrollViewExampleApp(),
+      ),
     ]),
     Example(name: 'sliver', subExamples: <Example>[
       Example(
-          name: 'decorated_sliver.0.dart',
-          widget: const SliverDecorationExampleApp(),
-          scripPath: 'assets/scripts/widgets/sliver/decorated_sliver.0.dart'),
+        name: 'decorated_sliver.0.dart',
+        widget: const SliverDecorationExampleApp(),
+      ),
       Example(
-          name: 'pinned_header_sliver.0.dart',
-          widget: const PinnedHeaderSliverApp(),
-          scripPath: 'assets/scripts/widgets/sliver/pinned_header_sliver.0.dart'),
+        name: 'pinned_header_sliver.0.dart',
+        widget: const PinnedHeaderSliverApp(),
+      ),
       Example(
-          name: 'sliver_constrained_cross_axis.0.dart',
-          widget: const SliverConstrainedCrossAxisExampleApp(),
-          scripPath: 'assets/scripts/widgets/sliver/sliver_constrained_cross_axis.0.dart'),
+        name: 'sliver_constrained_cross_axis.0.dart',
+        widget: const SliverConstrainedCrossAxisExampleApp(),
+      ),
       Example(
-          name: 'sliver_cross_axis_group.0.dart',
-          widget: const SliverCrossAxisGroupExampleApp(),
-          scripPath: 'assets/scripts/widgets/sliver/sliver_cross_axis_group.0.dart'),
+        name: 'sliver_cross_axis_group.0.dart',
+        widget: const SliverCrossAxisGroupExampleApp(),
+      ),
       Example(
-          name: 'sliver_main_axis_group.0.dart',
-          widget: const SliverMainAxisGroupExampleApp(),
-          scripPath: 'assets/scripts/widgets/sliver/sliver_main_axis_group.0.dart'),
+        name: 'sliver_main_axis_group.0.dart',
+        widget: const SliverMainAxisGroupExampleApp(),
+      ),
       Example(
-          name: 'sliver_opacity.1.dart',
-          widget: const SliverOpacityExampleApp(),
-          scripPath: 'assets/scripts/widgets/sliver/sliver_opacity.1.dart'),
+        name: 'sliver_opacity.1.dart',
+        widget: const SliverOpacityExampleApp(),
+      ),
       Example(
-          name: 'sliver_resizing_header.0.dart',
-          widget: const SliverResizingHeaderApp(),
-          scripPath: 'assets/scripts/widgets/sliver/sliver_resizing_header.0.dart'),
+        name: 'sliver_resizing_header.0.dart',
+        widget: const SliverResizingHeaderApp(),
+      ),
       Example(
-          name: 'sliver_tree.0.dart',
-          widget: const TreeSliverExampleApp(),
-          scripPath: 'assets/scripts/widgets/sliver/sliver_tree.0.dart'),
+        name: 'sliver_tree.0.dart',
+        widget: const TreeSliverExampleApp(),
+      ),
       Example(
-          name: 'sliver_tree.1.dart',
-          widget: const widget_sliver_1.TreeSliverExampleApp(),
-          scripPath: 'assets/scripts/widgets/sliver/sliver_tree.1.dart'),
+        name: 'sliver_tree.1.dart',
+        widget: const widget_sliver_1.TreeSliverExampleApp(),
+      ),
     ]),
     Example(name: 'sliver_fill', subExamples: <Example>[
       Example(
-          name: 'sliver_fill_remaining.0.dart',
-          widget: const SliverFillRemainingExampleApp(),
-          scripPath: 'assets/scripts/widgets/sliver_fill/sliver_fill_remaining.0.dart'),
+        name: 'sliver_fill_remaining.0.dart',
+        widget: const SliverFillRemainingExampleApp(),
+      ),
       Example(
-          name: 'sliver_fill_remaining.1.dart',
-          widget: const widget_sliver_fill_1.SliverFillRemainingExampleApp(),
-          scripPath: 'assets/scripts/widgets/sliver_fill/sliver_fill_remaining.1.dart'),
+        name: 'sliver_fill_remaining.1.dart',
+        widget: const widget_sliver_fill_1.SliverFillRemainingExampleApp(),
+      ),
       Example(
-          name: 'sliver_fill_remaining.2.dart',
-          widget: const widget_sliver_fill_2.SliverFillRemainingExampleApp(),
-          scripPath: 'assets/scripts/widgets/sliver_fill/sliver_fill_remaining.2.dart'),
+        name: 'sliver_fill_remaining.2.dart',
+        widget: const widget_sliver_fill_2.SliverFillRemainingExampleApp(),
+      ),
       Example(
-          name: 'sliver_fill_remaining.3.dart',
-          widget: const widget_sliver_fill_3.SliverFillRemainingExampleApp(),
-          scripPath: 'assets/scripts/widgets/sliver_fill/sliver_fill_remaining.3.dart'),
+        name: 'sliver_fill_remaining.3.dart',
+        widget: const widget_sliver_fill_3.SliverFillRemainingExampleApp(),
+      ),
     ]),
     Example(name: 'slotted_render_object_widget', subExamples: <Example>[
       Example(
-          name: 'slotted_multi_child_render_object_widget_mixin.0.dart',
-          widget: const widget_slotted.ExampleWidget(),
-          scripPath:
-              'assets/scripts/widgets/slotted_render_object_widget/slotted_multi_child_render_object_widget_mixin.0.dart')
+        name: 'slotted_multi_child_render_object_widget_mixin.0.dart',
+        widget: const widget_slotted.ExampleWidget(),
+      )
     ]),
     Example(name: 'system_context_menu', subExamples: <Example>[
       Example(
-          name: 'system_context_menu.0.dart',
-          widget: const SystemContextMenuExampleApp(),
-          scripPath: 'assets/scripts/widgets/system_context_menu/system_context_menu.0.dart')
+        name: 'system_context_menu.0.dart',
+        widget: const SystemContextMenuExampleApp(),
+      )
     ]),
     Example(name: 'table', subExamples: <Example>[
       Example(
-          name: 'table.0.dart',
-          widget: const TableExampleApp(),
-          scripPath: 'assets/scripts/widgets/table/table.0.dart')
+        name: 'table.0.dart',
+        widget: const TableExampleApp(),
+      )
     ]),
     Example(name: 'tap_region', subExamples: <Example>[
       Example(
-          name: 'text_field_tap_region.0.dart',
-          widget: const TapRegionApp(),
-          scripPath: 'assets/scripts/widgets/tap_region/text_field_tap_region.0.dart')
+        name: 'text_field_tap_region.0.dart',
+        widget: const TapRegionApp(),
+      )
     ]),
     Example(name: 'text', subExamples: <Example>[
       Example(
-          name: 'text.0.dart',
-          widget: const DefaultTextStyleApp(),
-          scripPath: 'assets/scripts/widgets/text/text.0.dart')
+        name: 'text.0.dart',
+        widget: const DefaultTextStyleApp(),
+      )
     ]),
     Example(name: 'text_magnifier', subExamples: <Example>[
       Example(
-          name: 'text_magnifier.0.dart',
-          widget: const TextMagnifierExampleApp(text: 'Hello world!'),
-          scripPath: 'assets/scripts/widgets/text_magnifier/text_magnifier.0.dart')
+        name: 'text_magnifier.0.dart',
+        widget: const TextMagnifierExampleApp(text: 'Hello world!'),
+      )
     ]),
     Example(name: 'transitions', subExamples: <Example>[
       Example(
-          name: 'align_transition.0.dart',
-          widget: const AlignTransitionExampleApp(),
-          scripPath: 'assets/scripts/widgets/transitions/align_transition.0.dart'),
+        name: 'align_transition.0.dart',
+        widget: const AlignTransitionExampleApp(),
+      ),
       Example(
-          name: 'animated_builder.0.dart',
-          widget: const AnimatedBuilderExampleApp(),
-          scripPath: 'assets/scripts/widgets/transitions/animated_builder.0.dart'),
+        name: 'animated_builder.0.dart',
+        widget: const AnimatedBuilderExampleApp(),
+      ),
       Example(
-          name: 'animated_widget.0.dart',
-          widget: const AnimatedWidgetExampleApp(),
-          scripPath: 'assets/scripts/widgets/transitions/animated_widget.0.dart'),
+        name: 'animated_widget.0.dart',
+        widget: const AnimatedWidgetExampleApp(),
+      ),
       Example(
-          name: 'decorated_box_transition.0.dart',
-          widget: const DecoratedBoxTransitionExampleApp(),
-          scripPath: 'assets/scripts/widgets/transitions/decorated_box_transition.0.dart'),
+        name: 'decorated_box_transition.0.dart',
+        widget: const DecoratedBoxTransitionExampleApp(),
+      ),
       Example(
-          name: 'default_text_style_transition.0.dart',
-          widget: const DefaultTextStyleTransitionExampleApp(),
-          scripPath: 'assets/scripts/widgets/transitions/default_text_style_transition.0.dart'),
+        name: 'default_text_style_transition.0.dart',
+        widget: const DefaultTextStyleTransitionExampleApp(),
+      ),
       Example(
-          name: 'fade_transition.0.dart',
-          widget: const FadeTransitionExampleApp(),
-          scripPath: 'assets/scripts/widgets/transitions/fade_transition.0.dart'),
+        name: 'fade_transition.0.dart',
+        widget: const FadeTransitionExampleApp(),
+      ),
       Example(
-          name: 'listenable_builder.0.dart',
-          widget: const ListenableBuilderExample(),
-          scripPath: 'assets/scripts/widgets/transitions/listenable_builder.0.dart'),
+        name: 'listenable_builder.0.dart',
+        widget: const ListenableBuilderExample(),
+      ),
       Example(
-          name: 'listenable_builder.1.dart',
-          widget: const widget_transitions_1.ListenableBuilderExample(),
-          scripPath: 'assets/scripts/widgets/transitions/listenable_builder.1.dart'),
+        name: 'listenable_builder.1.dart',
+        widget: const widget_transitions_1.ListenableBuilderExample(),
+      ),
       Example(
-          name: 'listenable_builder.2.dart',
-          widget: const widget_transitions_2.ListenableBuilderExample(),
-          scripPath: 'assets/scripts/widgets/transitions/listenable_builder.2.dart'),
+        name: 'listenable_builder.2.dart',
+        widget: const widget_transitions_2.ListenableBuilderExample(),
+      ),
       Example(
-          name: 'listenable_builder.3.dart',
-          widget: const widget_transitions_3.ListenableBuilderExample(),
-          scripPath: 'assets/scripts/widgets/transitions/listenable_builder.3.dart'),
+        name: 'listenable_builder.3.dart',
+        widget: const widget_transitions_3.ListenableBuilderExample(),
+      ),
       Example(
-          name: 'matrix_transition.0.dart',
-          widget: const MatrixTransitionExampleApp(),
-          scripPath: 'assets/scripts/widgets/transitions/matrix_transition.0.dart'),
+        name: 'matrix_transition.0.dart',
+        widget: const MatrixTransitionExampleApp(),
+      ),
       Example(
-          name: 'positioned_transition.0.dart',
-          widget: const PositionedTransitionExampleApp(),
-          scripPath: 'assets/scripts/widgets/transitions/positioned_transition.0.dart'),
+        name: 'positioned_transition.0.dart',
+        widget: const PositionedTransitionExampleApp(),
+      ),
       Example(
-          name: 'relative_positioned_transition.0.dart',
-          widget: const RelativePositionedTransitionExampleApp(),
-          scripPath: 'assets/scripts/widgets/transitions/relative_positioned_transition.0.dart'),
+        name: 'relative_positioned_transition.0.dart',
+        widget: const RelativePositionedTransitionExampleApp(),
+      ),
       Example(
-          name: 'rotation_transition.0.dart',
-          widget: const RotationTransitionExampleApp(),
-          scripPath: 'assets/scripts/widgets/transitions/rotation_transition.0.dart'),
+        name: 'rotation_transition.0.dart',
+        widget: const RotationTransitionExampleApp(),
+      ),
       Example(
-          name: 'scale_transition.0.dart',
-          widget: const ScaleTransitionExampleApp(),
-          scripPath: 'assets/scripts/widgets/transitions/scale_transition.0.dart'),
+        name: 'scale_transition.0.dart',
+        widget: const ScaleTransitionExampleApp(),
+      ),
       Example(
-          name: 'size_transition.0.dart',
-          widget: const SizeTransitionExampleApp(),
-          scripPath: 'assets/scripts/widgets/transitions/size_transition.0.dart'),
+        name: 'size_transition.0.dart',
+        widget: const SizeTransitionExampleApp(),
+      ),
       Example(
-          name: 'slide_transition.0.dart',
-          widget: const SlideTransitionExampleApp(),
-          scripPath: 'assets/scripts/widgets/transitions/slide_transition.0.dart'),
+        name: 'slide_transition.0.dart',
+        widget: const SlideTransitionExampleApp(),
+      ),
       Example(
-          name: 'sliver_fade_transition.0.dart',
-          widget: const SliverFadeTransitionExampleApp(),
-          scripPath: 'assets/scripts/widgets/transitions/sliver_fade_transition.0.dart'),
+        name: 'sliver_fade_transition.0.dart',
+        widget: const SliverFadeTransitionExampleApp(),
+      ),
     ]),
     Example(name: 'tween_animation_builder', subExamples: <Example>[
       Example(
-          name: 'tween_animation_builder.0.dart',
-          widget: const TweenAnimationBuilderExampleApp(),
-          scripPath:
-              'assets/scripts/widgets/tween_animation_builder/tween_animation_builder.0.dart')
+        name: 'tween_animation_builder.0.dart',
+        widget: const TweenAnimationBuilderExampleApp(),
+      )
     ]),
     Example(name: 'undo_history', subExamples: <Example>[
       Example(
-          name: 'undo_history_controller.0.dart',
-          widget: const UndoHistoryControllerExampleApp(),
-          scripPath: 'assets/scripts/widgets/undo_history/undo_history_controller.0.dart')
+        name: 'undo_history_controller.0.dart',
+        widget: const UndoHistoryControllerExampleApp(),
+      )
     ]),
     Example(name: 'value_listenable_builder', subExamples: <Example>[
       Example(
-          name: 'value_listenable_builder.0.dart',
-          widget: const ValueListenableBuilderExampleApp(),
-          scripPath:
-              'assets/scripts/widgets/value_listenable_builder/value_listenable_builder.0.dart')
+        name: 'value_listenable_builder.0.dart',
+        widget: const ValueListenableBuilderExampleApp(),
+      )
     ]),
   ]),
 ];

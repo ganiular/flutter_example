@@ -27,7 +27,11 @@ class MainApp extends StatelessWidget {
           ),
         ),
       ),
-      home: ExampleFolders(title: 'Flutter Examples', examples: examples),
+      home: ExampleFolders(
+        title: 'Flutter Examples',
+        examples: examples,
+        directory: '',
+      ),
     );
   }
 }

@@ -10,10 +10,12 @@ class ExampleFolders extends StatefulWidget {
     required this.title,
     this.subTitle,
     required this.examples,
+    required this.directory,
   });
   final String title;
   final String? subTitle;
   final List<Example> examples;
+  final String directory;
 
   @override
   State<ExampleFolders> createState() => _ExampleFoldersState();
@@ -97,11 +99,14 @@ class _ExampleFoldersState extends State<ExampleFolders> {
       builder: (BuildContext context) {
         if (example.widget != null) {
           return ExamplePage(
-              view: example.widget!, name: example.name, scriptPath: example.scripPath!);
+              view: example.widget!,
+              name: example.name,
+              scriptPath: '${widget.directory}/${example.path}');
         } else {
           return ExampleFolders(
             title: example.name,
             examples: example.subExamples,
+            directory: '${widget.directory}/${example.path}',
           );
         }
       },

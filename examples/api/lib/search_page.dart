@@ -214,12 +214,13 @@ class _SearchPageState extends State<SearchPage> {
           return ExamplePage(
               view: example.widget!,
               name: example.name,
-              scriptPath: example.scripPath!,
+              scriptPath: '${item.directory}/${example.path}',
               directToScriptLine: item.line);
         } else {
           return ExampleFolders(
             title: example.name,
             examples: example.subExamples,
+            directory: item.directory,
           );
         }
       },
@@ -249,7 +250,7 @@ class _SearchPageState extends State<SearchPage> {
     }
   }
 
-  Future<void> _searchExample(Example example, String query, [String? directory]) async {
+  Future<void> _searchExample(Example example, String query, [String directory = '']) async {
     final RegExp pattern = RegExp(RegExp.escape(query), caseSensitive: false);
     final TextSpan? highlight = _searchText(example.name, query, pattern);
 
@@ -257,15 +258,15 @@ class _SearchPageState extends State<SearchPage> {
       _addSearchItem(SearchItem(directory: directory, example: example, highlight: highlight));
     }
 
-    if (example.scripPath != null) {
+    if (example.widget != null) {
       try {
-        final String script = await rootBundle.loadString(example.scripPath!);
+        final String script = await rootBundle.loadString('$directory/${example.path}');
         final List<String> lines = script.split('\n');
         for (int i = 0; i < lines.length; i++) {
           final TextSpan? highlight = _searchText(lines[i].trim(), query, pattern);
           if (highlight != null) {
             _addSearchItem(SearchItem(
-              directory: '$directory/${example.name}',
+              directory: '$directory/${example.path}',
               example: example,
               highlight: highlight,
               line: i + 1,
@@ -279,7 +280,7 @@ class _SearchPageState extends State<SearchPage> {
 
     if (example.subExamples.isNotEmpty) {
       for (final Example subexample in example.subExamples) {
-        _searchExample(subexample, query, '$directory/${example.name}');
+        _searchExample(subexample, query, '$directory/${example.path}');
       }
     }
   }
@@ -316,9 +317,9 @@ class _SearchPageState extends State<SearchPage> {
 
 @immutable
 class SearchItem {
-  const SearchItem({this.directory, this.example, this.highlight, this.line});
+  const SearchItem({required this.directory, this.example, this.highlight, this.line});
 
-  final String? directory;
+  final String directory;
   final Example? example;
   final TextSpan? highlight;
   final int? line;
