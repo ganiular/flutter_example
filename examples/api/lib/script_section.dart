@@ -29,6 +29,7 @@ class ScriptSection extends StatefulWidget {
 
 class _ScriptSectionState extends State<ScriptSection> with AutomaticKeepAliveClientMixin {
   String _script = '';
+  String _lineString = '';
 
   @override
   void initState() {
@@ -41,6 +42,8 @@ class _ScriptSectionState extends State<ScriptSection> with AutomaticKeepAliveCl
       final String script = await rootBundle.loadString(widget.scriptPath);
       setState(() {
         _script = script;
+        _lineString = List<String>.generate(_script.count('\n') + 1, (int index) => '${index + 1}')
+            .join('\n');
       });
     } catch (e) {
       debugPrint(e.toString());
@@ -70,8 +73,7 @@ class _ScriptSectionState extends State<ScriptSection> with AutomaticKeepAliveCl
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 6),
                   child: Text(
-                    List<String>.generate(
-                        _script.count('\n') + 1, (int index) => (index + 1).toString()).join('\n'),
+                    _lineString,
                     textAlign: TextAlign.end,
                     style: const TextStyle(
                         fontSize: fontSize, fontWeight: FontWeight.w500, color: Colors.white),
