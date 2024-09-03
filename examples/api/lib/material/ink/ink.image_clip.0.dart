@@ -7,18 +7,28 @@ import 'package:flutter/material.dart';
 /// Flutter code sample for [Image.frameBuilder].
 
 void main() {
-  runApp(
-    MaterialApp(
+  runApp(const ImageClipExampleApp());
+}
+
+class ImageClipExampleApp extends StatelessWidget {
+  const ImageClipExampleApp({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
       home: Scaffold(
         appBar: AppBar(title: const Text('Image.frameBuilder Sample')),
         body: const Center(
           child: ImageClipExample(
-            image: NetworkImage('https://flutter.github.io/assets-for-api-docs/assets/widgets/puffin.jpg'),
+            image: NetworkImage(
+                'https://flutter.github.io/assets-for-api-docs/assets/widgets/puffin.jpg'),
           ),
         ),
       ),
-    ),
-  );
+    );
+  }
 }
 
 class ImageClipExample extends StatelessWidget {

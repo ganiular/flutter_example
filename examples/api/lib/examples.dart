@@ -34,9 +34,9 @@ import 'material/bottom_sheet/show_modal_bottom_sheet.1.dart' as material_bottom
 import 'material/bottom_sheet/show_modal_bottom_sheet.2.dart' as material_bottom_sheet_3;
 import 'material/button_style/button_style.0.dart';
 import 'material/button_style_button/button_style_button.icon_alignment.0.dart';
-import 'material/card/card.0.dart';
 import 'material/card/card.0.dart' as material_card_1;
 import 'material/card/card.0.dart' as material_card_2;
+import 'material/card/card.0.dart';
 import 'material/carousel/carousel.0.dart';
 import 'material/checkbox/checkbox.0.dart';
 import 'material/checkbox/checkbox.1.dart' as material_checkbox_1;
@@ -58,6 +58,76 @@ import 'material/context_menu/editable_text_toolbar_builder.0.dart';
 import 'material/context_menu/editable_text_toolbar_builder.1.dart' as material_context_menu_1;
 import 'material/context_menu/editable_text_toolbar_builder.2.dart' as material_context_menu_2;
 import 'material/context_menu/selectable_region_toolbar_builder.0.dart';
+import 'material/data_table/data_table.0.dart';
+import 'material/data_table/data_table.1.dart' as material_data_table_1;
+import 'material/date_picker/date_picker_theme_day_shape.0.dart';
+import 'material/date_picker/show_date_picker.0.dart' as material_date_picker_1;
+import 'material/date_picker/show_date_range_picker.0.dart' as material_date_picker_2;
+import 'material/dialog/adaptive_alert_dialog.0.dart';
+import 'material/dialog/alert_dialog.0.dart';
+import 'material/dialog/alert_dialog.1.dart' as meterial_dialog_2;
+import 'material/dialog/dialog.0.dart' as meterial_dialog_3;
+import 'material/dialog/show_dialog.0.dart' as meterial_dialog_4;
+import 'material/dialog/show_dialog.1.dart' as meterial_dialog_5;
+import 'material/dialog/show_dialog.2.dart' as meterial_dialog_6;
+import 'material/divider/divider.0.dart';
+import 'material/divider/divider.1.dart' as material_divider_1;
+import 'material/divider/vertical_divider.0.dart' as material_divider_2;
+import 'material/divider/vertical_divider.1.dart' as material_divider_3;
+import 'material/drawer/drawer.0.dart';
+import 'material/dropdown/dropdown_button.0.dart';
+import 'material/dropdown/dropdown_button.selected_item_builder.0.dart' as material_dropdown_1;
+import 'material/dropdown/dropdown_button.style.0.dart' as material_dropdown_2;
+import 'material/dropdown_menu/dropdown_menu.0.dart';
+import 'material/dropdown_menu/dropdown_menu.1.dart' as material_dripdown_menu_1;
+import 'material/dropdown_menu/dropdown_menu.2.dart' as material_dripdown_menu_2;
+import 'material/dropdown_menu/dropdown_menu_entry_label_widget.0.dart';
+import 'material/elevated_button/elevated_button.0.dart';
+import 'material/expansion_panel/expansion_panel_list.0.dart';
+import 'material/expansion_panel/expansion_panel_list.expansion_panel_list_radio.0.dart';
+import 'material/expansion_tile/expansion_tile.0.dart';
+import 'material/expansion_tile/expansion_tile.1.dart';
+import 'material/expansion_tile/expansion_tile.2.dart';
+import 'material/filled_button/filled_button.0.dart';
+import 'material/filter_chip/filter_chip.0.dart' as material_filter_chip;
+import 'material/flexible_space_bar/flexible_space_bar.0.dart';
+import 'material/floating_action_button/floating_action_button.0.dart'
+    as material_floating_button_0;
+import 'material/floating_action_button/floating_action_button.1.dart'
+    as material_floating_button_1;
+import 'material/floating_action_button/floating_action_button.2.dart'
+    as material_floating_button_2;
+import 'material/floating_action_button_location/standard_fab_location.0.dart';
+import 'material/icon_button/icon_button.0.dart' as material_icon_button_0;
+import 'material/icon_button/icon_button.1.dart' as material_icon_button_1;
+import 'material/icon_button/icon_button.2.dart' as material_icon_button_2;
+import 'material/icon_button/icon_button.3.dart' as material_icon_button_3;
+import 'material/ink/ink.image_clip.0.dart';
+import 'material/ink/ink.image_clip.1.dart' as material_ink_1;
+import 'material/ink_well/ink_well.0.dart';
+import 'material/input_chip/input_chip.0.dart' as material_input_chip_0;
+import 'material/input_chip/input_chip.1.dart' as material_input_chip_1;
+import 'material/input_decorator/input_decoration.0.dart' as material_input_decorator_0;
+import 'material/input_decorator/input_decoration.1.dart' as material_input_decorator_1;
+import 'material/input_decorator/input_decoration.2.dart' as material_input_decorator_2;
+import 'material/input_decorator/input_decoration.3.dart' as material_input_decorator_3;
+import 'material/input_decorator/input_decoration.floating_label_style_error.0.dart'
+    as material_input_decorator_4;
+import 'material/input_decorator/input_decoration.helper.0.dart' as material_input_decorator_5;
+import 'material/input_decorator/input_decoration.label.0.dart' as material_input_decorator_6;
+import 'material/input_decorator/input_decoration.label_style_error.0.dart'
+    as material_input_decorator_7;
+import 'material/input_decorator/input_decoration.prefix_icon.0.dart' as material_input_decorator_8;
+import 'material/input_decorator/input_decoration.prefix_icon_constraints.0.dart'
+    as material_input_decorator_9;
+import 'material/input_decorator/input_decoration.suffix_icon.0.dart'
+    as material_input_decorator_10;
+import 'material/input_decorator/input_decoration.suffix_icon_constraints.0.dart'
+    as material_input_decorator_11;
+import 'material/input_decorator/input_decoration.widget_state.0.dart'
+    as material_input_decorator_12;
+import 'material/input_decorator/input_decoration.widget_state.1.dart'
+    as material_input_decorator_13;
 import 'widgets/actions/action.action_overridable.0.dart';
 import 'widgets/actions/action_listener.0.dart';
 import 'widgets/actions/actions.0.dart';
@@ -365,9 +435,9 @@ final List<Example> examples = <Example>[
       Example(name: 'card.1.dart', widget: const material_card_1.CardExampleApp()),
       Example(name: 'card.2.dart', widget: const material_card_2.CardExampleApp()),
     ]),
-    Example(
-        name: 'carousel',
-        subExamples: <Example>[Example(name: 'carousel.0.dart', widget: const CarouselExampleApp())]),
+    Example(name: 'carousel', subExamples: <Example>[
+      Example(name: 'carousel.0.dart', widget: const CarouselExampleApp())
+    ]),
     Example(name: 'checkbox', subExamples: <Example>[
       Example(name: 'checkbox.0.dart', widget: const CheckboxExampleApp()),
       Example(name: 'checkbox.1.dart', widget: const material_checkbox_1.CheckboxExampleApp()),
@@ -420,26 +490,162 @@ final List<Example> examples = <Example>[
           name: 'selectable_region_toolbar_builder.0.dart',
           widget: const SelectableRegionToolbarBuilderExampleApp()),
     ]),
-    Example(name: 'data_table', subExamples: <Example>[]),
-    Example(name: 'date_picker', subExamples: <Example>[]),
-    Example(name: 'dialog', subExamples: <Example>[]),
-    Example(name: 'divider', subExamples: <Example>[]),
-    Example(name: 'drawer', subExamples: <Example>[]),
-    Example(name: 'dropdown', subExamples: <Example>[]),
-    Example(name: 'dropdown_menu', subExamples: <Example>[]),
-    Example(name: 'elevated_button', subExamples: <Example>[]),
-    Example(name: 'expansion_panel', subExamples: <Example>[]),
-    Example(name: 'expansion_tile', subExamples: <Example>[]),
-    Example(name: 'filled_button', subExamples: <Example>[]),
-    Example(name: 'filter_chip', subExamples: <Example>[]),
-    Example(name: 'flexible_space_bar', subExamples: <Example>[]),
-    Example(name: 'floating_action_button', subExamples: <Example>[]),
-    Example(name: 'floating_action_button_location', subExamples: <Example>[]),
-    Example(name: 'icon_button', subExamples: <Example>[]),
-    Example(name: 'ink', subExamples: <Example>[]),
-    Example(name: 'ink_well', subExamples: <Example>[]),
-    Example(name: 'input_chip', subExamples: <Example>[]),
-    Example(name: 'input_decorator', subExamples: <Example>[]),
+    Example(name: 'data_table', subExamples: <Example>[
+      Example(name: 'data_table.0.dart', widget: const DataTableExampleApp()),
+      Example(name: 'data_table.1.dart', widget: const material_data_table_1.DataTableExampleApp()),
+    ]),
+    Example(name: 'date_picker', subExamples: <Example>[
+      Example(name: 'date_picker_theme_day_shape.0.dart', widget: const DatePickerApp()),
+      Example(
+          name: 'show_date_picker.0.dart', widget: const material_date_picker_1.DatePickerApp()),
+      Example(
+          name: 'show_date_range_picker.0.dart',
+          widget: const material_date_picker_2.DatePickerApp()),
+    ]),
+    Example(name: 'dialog', subExamples: <Example>[
+      Example(name: 'adaptive_alert_dialog.0.dart', widget: const AdaptiveAlertDialogApp()),
+      Example(name: 'alert_dialog.0.dart', widget: const AlertDialogExampleApp()),
+      Example(name: 'alert_dialog.1.dart', widget: const meterial_dialog_2.AlertDialogExampleApp()),
+      Example(name: 'dialog.0.dart', widget: const meterial_dialog_3.DialogExampleApp()),
+      Example(name: 'show_dialog.0.dart', widget: const meterial_dialog_4.ShowDialogExampleApp()),
+      Example(name: 'show_dialog.1.dart', widget: const meterial_dialog_5.ShowDialogExampleApp()),
+      Example(name: 'show_dialog.2.dart', widget: const meterial_dialog_6.ShowDialogExampleApp()),
+    ]),
+    Example(name: 'divider', subExamples: <Example>[
+      Example(name: 'divider.0.dart', widget: const DividerExampleApp()),
+      Example(name: 'divider.1.dart', widget: const material_divider_1.DividerExampleApp()),
+      Example(
+          name: 'vertical_divider.0.dart',
+          widget: const material_divider_2.VerticalDividerExampleApp()),
+      Example(
+          name: 'vertical_divider.1.dart',
+          widget: const material_divider_3.VerticalDividerExampleApp()),
+    ]),
+    Example(
+        name: 'drawer',
+        subExamples: <Example>[Example(name: 'drawer.0.dart', widget: const DrawerApp())]),
+    Example(name: 'dropdown', subExamples: <Example>[
+      Example(name: 'dropdown_button.0.dart', widget: const DropdownButtonApp()),
+      Example(
+          name: 'dropdown_button.selected_item_builder.0.dart',
+          widget: const material_dropdown_1.DropdownButtonApp()),
+      Example(
+          name: 'dropdown_button.style.0.dart',
+          widget: const material_dropdown_2.DropdownButtonApp()),
+    ]),
+    Example(name: 'dropdown_menu', subExamples: <Example>[
+      Example(name: 'dropdown_menu.0.dart', widget: const DropdownMenuExample()),
+      Example(
+          name: 'dropdown_menu.1.dart',
+          widget: const material_dripdown_menu_1.DropdownMenuExample()),
+      Example(
+          name: 'dropdown_menu.2.dart', widget: const material_dripdown_menu_2.DropdownMenuApp()),
+      Example(
+          name: 'dropdown_menu_entry_label_widget.0.dart',
+          widget: const DropdownMenuEntryLabelWidgetExampleApp()),
+    ]),
+    Example(name: 'elevated_button', subExamples: <Example>[
+      Example(name: 'elevated_button.0.dart', widget: const ElevatedButtonExampleApp())
+    ]),
+    Example(name: 'expansion_panel', subExamples: <Example>[
+      Example(name: 'expansion_panel_list.0.dart', widget: const ExpansionPanelListExampleApp()),
+      Example(
+          name: 'expansion_panel_list.expansion_panel_list_radio.0.dart',
+          widget: const ExpansionPanelListRadioExampleApp()),
+    ]),
+    Example(name: 'expansion_tile', subExamples: <Example>[
+      Example(name: 'expansion_tile.0.dart', widget: const ExpansionTileApp()),
+      Example(name: 'expansion_tile.1.dart', widget: const ExpansionTileControllerApp()),
+      Example(name: 'expansion_tile.2.dart', widget: const ExpansionTileAnimationStyleApp()),
+    ]),
+    Example(name: 'filled_button', subExamples: <Example>[
+      Example(name: 'filled_button.0.dart', widget: const FilledButtonApp())
+    ]),
+    Example(name: 'filter_chip', subExamples: <Example>[
+      Example(name: 'filter_chip.0.dart', widget: const material_filter_chip.ChipApp())
+    ]),
+    Example(name: 'flexible_space_bar', subExamples: <Example>[
+      Example(name: 'flexible_space_bar.0.dart', widget: const FlexibleSpaceBarExampleApp())
+    ]),
+    Example(name: 'floating_action_button', subExamples: <Example>[
+      Example(
+          name: 'floating_action_button.0.dart',
+          widget: const material_floating_button_0.FloatingActionButtonExampleApp()),
+      Example(
+          name: 'floating_action_button.1.dart',
+          widget: const material_floating_button_1.FloatingActionButtonExampleApp()),
+      Example(
+          name: 'floating_action_button.2.dart',
+          widget: const material_floating_button_2.FloatingActionButtonExampleApp()),
+    ]),
+    Example(name: 'floating_action_button_location', subExamples: <Example>[
+      Example(name: 'standard_fab_location.0.dart', widget: const StandardFabLocationExampleApp())
+    ]),
+    Example(name: 'icon_button', subExamples: <Example>[
+      Example(
+          name: 'icon_button.0.dart', widget: const material_icon_button_0.IconButtonExampleApp()),
+      Example(
+          name: 'icon_button.1.dart', widget: const material_icon_button_1.IconButtonExampleApp()),
+      Example(name: 'icon_button.2.dart', widget: const material_icon_button_2.IconButtonApp()),
+      Example(
+          name: 'icon_button.3.dart', widget: const material_icon_button_3.IconButtonToggleApp()),
+    ]),
+    Example(name: 'ink', subExamples: <Example>[
+      Example(name: 'ink.image_clip.0.dart', widget: const ImageClipExampleApp()),
+      Example(name: 'ink.image_clip.1.dart', widget: const material_ink_1.ImageClipExampleApp()),
+    ]),
+    Example(name: 'ink_well', subExamples: <Example>[
+      Example(name: 'ink_well.0.dart', widget: const InkWellExampleApp())
+    ]),
+    Example(name: 'input_chip', subExamples: <Example>[
+      Example(name: 'input_chip.0.dart', widget: const material_input_chip_0.ChipApp()),
+      Example(
+          name: 'input_chip.1.dart', widget: const material_input_chip_1.EditableChipFieldApp()),
+    ]),
+    Example(name: 'input_decorator', subExamples: <Example>[
+      Example(
+          name: 'input_decoration.0.dart',
+          widget: const material_input_decorator_0.InputDecorationExampleApp()),
+      Example(
+          name: 'input_decoration.1.dart',
+          widget: const material_input_decorator_1.InputDecorationExampleApp()),
+      Example(
+          name: 'input_decoration.2.dart',
+          widget: const material_input_decorator_2.InputDecorationExampleApp()),
+      Example(
+          name: 'input_decoration.3.dart',
+          widget: const material_input_decorator_3.InputDecorationExampleApp()),
+      Example(
+          name: 'input_decoration.floating_label_style_error.0.dart',
+          widget: const material_input_decorator_4.FloatingLabelStyleErrorExampleApp()),
+      Example(
+          name: 'input_decoration.helper.0.dart',
+          widget: const material_input_decorator_5.HelperExampleApp()),
+      Example(
+          name: 'input_decoration.label.0.dart',
+          widget: const material_input_decorator_6.LabelExampleApp()),
+      Example(
+          name: 'input_decoration.label_style_error.0.dart',
+          widget: const material_input_decorator_7.LabelStyleErrorExampleApp()),
+      Example(
+          name: 'input_decoration.prefix_icon.0.dart',
+          widget: const material_input_decorator_8.PrefixIconExampleApp()),
+      Example(
+          name: 'input_decoration.prefix_icon_constraints.0.dart',
+          widget: const material_input_decorator_9.PrefixIconConstraintsExampleApp()),
+      Example(
+          name: 'input_decoration.suffix_icon.0.dart',
+          widget: const material_input_decorator_10.SuffixIconExampleApp()),
+      Example(
+          name: 'input_decoration.suffix_icon_constraints.0.dart',
+          widget: const material_input_decorator_11.SuffixIconConstraintsExampleApp()),
+      Example(
+          name: 'input_decoration.widget_state.0.dart',
+          widget: const material_input_decorator_12.MaterialStateExampleApp()),
+      Example(
+          name: 'input_decoration.widget_state.1.dart',
+          widget: const material_input_decorator_13.MaterialStateExampleApp()),
+    ]),
     Example(name: 'list_tile', subExamples: <Example>[]),
     Example(name: 'material_state', subExamples: <Example>[]),
     Example(name: 'menu_anchor', subExamples: <Example>[]),

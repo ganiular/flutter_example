@@ -29,7 +29,10 @@ class ExamplePage extends StatelessWidget {
               const SizedBox(height: 4),
               Text(
                 name,
-                style: const TextStyle(fontSize: 11, fontWeight: FontWeight.w200),
+                style: const TextStyle(
+                  fontSize: 12,
+                  color: Color(0xFFDAD7D7),
+                ),
               )
             ],
           ),

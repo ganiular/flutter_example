@@ -62,28 +62,32 @@ class _ScriptSectionState extends State<ScriptSection> with AutomaticKeepAliveCl
     super.build(context);
 
     return LayoutBuilder(builder: (BuildContext context, BoxConstraints constraints) {
-      const double fontSize = 16.0;
+      const double fontSize = 15.0;
       return SingleChildScrollView(
         child: ConstrainedBox(
           constraints: BoxConstraints(minHeight: constraints.maxHeight),
           child: ColoredBox(
             color: const Color(0xFF00457D),
             child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 6),
+                  padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
                   child: Text(
                     _lineString,
                     textAlign: TextAlign.end,
                     style: const TextStyle(
-                        fontSize: fontSize, fontWeight: FontWeight.w500, color: Colors.white),
+                        fontSize: fontSize, fontWeight: FontWeight.w500, color: Color(0xFFE5E3E3)),
                   ),
                 ),
                 Expanded(
-                  child: AnySyntaxHighlighter(
-                    _script,
-                    fontSize: fontSize,
-                    isSelectableText: true,
+                  child: ConstrainedBox(
+                    constraints: BoxConstraints(minHeight: constraints.maxHeight),
+                    child: AnySyntaxHighlighter(
+                      _script,
+                      fontSize: fontSize,
+                      isSelectableText: true,
+                    ),
                   ),
                 ),
               ],
