@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'animation/animation_controller/animated_digit.0.dart';
+import 'animation/curves/curve2_d.0.dart';
 import 'material/about/about_list_tile.0.dart';
 import 'material/action_buttons/action_icon_theme.0.dart';
 import 'material/action_chip/action_chip.0.dart';
@@ -470,7 +472,14 @@ class Example {
 }
 
 final List<Example> examples = <Example>[
-  Example(name: 'animation'),
+  Example(name: 'animation', subExamples: [
+    Example(
+        name: 'animation_controller',
+        subExamples: [Example(name: 'animated_digit.0.dart', widget: const AnimatedDigitApp())]),
+    Example(
+        name: 'curves',
+        subExamples: [Example(name: 'curve2_d.0.dart', widget: const Curve2DExampleApp())]),
+  ]),
   Example(name: 'cupertino'),
   Example(name: 'gestures'),
   Example(name: 'material', subExamples: <Example>[
