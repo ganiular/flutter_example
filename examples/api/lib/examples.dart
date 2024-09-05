@@ -265,6 +265,9 @@ import 'material/tooltip/tooltip.0.dart' as material_tooltip_0;
 import 'material/tooltip/tooltip.1.dart' as material_tooltip_1;
 import 'material/tooltip/tooltip.2.dart' as material_tooltip_2;
 import 'material/tooltip/tooltip.3.dart' as material_tooltip_3;
+import 'sample_templates/cupertino.0.dart' as cupertino_sample;
+import 'sample_templates/material.0.dart' as material_sample;
+import 'sample_templates/widgets.0.dart' as widget_sample;
 import 'widgets/actions/action.action_overridable.0.dart';
 import 'widgets/actions/action_listener.0.dart';
 import 'widgets/actions/actions.0.dart';
@@ -472,16 +475,42 @@ class Example {
 }
 
 final List<Example> examples = <Example>[
-  Example(name: 'animation', subExamples: [
+  Example(name: 'animation', subExamples: <Example>[
     Example(
         name: 'animation_controller',
-        subExamples: [Example(name: 'animated_digit.0.dart', widget: const AnimatedDigitApp())]),
+        subExamples: <Example>[Example(name: 'animated_digit.0.dart', widget: const AnimatedDigitApp())]),
     Example(
         name: 'curves',
-        subExamples: [Example(name: 'curve2_d.0.dart', widget: const Curve2DExampleApp())]),
+        subExamples: <Example>[Example(name: 'curve2_d.0.dart', widget: const Curve2DExampleApp())]),
   ]),
-  Example(name: 'cupertino'),
-  Example(name: 'gestures'),
+  Example(name: 'cupertino', subExamples: <Example>[
+    Example(name: 'activity_indicator', subExamples: <Example>[]),
+    Example(name: 'bottom_tab_bar', subExamples: <Example>[]),
+    Example(name: 'button', subExamples: <Example>[]),
+    Example(name: 'context_menu', subExamples: <Example>[]),
+    Example(name: 'date_picker', subExamples: <Example>[]),
+    Example(name: 'dialog', subExamples: <Example>[]),
+    Example(name: 'form_row', subExamples: <Example>[]),
+    Example(name: 'list_section', subExamples: <Example>[]),
+    Example(name: 'nav_bar', subExamples: <Example>[]),
+    Example(name: 'page_scaffold', subExamples: <Example>[]),
+    Example(name: 'picker', subExamples: <Example>[]),
+    Example(name: 'radio', subExamples: <Example>[]),
+    Example(name: 'refresh', subExamples: <Example>[]),
+    Example(name: 'route', subExamples: <Example>[]),
+    Example(name: 'scrollbar', subExamples: <Example>[]),
+    Example(name: 'search_field', subExamples: <Example>[]),
+    Example(name: 'segmented_control', subExamples: <Example>[]),
+    Example(name: 'slider', subExamples: <Example>[]),
+    Example(name: 'switch', subExamples: <Example>[]),
+    Example(name: 'tab_scaffold', subExamples: <Example>[]),
+    Example(name: 'text_field', subExamples: <Example>[]),
+    Example(name: 'text_form_field_row', subExamples: <Example>[]),
+  ]),
+  Example(name: 'gestures', subExamples: <Example>[
+    Example(name: 'pointer_signal_resolver', subExamples: <Example>[]),
+    Example(name: 'tap_and_drag', subExamples: <Example>[]),
+  ]),
   Example(name: 'material', subExamples: <Example>[
     Example(name: 'about', subExamples: <Example>[
       Example(name: 'about_list_tile.0.dart', widget: const AboutListTileExampleApp()),
@@ -1109,11 +1138,33 @@ final List<Example> examples = <Example>[
       Example(name: 'tooltip.3.dart', widget: const material_tooltip_3.TooltipExampleApp()),
     ]),
   ]),
-  Example(name: 'painting'),
-  Example(name: 'rendering'),
-  Example(name: 'sample_templates'),
-  Example(name: 'services'),
-  Example(name: 'ui'),
+  Example(name: 'painting', subExamples: <Example>[
+    Example(name: 'axis_direction', subExamples: <Example>[]),
+    Example(name: 'borders', subExamples: <Example>[]),
+    Example(name: 'gradient', subExamples: <Example>[]),
+    Example(name: 'image_provider', subExamples: <Example>[]),
+    Example(name: 'linear_border', subExamples: <Example>[]),
+    Example(name: 'star_border', subExamples: <Example>[]),
+  ]),
+  Example(name: 'rendering', subExamples: <Example>[
+    Example(name: 'box', subExamples: <Example>[]),
+    Example(name: 'growth_direction', subExamples: <Example>[]),
+    Example(name: 'scroll_direction', subExamples: <Example>[]),
+    Example(name: 'sliver_grid', subExamples: <Example>[]),
+  ]),
+  Example(name: 'sample_templates', subExamples: <Example>[
+    Example(name: 'cupertino.0.dart', widget: const cupertino_sample.SampleApp()),
+    Example(name: 'material.0.dart', widget: const material_sample.SampleApp()),
+    Example(name: 'widgets.0.dart', widget: const widget_sample.SampleApp()),
+  ]),
+  Example(name: 'services', subExamples: <Example>[
+    Example(name: 'binding', subExamples: <Example>[]),
+    Example(name: 'keyboard_key', subExamples: <Example>[]),
+    Example(name: 'mouse_cursor', subExamples: <Example>[]),
+    Example(name: 'system_chrome', subExamples: <Example>[]),
+    Example(name: 'text_input', subExamples: <Example>[]),
+  ]),
+  Example(name: 'ui', subExamples: <Example>[Example(name: 'text', subExamples: <Example>[])]),
   Example(name: 'widgets', subExamples: <Example>[
     Example(name: 'actions', subExamples: <Example>[
       Example(
