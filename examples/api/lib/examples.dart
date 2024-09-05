@@ -2,6 +2,44 @@ import 'package:flutter/material.dart';
 
 import 'animation/animation_controller/animated_digit.0.dart';
 import 'animation/curves/curve2_d.0.dart';
+import 'cupertino/activity_indicator/cupertino_activity_indicator.0.dart';
+import 'cupertino/bottom_tab_bar/cupertino_tab_bar.0.dart';
+import 'cupertino/button/cupertino_button.0.dart';
+import 'cupertino/checkbox/cupertino_checkbox.0.dart';
+import 'cupertino/context_menu/cupertino_context_menu.0.dart' as cupertino_context_menu_0;
+import 'cupertino/context_menu/cupertino_context_menu.1.dart' as cupertino_context_menu_1;
+import 'cupertino/date_picker/cupertino_date_picker.0.dart' as cupertino_date_picker_0;
+import 'cupertino/date_picker/cupertino_timer_picker.0.dart' as cupertino_date_picker_1;
+import 'cupertino/dialog/cupertino_action_sheet.0.dart' as cupertino_dialog_0;
+import 'cupertino/dialog/cupertino_alert_dialog.0.dart' as cupertino_dialog_1;
+import 'cupertino/dialog/cupertino_popup_surface.0.dart' as cupertino_dialog_2;
+import 'cupertino/form_row/cupertino_form_row.0.dart';
+import 'cupertino/list_section/list_section_base.0.dart';
+import 'cupertino/list_section/list_section_inset.0.dart';
+import 'cupertino/nav_bar/cupertino_navigation_bar.0.dart';
+import 'cupertino/nav_bar/cupertino_sliver_nav_bar.0.dart';
+import 'cupertino/page_scaffold/cupertino_page_scaffold.0.dart';
+import 'cupertino/picker/cupertino_picker.0.dart';
+import 'cupertino/radio/cupertino_radio.0.dart' as cupertino_radio_0;
+import 'cupertino/radio/cupertino_radio.toggleable.0.dart' as cupertino_radio_1;
+import 'cupertino/refresh/cupertino_sliver_refresh_control.0.dart';
+import 'cupertino/route/show_cupertino_dialog.0.dart';
+import 'cupertino/route/show_cupertino_modal_popup.0.dart';
+import 'cupertino/scrollbar/cupertino_scrollbar.0.dart' as cupertino_scrollbar_0;
+import 'cupertino/scrollbar/cupertino_scrollbar.1.dart' as cupertino_scrollbar_1;
+import 'cupertino/search_field/cupertino_search_field.0.dart' as cupertino_search_0;
+import 'cupertino/search_field/cupertino_search_field.1.dart' as cupertino_search_1;
+import 'cupertino/segmented_control/cupertino_segmented_control.0.dart' as cupertino_segment_0;
+import 'cupertino/segmented_control/cupertino_sliding_segmented_control.0.dart'
+    as cupertino_segment_1;
+import 'cupertino/slider/cupertino_slider.0.dart';
+import 'cupertino/switch/cupertino_switch.0.dart';
+import 'cupertino/tab_scaffold/cupertino_tab_controller.0.dart';
+import 'cupertino/tab_scaffold/cupertino_tab_scaffold.0.dart';
+import 'cupertino/text_field/cupertino_text_field.0.dart';
+import 'cupertino/text_form_field_row/cupertino_text_form_field_row.1.dart';
+import 'gestures/pointer_signal_resolver/pointer_signal_resolver.0.dart';
+import 'gestures/tap_and_drag/tap_and_drag.0.dart';
 import 'material/about/about_list_tile.0.dart';
 import 'material/action_buttons/action_icon_theme.0.dart';
 import 'material/action_chip/action_chip.0.dart';
@@ -265,9 +303,57 @@ import 'material/tooltip/tooltip.0.dart' as material_tooltip_0;
 import 'material/tooltip/tooltip.1.dart' as material_tooltip_1;
 import 'material/tooltip/tooltip.2.dart' as material_tooltip_2;
 import 'material/tooltip/tooltip.3.dart' as material_tooltip_3;
+import 'painting/axis_direction/axis_direction.0.dart' as painting_axis;
+import 'painting/borders/border_side.stroke_align.0.dart';
+import 'painting/gradient/linear_gradient.0.dart';
+import 'painting/image_provider/image_provider.0.dart' as painting_image;
+import 'painting/linear_border/linear_border.0.dart' as painting_border;
+import 'painting/star_border/star_border.0.dart' as painting_star_border;
+import 'rendering/box/parent_data.0.dart' as rendering_box;
+import 'rendering/growth_direction/growth_direction.0.dart' as rendering_growth;
+import 'rendering/scroll_direction/scroll_direction.0.dart' as rendering_scroll_direction;
+import 'rendering/sliver_grid/sliver_grid_delegate_with_fixed_cross_axis_count.0.dart'
+    as rendering_sliver_0;
+import 'rendering/sliver_grid/sliver_grid_delegate_with_fixed_cross_axis_count.1.dart'
+    as rendering_sliver_1;
 import 'sample_templates/cupertino.0.dart' as cupertino_sample;
 import 'sample_templates/material.0.dart' as material_sample;
 import 'sample_templates/widgets.0.dart' as widget_sample;
+import 'services/binding/handle_request_app_exit.0.dart';
+import 'services/keyboard_key/logical_keyboard_key.0.dart' as services_keyboard_0;
+import 'services/keyboard_key/physical_keyboard_key.0.dart' as services_keyboard_1;
+import 'services/mouse_cursor/mouse_cursor.0.dart' as services_mouse;
+import 'services/system_chrome/system_chrome.set_system_u_i_overlay_style.0.dart'
+    as services_system_chrome_0;
+import 'services/system_chrome/system_chrome.set_system_u_i_overlay_style.1.dart'
+    as services_system_chrome_1;
+import 'services/text_input/text_input_control.0.dart';
+import 'ui/text/font_feature.0.dart' as ui_text_0;
+import 'ui/text/font_feature.font_feature_alternative.0.dart' as ui_text_1;
+import 'ui/text/font_feature.font_feature_alternative_fractions.0.dart' as ui_text_2;
+import 'ui/text/font_feature.font_feature_case_sensitive_forms.0.dart' as ui_text_3;
+import 'ui/text/font_feature.font_feature_character_variant.0.dart' as ui_text_4;
+import 'ui/text/font_feature.font_feature_contextual_alternates.0.dart' as ui_text_5;
+import 'ui/text/font_feature.font_feature_denominator.0.dart' as ui_text_6;
+import 'ui/text/font_feature.font_feature_fractions.0.dart' as ui_text_7;
+import 'ui/text/font_feature.font_feature_historical_forms.0.dart' as ui_text_8;
+import 'ui/text/font_feature.font_feature_historical_ligatures.0.dart' as ui_text_9;
+import 'ui/text/font_feature.font_feature_lining_figures.0.dart' as ui_text_10;
+import 'ui/text/font_feature.font_feature_locale_aware.0.dart' as ui_text_11;
+import 'ui/text/font_feature.font_feature_notational_forms.0.dart' as ui_text_12;
+import 'ui/text/font_feature.font_feature_numerators.0.dart' as ui_text_13;
+import 'ui/text/font_feature.font_feature_oldstyle_figures.0.dart' as ui_text_14;
+import 'ui/text/font_feature.font_feature_ordinal_forms.0.dart' as ui_text_15;
+import 'ui/text/font_feature.font_feature_proportional_figures.0.dart' as ui_text_16;
+import 'ui/text/font_feature.font_feature_scientific_inferiors.0.dart' as ui_text_17;
+import 'ui/text/font_feature.font_feature_slashed_zero.0.dart' as ui_text_18;
+import 'ui/text/font_feature.font_feature_stylistic_alternates.0.dart' as ui_text_19;
+import 'ui/text/font_feature.font_feature_stylistic_set.0.dart' as ui_text_20;
+import 'ui/text/font_feature.font_feature_stylistic_set.1.dart' as ui_text_21;
+import 'ui/text/font_feature.font_feature_subscripts.0.dart' as ui_text_22;
+import 'ui/text/font_feature.font_feature_superscripts.0.dart' as ui_text_23;
+import 'ui/text/font_feature.font_feature_swash.0.dart' as ui_text_24;
+import 'ui/text/font_feature.font_feature_tabular_figures.0.dart' as ui_text_25;
 import 'widgets/actions/action.action_overridable.0.dart';
 import 'widgets/actions/action_listener.0.dart';
 import 'widgets/actions/actions.0.dart';
@@ -476,40 +562,128 @@ class Example {
 
 final List<Example> examples = <Example>[
   Example(name: 'animation', subExamples: <Example>[
-    Example(
-        name: 'animation_controller',
-        subExamples: <Example>[Example(name: 'animated_digit.0.dart', widget: const AnimatedDigitApp())]),
-    Example(
-        name: 'curves',
-        subExamples: <Example>[Example(name: 'curve2_d.0.dart', widget: const Curve2DExampleApp())]),
+    Example(name: 'animation_controller', subExamples: <Example>[
+      Example(name: 'animated_digit.0.dart', widget: const AnimatedDigitApp())
+    ]),
+    Example(name: 'curves', subExamples: <Example>[
+      Example(name: 'curve2_d.0.dart', widget: const Curve2DExampleApp())
+    ]),
   ]),
   Example(name: 'cupertino', subExamples: <Example>[
-    Example(name: 'activity_indicator', subExamples: <Example>[]),
-    Example(name: 'bottom_tab_bar', subExamples: <Example>[]),
-    Example(name: 'button', subExamples: <Example>[]),
-    Example(name: 'context_menu', subExamples: <Example>[]),
-    Example(name: 'date_picker', subExamples: <Example>[]),
-    Example(name: 'dialog', subExamples: <Example>[]),
-    Example(name: 'form_row', subExamples: <Example>[]),
-    Example(name: 'list_section', subExamples: <Example>[]),
-    Example(name: 'nav_bar', subExamples: <Example>[]),
-    Example(name: 'page_scaffold', subExamples: <Example>[]),
-    Example(name: 'picker', subExamples: <Example>[]),
-    Example(name: 'radio', subExamples: <Example>[]),
-    Example(name: 'refresh', subExamples: <Example>[]),
-    Example(name: 'route', subExamples: <Example>[]),
-    Example(name: 'scrollbar', subExamples: <Example>[]),
-    Example(name: 'search_field', subExamples: <Example>[]),
-    Example(name: 'segmented_control', subExamples: <Example>[]),
-    Example(name: 'slider', subExamples: <Example>[]),
-    Example(name: 'switch', subExamples: <Example>[]),
-    Example(name: 'tab_scaffold', subExamples: <Example>[]),
-    Example(name: 'text_field', subExamples: <Example>[]),
-    Example(name: 'text_form_field_row', subExamples: <Example>[]),
+    Example(name: 'activity_indicator', subExamples: <Example>[
+      Example(name: 'cupertino_activity_indicator.0.dart', widget: const CupertinoIndicatorApp())
+    ]),
+    Example(name: 'bottom_tab_bar', subExamples: <Example>[
+      Example(name: 'cupertino_tab_bar.0.dart', widget: const CupertinoTabBarApp())
+    ]),
+    Example(name: 'button', subExamples: <Example>[
+      Example(name: 'cupertino_button.0.dart', widget: const CupertinoButtonApp())
+    ]),
+    Example(name: 'checkbox', subExamples: <Example>[
+      Example(name: 'cupertino_checkbox.0.dart', widget: const CupertinoCheckboxApp())
+    ]),
+    Example(name: 'context_menu', subExamples: <Example>[
+      Example(
+          name: 'cupertino_context_menu.0.dart',
+          widget: const cupertino_context_menu_0.ContextMenuApp()),
+      Example(
+          name: 'cupertino_context_menu.1.dart',
+          widget: const cupertino_context_menu_1.ContextMenuApp()),
+    ]),
+    Example(name: 'date_picker', subExamples: <Example>[
+      Example(
+          name: 'cupertino_date_picker.0.dart',
+          widget: const cupertino_date_picker_0.DatePickerApp()),
+      Example(
+          name: 'cupertino_timer_picker.0.dart',
+          widget: const cupertino_date_picker_1.TimerPickerApp()),
+    ]),
+    Example(name: 'dialog', subExamples: <Example>[
+      Example(
+          name: 'cupertino_action_sheet.0.dart', widget: const cupertino_dialog_0.ActionSheetApp()),
+      Example(
+          name: 'cupertino_alert_dialog.0.dart', widget: const cupertino_dialog_1.AlertDialogApp()),
+      Example(
+          name: 'cupertino_popup_surface.0.dart',
+          widget: const cupertino_dialog_2.PopupSurfaceApp()),
+    ]),
+    Example(name: 'form_row', subExamples: <Example>[
+      Example(name: 'cupertino_form_row.0.dart', widget: const CupertinoFormRowApp())
+    ]),
+    Example(name: 'list_section', subExamples: <Example>[
+      Example(name: 'list_section_base.0.dart', widget: const CupertinoListSectionBaseApp()),
+      Example(name: 'list_section_inset.0.dart', widget: const CupertinoListSectionInsetApp()),
+    ]),
+    Example(name: 'nav_bar', subExamples: <Example>[
+      Example(name: 'cupertino_navigation_bar.0.dart', widget: const NavBarApp()),
+      Example(name: 'cupertino_sliver_nav_bar.0.dart', widget: const SliverNavBarApp()),
+    ]),
+    Example(name: 'page_scaffold', subExamples: <Example>[
+      Example(name: 'cupertino_page_scaffold.0.dart', widget: const PageScaffoldApp())
+    ]),
+    Example(name: 'picker', subExamples: <Example>[
+      Example(name: 'cupertino_picker.0.dart', widget: const CupertinoPickerApp())
+    ]),
+    Example(name: 'radio', subExamples: <Example>[
+      Example(name: 'cupertino_radio.0.dart', widget: const cupertino_radio_0.CupertinoRadioApp()),
+      Example(
+          name: 'cupertino_radio.toggleable.0.dart',
+          widget: const cupertino_radio_1.CupertinoRadioApp()),
+    ]),
+    Example(name: 'refresh', subExamples: <Example>[
+      Example(name: 'cupertino_sliver_refresh_control.0.dart', widget: const RefreshControlApp())
+    ]),
+    Example(name: 'route', subExamples: <Example>[
+      Example(name: 'show_cupertino_dialog.0.dart', widget: const CupertinoDialogApp()),
+      Example(name: 'show_cupertino_modal_popup.0.dart', widget: const ModalPopupApp()),
+    ]),
+    Example(name: 'scrollbar', subExamples: <Example>[
+      Example(
+          name: 'cupertino_scrollbar.0.dart', widget: const cupertino_scrollbar_0.ScrollbarApp()),
+      Example(
+          name: 'cupertino_scrollbar.1.dart', widget: const cupertino_scrollbar_1.ScrollbarApp()),
+    ]),
+    Example(name: 'search_field', subExamples: <Example>[
+      Example(
+          name: 'cupertino_search_field.0.dart',
+          widget: const cupertino_search_0.SearchTextFieldApp()),
+      Example(
+          name: 'cupertino_search_field.1.dart',
+          widget: const cupertino_search_1.SearchTextFieldApp()),
+    ]),
+    Example(name: 'segmented_control', subExamples: <Example>[
+      Example(
+          name: 'cupertino_segmented_control.0.dart',
+          widget: const cupertino_segment_0.SegmentedControlApp()),
+      Example(
+          name: 'cupertino_sliding_segmented_control.0.dart',
+          widget: const cupertino_segment_1.SegmentedControlApp()),
+    ]),
+    Example(name: 'slider', subExamples: <Example>[
+      Example(name: 'cupertino_slider.0.dart', widget: const CupertinoSliderApp())
+    ]),
+    Example(name: 'switch', subExamples: <Example>[
+      Example(name: 'cupertino_switch.0.dart', widget: const CupertinoSwitchApp())
+    ]),
+    Example(name: 'tab_scaffold', subExamples: <Example>[
+      Example(name: 'cupertino_tab_controller.0.dart', widget: const TabControllerApp()),
+      Example(name: 'cupertino_tab_scaffold.0.dart', widget: const TabScaffoldApp()),
+    ]),
+    Example(name: 'text_field', subExamples: <Example>[
+      Example(name: 'cupertino_text_field.0.dart', widget: const CupertinoTextFieldApp()),
+    ]),
+    Example(name: 'text_form_field_row', subExamples: <Example>[
+      Example(name: 'cupertino_text_form_field_row.1.dart', widget: const FormSectionApp())
+    ]),
   ]),
   Example(name: 'gestures', subExamples: <Example>[
-    Example(name: 'pointer_signal_resolver', subExamples: <Example>[]),
-    Example(name: 'tap_and_drag', subExamples: <Example>[]),
+    Example(name: 'pointer_signal_resolver', subExamples: <Example>[
+      Example(
+          name: 'pointer_signal_resolver.0.dart', widget: const PointerSignalResolverExampleApp())
+    ]),
+    Example(name: 'tap_and_drag', subExamples: <Example>[
+      Example(name: 'tap_and_drag.0.dart', widget: const TapAndDragToZoomApp())
+    ]),
   ]),
   Example(name: 'material', subExamples: <Example>[
     Example(name: 'about', subExamples: <Example>[
@@ -1139,18 +1313,44 @@ final List<Example> examples = <Example>[
     ]),
   ]),
   Example(name: 'painting', subExamples: <Example>[
-    Example(name: 'axis_direction', subExamples: <Example>[]),
-    Example(name: 'borders', subExamples: <Example>[]),
-    Example(name: 'gradient', subExamples: <Example>[]),
-    Example(name: 'image_provider', subExamples: <Example>[]),
-    Example(name: 'linear_border', subExamples: <Example>[]),
-    Example(name: 'star_border', subExamples: <Example>[]),
+    Example(name: 'axis_direction', subExamples: <Example>[
+      Example(name: 'axis_direction.0.dart', widget: const painting_axis.ExampleApp())
+    ]),
+    Example(name: 'borders', subExamples: <Example>[
+      Example(name: 'border_side.stroke_align.0.dart', widget: const StrokeAlignApp())
+    ]),
+    Example(name: 'gradient', subExamples: <Example>[
+      Example(name: 'linear_gradient.0.dart', widget: const LinearGradientExampleApp())
+    ]),
+    Example(name: 'image_provider', subExamples: <Example>[
+      Example(name: 'image_provider.0.dart', widget: const painting_image.ExampleApp())
+    ]),
+    Example(name: 'linear_border', subExamples: <Example>[
+      Example(name: 'linear_border.0.dart', widget: const painting_border.ExampleApp())
+    ]),
+    Example(name: 'star_border', subExamples: <Example>[
+      Example(name: 'star_border.0.dart', widget: const painting_star_border.StarBorderApp())
+    ]),
   ]),
   Example(name: 'rendering', subExamples: <Example>[
-    Example(name: 'box', subExamples: <Example>[]),
-    Example(name: 'growth_direction', subExamples: <Example>[]),
-    Example(name: 'scroll_direction', subExamples: <Example>[]),
-    Example(name: 'sliver_grid', subExamples: <Example>[]),
+    Example(name: 'box', subExamples: <Example>[
+      Example(name: 'parent_data.0.dart', widget: const rendering_box.SampleApp())
+    ]),
+    Example(name: 'growth_direction', subExamples: <Example>[
+      Example(name: 'growth_direction.0.dart', widget: const rendering_growth.ExampleApp())
+    ]),
+    Example(name: 'scroll_direction', subExamples: <Example>[
+      Example(
+          name: 'scroll_direction.0.dart', widget: const rendering_scroll_direction.ExampleApp())
+    ]),
+    Example(name: 'sliver_grid', subExamples: <Example>[
+      Example(
+          name: 'sliver_grid_delegate_with_fixed_cross_axis_count.0.dart',
+          widget: const rendering_sliver_0.SliverGridDelegateWithFixedCrossAxisCountExampleApp()),
+      Example(
+          name: 'sliver_grid_delegate_with_fixed_cross_axis_count.1.dart',
+          widget: const rendering_sliver_1.SliverGridDelegateWithFixedCrossAxisCountExampleApp()),
+    ]),
   ]),
   Example(name: 'sample_templates', subExamples: <Example>[
     Example(name: 'cupertino.0.dart', widget: const cupertino_sample.SampleApp()),
@@ -1158,13 +1358,108 @@ final List<Example> examples = <Example>[
     Example(name: 'widgets.0.dart', widget: const widget_sample.SampleApp()),
   ]),
   Example(name: 'services', subExamples: <Example>[
-    Example(name: 'binding', subExamples: <Example>[]),
-    Example(name: 'keyboard_key', subExamples: <Example>[]),
-    Example(name: 'mouse_cursor', subExamples: <Example>[]),
-    Example(name: 'system_chrome', subExamples: <Example>[]),
-    Example(name: 'text_input', subExamples: <Example>[]),
+    Example(name: 'binding', subExamples: <Example>[
+      Example(name: 'handle_request_app_exit.0.dart', widget: const ApplicationExitExample())
+    ]),
+    Example(name: 'keyboard_key', subExamples: <Example>[
+      Example(
+          name: 'logical_keyboard_key.0.dart', widget: const services_keyboard_0.KeyExampleApp()),
+      Example(
+          name: 'physical_keyboard_key.0.dart', widget: const services_keyboard_1.KeyExampleApp()),
+    ]),
+    Example(name: 'mouse_cursor', subExamples: <Example>[
+      Example(name: 'mouse_cursor.0.dart', widget: const services_mouse.MouseCursorExampleApp()),
+    ]),
+    Example(name: 'system_chrome', subExamples: <Example>[
+      Example(
+          name: 'system_chrome.set_system_u_i_overlay_style.0.dart',
+          widget: const services_system_chrome_0.SystemOverlayStyleApp()),
+      Example(
+          name: 'system_chrome.set_system_u_i_overlay_style.1.dart',
+          widget: const services_system_chrome_1.SystemOverlayStyleApp()),
+    ]),
+    Example(name: 'text_input', subExamples: <Example>[
+      Example(name: 'text_input_control.0.dart', widget: const TextInputControlExampleApp()),
+    ]),
   ]),
-  Example(name: 'ui', subExamples: <Example>[Example(name: 'text', subExamples: <Example>[])]),
+  Example(name: 'ui', subExamples: <Example>[
+    Example(name: 'text', subExamples: <Example>[
+      Example(name: 'font_feature.0.dart', widget: const ui_text_0.ExampleApp()),
+      Example(
+          name: 'font_feature.font_feature_alternative.0.dart',
+          widget: const ui_text_1.ExampleApp()),
+      Example(
+          name: 'font_feature.font_feature_alternative_fractions.0.dart',
+          widget: const ui_text_2.ExampleApp()),
+      Example(
+          name: 'font_feature.font_feature_case_sensitive_forms.0.dart',
+          widget: const ui_text_3.ExampleApp()),
+      Example(
+          name: 'font_feature.font_feature_character_variant.0.dart',
+          widget: const ui_text_4.ExampleApp()),
+      Example(
+          name: 'font_feature.font_feature_contextual_alternates.0.dart',
+          widget: const ui_text_5.ExampleApp()),
+      Example(
+          name: 'font_feature.font_feature_denominator.0.dart',
+          widget: const ui_text_6.ExampleApp()),
+      Example(
+          name: 'font_feature.font_feature_fractions.0.dart', widget: const ui_text_7.ExampleApp()),
+      Example(
+          name: 'font_feature.font_feature_historical_forms.0.dart',
+          widget: const ui_text_8.ExampleApp()),
+      Example(
+          name: 'font_feature.font_feature_historical_ligatures.0.dart',
+          widget: const ui_text_9.ExampleApp()),
+      Example(
+          name: 'font_feature.font_feature_lining_figures.0.dart',
+          widget: const ui_text_10.ExampleApp()),
+      Example(
+          name: 'font_feature.font_feature_locale_aware.0.dart',
+          widget: const ui_text_11.ExampleApp()),
+      Example(
+          name: 'font_feature.font_feature_notational_forms.0.dart',
+          widget: const ui_text_12.ExampleApp()),
+      Example(
+          name: 'font_feature.font_feature_numerators.0.dart',
+          widget: const ui_text_13.ExampleApp()),
+      Example(
+          name: 'font_feature.font_feature_oldstyle_figures.0.dart',
+          widget: const ui_text_14.ExampleApp()),
+      Example(
+          name: 'font_feature.font_feature_ordinal_forms.0.dart',
+          widget: const ui_text_15.ExampleApp()),
+      Example(
+          name: 'font_feature.font_feature_proportional_figures.0.dart',
+          widget: const ui_text_16.ExampleApp()),
+      Example(
+          name: 'font_feature.font_feature_scientific_inferiors.0.dart',
+          widget: const ui_text_17.ExampleApp()),
+      Example(
+          name: 'font_feature.font_feature_slashed_zero.0.dart',
+          widget: const ui_text_18.ExampleApp()),
+      Example(
+          name: 'font_feature.font_feature_stylistic_alternates.0.dart',
+          widget: const ui_text_19.ExampleApp()),
+      Example(
+          name: 'font_feature.font_feature_stylistic_set.0.dart',
+          widget: const ui_text_20.ExampleApp()),
+      Example(
+          name: 'font_feature.font_feature_stylistic_set.1.dart',
+          widget: const ui_text_21.ExampleApp()),
+      Example(
+          name: 'font_feature.font_feature_subscripts.0.dart',
+          widget: const ui_text_22.ExampleApp()),
+      Example(
+          name: 'font_feature.font_feature_superscripts.0.dart',
+          widget: const ui_text_23.ExampleApp()),
+      Example(
+          name: 'font_feature.font_feature_swash.0.dart', widget: const ui_text_24.ExampleApp()),
+      Example(
+          name: 'font_feature.font_feature_tabular_figures.0.dart',
+          widget: const ui_text_25.ExampleApp()),
+    ])
+  ]),
   Example(name: 'widgets', subExamples: <Example>[
     Example(name: 'actions', subExamples: <Example>[
       Example(

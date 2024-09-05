@@ -107,6 +107,7 @@ flutter:
     - assets/scripts/cupertino/bottom_tab_bar/
     - assets/scripts/cupertino/button/
     - assets/scripts/cupertino/context_menu/
+    - assets/scripts/cupertino/checkbox/
     - assets/scripts/cupertino/date_picker/
     - assets/scripts/cupertino/dialog/
     - assets/scripts/cupertino/form_row/
