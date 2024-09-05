@@ -128,6 +128,141 @@ import 'material/input_decorator/input_decoration.widget_state.0.dart'
     as material_input_decorator_12;
 import 'material/input_decorator/input_decoration.widget_state.1.dart'
     as material_input_decorator_13;
+import 'material/list_tile/custom_list_item.0.dart' as material_list_tile_0;
+import 'material/list_tile/custom_list_item.1.dart' as material_list_tile_1;
+import 'material/list_tile/list_tile.0.dart' as material_list_tile_2;
+import 'material/list_tile/list_tile.1.dart' as material_list_tile_3;
+import 'material/list_tile/list_tile.2.dart' as material_list_tile_4;
+import 'material/list_tile/list_tile.3.dart' as material_list_tile_5;
+import 'material/list_tile/list_tile.4.dart' as material_list_tile_6;
+import 'material/list_tile/list_tile.selected.0.dart' as material_list_tile_7;
+import 'material/material_state/material_state_border_side.0.dart';
+import 'material/material_state/material_state_mouse_cursor.0.dart';
+import 'material/material_state/material_state_outlined_border.0.dart';
+import 'material/material_state/material_state_property.0.dart';
+import 'material/menu_anchor/checkbox_menu_button.0.dart' as material_menu_acnchor_0;
+import 'material/menu_anchor/menu_accelerator_label.0.dart' as material_menu_acnchor_1;
+import 'material/menu_anchor/menu_anchor.0.dart' as material_menu_acnchor_2;
+import 'material/menu_anchor/menu_anchor.1.dart' as material_menu_acnchor_3;
+import 'material/menu_anchor/menu_anchor.2.dart' as material_menu_acnchor_4;
+import 'material/menu_anchor/menu_anchor.3.dart' as material_menu_acnchor_5;
+import 'material/menu_anchor/menu_bar.0.dart' as material_menu_acnchor_6;
+import 'material/menu_anchor/radio_menu_button.0.dart' as material_menu_acnchor_7;
+import 'material/navigation_bar/navigation_bar.0.dart' as material_navigation_bar_0;
+import 'material/navigation_bar/navigation_bar.1.dart' as material_navigation_bar_1;
+import 'material/navigation_bar/navigation_bar.2.dart' as material_navigation_bar_2;
+import 'material/navigation_drawer/navigation_drawer.0.dart';
+import 'material/navigation_rail/navigation_rail.0.dart' as material_navigation_rail_0;
+import 'material/navigation_rail/navigation_rail.1.dart' as material_navigation_rail_1;
+import 'material/navigation_rail/navigation_rail.extended_animation.0.dart'
+    as material_navigation_rail_2;
+import 'material/outlined_button/outlined_button.0.dart';
+import 'material/page_transitions_theme/page_transitions_theme.0.dart'
+    as material_page_transition_0;
+import 'material/page_transitions_theme/page_transitions_theme.1.dart'
+    as material_page_transition_1;
+import 'material/paginated_data_table/paginated_data_table.0.dart' as material_paginated_table_0;
+import 'material/paginated_data_table/paginated_data_table.1.dart' as material_paginated_table_1;
+import 'material/platform_menu_bar/platform_menu_bar.0.dart' as material_platform_menu_0;
+import 'material/popup_menu/popup_menu.0.dart' as material_popup_menu_0;
+import 'material/popup_menu/popup_menu.1.dart' as material_popup_menu_1;
+import 'material/popup_menu/popup_menu.2.dart' as material_popup_menu_2;
+import 'material/progress_indicator/circular_progress_indicator.0.dart'
+    as material_progress_indicator_0;
+import 'material/progress_indicator/circular_progress_indicator.1.dart'
+    as material_progress_indicator_1;
+import 'material/progress_indicator/linear_progress_indicator.0.dart'
+    as material_progress_indicator_2;
+import 'material/progress_indicator/linear_progress_indicator.1.dart'
+    as material_progress_indicator_3;
+import 'material/radio/radio.0.dart' as material_radio_0;
+import 'material/radio/radio.toggleable.0.dart' as material_radio_1;
+import 'material/radio_list_tile/custom_labeled_radio.0.dart' as material_radio_tile_0;
+import 'material/radio_list_tile/custom_labeled_radio.1.dart' as material_radio_tile_1;
+import 'material/radio_list_tile/radio_list_tile.0.dart' as material_radio_tile_2;
+import 'material/radio_list_tile/radio_list_tile.1.dart' as material_radio_tile_3;
+import 'material/radio_list_tile/radio_list_tile.toggleable.0.dart' as material_radio_tile_4;
+import 'material/range_slider/range_slider.0.dart';
+import 'material/refresh_indicator/refresh_indicator.0.dart' as material_refresh_0;
+import 'material/refresh_indicator/refresh_indicator.1.dart' as material_refresh_1;
+import 'material/reorderable_list/reorderable_list_view.0.dart' as material_reorderable_0;
+import 'material/reorderable_list/reorderable_list_view.1.dart' as material_reorderable_1;
+import 'material/reorderable_list/reorderable_list_view.2.dart' as material_reorderable_2;
+import 'material/reorderable_list/reorderable_list_view.build_default_drag_handles.0.dart'
+    as material_reorderable_3;
+import 'material/reorderable_list/reorderable_list_view.reorderable_list_view_builder.0.dart'
+    as material_reorderable_4;
+import 'material/scaffold/scaffold.0.dart' as material_scaffold_0;
+import 'material/scaffold/scaffold.1.dart' as material_scaffold_1;
+import 'material/scaffold/scaffold.2.dart' as material_scaffold_2;
+import 'material/scaffold/scaffold.drawer.0.dart' as material_scaffold_3;
+import 'material/scaffold/scaffold.end_drawer.0.dart' as material_scaffold_4;
+import 'material/scaffold/scaffold.floating_action_button_animator.0.dart' as material_scaffold_5;
+import 'material/scaffold/scaffold.of.0.dart' as material_scaffold_13;
+import 'material/scaffold/scaffold.of.1.dart' as material_scaffold_14;
+import 'material/scaffold/scaffold_messenger.0.dart' as material_scaffold_6;
+import 'material/scaffold/scaffold_messenger.of.0.dart' as material_scaffold_7;
+import 'material/scaffold/scaffold_messenger.of.1.dart' as material_scaffold_8;
+import 'material/scaffold/scaffold_messenger_state.show_material_banner.0.dart'
+    as material_scaffold_9;
+import 'material/scaffold/scaffold_messenger_state.show_snack_bar.0.dart' as material_scaffold_10;
+import 'material/scaffold/scaffold_messenger_state.show_snack_bar.1.dart' as material_scaffold_11;
+import 'material/scaffold/scaffold_messenger_state.show_snack_bar.2.dart' as material_scaffold_12;
+import 'material/scaffold/scaffold_state.show_bottom_sheet.0.dart' as material_scaffold_15;
+import 'material/scaffold/scaffold_state.show_bottom_sheet.1.dart' as material_scaffold_16;
+import 'material/scrollbar/scrollbar.0.dart' as material_scrollbar_0;
+import 'material/scrollbar/scrollbar.1.dart' as material_scrollbar_1;
+import 'material/search_anchor/search_anchor.0.dart' as material_search_anchor_0;
+import 'material/search_anchor/search_anchor.1.dart' as material_search_anchor_1;
+import 'material/search_anchor/search_anchor.2.dart' as material_search_anchor_2;
+import 'material/search_anchor/search_anchor.3.dart' as material_search_anchor_3;
+import 'material/search_anchor/search_anchor.4.dart' as material_search_anchor_4;
+import 'material/search_anchor/search_bar.0.dart' as material_search_anchor_5;
+import 'material/segmented_button/segmented_button.0.dart' as material_segmented_button_0;
+import 'material/segmented_button/segmented_button.1.dart' as material_segmented_button_1;
+import 'material/selectable_region/selectable_region.0.dart';
+import 'material/selection_area/selection_area.0.dart';
+import 'material/selection_container/selection_container.0.dart' as material_selection_container_0;
+import 'material/selection_container/selection_container_disabled.0.dart'
+    as material_selection_container_1;
+import 'material/slider/slider.0.dart' as material_slider_0;
+import 'material/slider/slider.1.dart' as material_slider_1;
+import 'material/slider/slider.2.dart' as material_slider_2;
+import 'material/snack_bar/snack_bar.0.dart' as material_snack_bar_0;
+import 'material/snack_bar/snack_bar.1.dart' as material_snack_bar_1;
+import 'material/snack_bar/snack_bar.2.dart' as material_snack_bar_2;
+import 'material/stepper/step_style.0.dart' as material_stepper_2;
+import 'material/stepper/stepper.0.dart' as material_stepper_0;
+import 'material/stepper/stepper.controls_builder.0.dart' as material_stepper_1;
+import 'material/switch/switch.0.dart' as material_switch_0;
+import 'material/switch/switch.1.dart' as material_switch_1;
+import 'material/switch/switch.2.dart' as material_switch_2;
+import 'material/switch/switch.3.dart' as material_switch_3;
+import 'material/switch/switch.4.dart' as material_switch_4;
+import 'material/switch_list_tile/custom_labeled_switch.0.dart' as material_swith_tile_0;
+import 'material/switch_list_tile/custom_labeled_switch.1.dart' as material_swith_tile_1;
+import 'material/switch_list_tile/switch_list_tile.0.dart' as material_swith_tile_2;
+import 'material/switch_list_tile/switch_list_tile.1.dart' as material_swith_tile_3;
+import 'material/tab_controller/tab_controller.1.dart';
+import 'material/tabs/tab_bar.0.dart' as material_tabs_0;
+import 'material/tabs/tab_bar.1.dart' as material_tabs_1;
+import 'material/tabs/tab_bar.2.dart' as material_tabs_2;
+import 'material/text_button/text_button.0.dart' as material_text_button_0;
+import 'material/text_button/text_button.1.dart' as material_text_button_1;
+import 'material/text_field/text_field.0.dart' as material_text_field_0;
+import 'material/text_field/text_field.1.dart' as material_text_field_1;
+import 'material/text_field/text_field.2.dart' as material_text_field_2;
+import 'material/text_form_field/text_form_field.1.dart' as material_text_form_0;
+import 'material/text_form_field/text_form_field.2.dart' as material_text_form_1;
+import 'material/theme/theme_extension.1.dart';
+import 'material/theme_data/theme_data.0.dart';
+import 'material/time_picker/show_time_picker.0.dart';
+import 'material/toggle_buttons/toggle_buttons.0.dart' as material_toggle_button_0;
+import 'material/toggle_buttons/toggle_buttons.1.dart' as material_toggle_button_1;
+import 'material/tooltip/tooltip.0.dart' as material_tooltip_0;
+import 'material/tooltip/tooltip.1.dart' as material_tooltip_1;
+import 'material/tooltip/tooltip.2.dart' as material_tooltip_2;
+import 'material/tooltip/tooltip.3.dart' as material_tooltip_3;
 import 'widgets/actions/action.action_overridable.0.dart';
 import 'widgets/actions/action_listener.0.dart';
 import 'widgets/actions/actions.0.dart';
@@ -646,45 +781,324 @@ final List<Example> examples = <Example>[
           name: 'input_decoration.widget_state.1.dart',
           widget: const material_input_decorator_13.MaterialStateExampleApp()),
     ]),
-    Example(name: 'list_tile', subExamples: <Example>[]),
-    Example(name: 'material_state', subExamples: <Example>[]),
-    Example(name: 'menu_anchor', subExamples: <Example>[]),
-    Example(name: 'navigation_bar', subExamples: <Example>[]),
-    Example(name: 'navigation_drawer', subExamples: <Example>[]),
-    Example(name: 'navigation_rail', subExamples: <Example>[]),
-    Example(name: 'outlined_button', subExamples: <Example>[]),
-    Example(name: 'page_transitions_theme', subExamples: <Example>[]),
-    Example(name: 'paginated_data_table', subExamples: <Example>[]),
-    Example(name: 'platform_menu_bar', subExamples: <Example>[]),
-    Example(name: 'popup_menu', subExamples: <Example>[]),
-    Example(name: 'progress_indicator', subExamples: <Example>[]),
-    Example(name: 'radio', subExamples: <Example>[]),
-    Example(name: 'radio_list_tile', subExamples: <Example>[]),
-    Example(name: 'range_slider', subExamples: <Example>[]),
-    Example(name: 'refresh_indicator', subExamples: <Example>[]),
-    Example(name: 'reorderable_list', subExamples: <Example>[]),
-    Example(name: 'scaffold', subExamples: <Example>[]),
-    Example(name: 'scrollbar', subExamples: <Example>[]),
-    Example(name: 'search_anchor', subExamples: <Example>[]),
-    Example(name: 'segmented_button', subExamples: <Example>[]),
-    Example(name: 'selectable_region', subExamples: <Example>[]),
-    Example(name: 'selection_area', subExamples: <Example>[]),
-    Example(name: 'selection_container', subExamples: <Example>[]),
-    Example(name: 'slider', subExamples: <Example>[]),
-    Example(name: 'snack_bar', subExamples: <Example>[]),
-    Example(name: 'stepper', subExamples: <Example>[]),
-    Example(name: 'switch', subExamples: <Example>[]),
-    Example(name: 'switch_list_tile', subExamples: <Example>[]),
-    Example(name: 'tab_controller', subExamples: <Example>[]),
-    Example(name: 'tabs', subExamples: <Example>[]),
-    Example(name: 'text_button', subExamples: <Example>[]),
-    Example(name: 'text_field', subExamples: <Example>[]),
-    Example(name: 'text_form_field', subExamples: <Example>[]),
-    Example(name: 'theme', subExamples: <Example>[]),
-    Example(name: 'theme_data', subExamples: <Example>[]),
-    Example(name: 'time_picker', subExamples: <Example>[]),
-    Example(name: 'toggle_buttons', subExamples: <Example>[]),
-    Example(name: 'tooltip', subExamples: <Example>[]),
+    Example(name: 'list_tile', subExamples: <Example>[
+      Example(
+          name: 'custom_list_item.0.dart', widget: const material_list_tile_0.CustomListItemApp()),
+      Example(
+          name: 'custom_list_item.1.dart', widget: const material_list_tile_1.CustomListItemApp()),
+      Example(name: 'list_tile.0.dart', widget: const material_list_tile_2.ListTileApp()),
+      Example(name: 'list_tile.1.dart', widget: const material_list_tile_3.ListTileApp()),
+      Example(name: 'list_tile.2.dart', widget: const material_list_tile_4.ListTileApp()),
+      Example(name: 'list_tile.3.dart', widget: const material_list_tile_5.ListTileApp()),
+      Example(name: 'list_tile.4.dart', widget: const material_list_tile_6.ListTileApp()),
+      Example(name: 'list_tile.selected.0.dart', widget: const material_list_tile_7.ListTileApp()),
+    ]),
+    Example(name: 'material_state', subExamples: <Example>[
+      Example(
+          name: 'material_state_border_side.0.dart',
+          widget: const MaterialStateBorderSideExampleApp()),
+      Example(
+          name: 'material_state_mouse_cursor.0.dart',
+          widget: const MaterialStateMouseCursorExampleApp()),
+      Example(
+          name: 'material_state_outlined_border.0.dart',
+          widget: const MaterialStateOutlinedBorderExampleApp()),
+      Example(
+          name: 'material_state_property.0.dart', widget: const MaterialStatePropertyExampleApp()),
+    ]),
+    Example(name: 'menu_anchor', subExamples: <Example>[
+      Example(name: 'checkbox_menu_button.0.dart', widget: const material_menu_acnchor_0.MenuApp()),
+      Example(
+          name: 'menu_accelerator_label.0.dart',
+          widget: const material_menu_acnchor_1.MenuAcceleratorApp()),
+      Example(name: 'menu_anchor.0.dart', widget: const material_menu_acnchor_2.MenuApp()),
+      Example(name: 'menu_anchor.1.dart', widget: const material_menu_acnchor_3.ContextMenuApp()),
+      Example(name: 'menu_anchor.2.dart', widget: const material_menu_acnchor_4.MenuAnchorApp()),
+      Example(
+          name: 'menu_anchor.3.dart',
+          widget: const material_menu_acnchor_5.SimpleCascadingMenuApp()),
+      Example(name: 'menu_bar.0.dart', widget: const material_menu_acnchor_6.MenuBarApp()),
+      Example(name: 'radio_menu_button.0.dart', widget: const material_menu_acnchor_7.MenuApp()),
+    ]),
+    Example(name: 'navigation_bar', subExamples: <Example>[
+      Example(
+          name: 'navigation_bar.0.dart',
+          widget: const material_navigation_bar_0.NavigationBarApp()),
+      Example(
+          name: 'navigation_bar.1.dart',
+          widget: const material_navigation_bar_1.NavigationBarApp()),
+      Example(
+          name: 'navigation_bar.2.dart',
+          widget: const material_navigation_bar_2.NavigationBarApp()),
+    ]),
+    Example(name: 'navigation_drawer', subExamples: <Example>[
+      Example(name: 'navigation_drawer.0.dart', widget: const NavigationDrawerApp())
+    ]),
+    Example(name: 'navigation_rail', subExamples: <Example>[
+      Example(
+          name: 'navigation_rail.0.dart',
+          widget: const material_navigation_rail_0.NavigationRailExampleApp()),
+      Example(
+          name: 'navigation_rail.1.dart',
+          widget: const material_navigation_rail_1.NavigationRailExampleApp()),
+      Example(
+          name: 'navigation_rail.extended_animation.0.dart',
+          widget: const material_navigation_rail_2.ExtendedAnimationExampleApp()),
+    ]),
+    Example(name: 'outlined_button', subExamples: <Example>[
+      Example(name: 'outlined_button.0.dart', widget: const OutlinedButtonExampleApp())
+    ]),
+    Example(name: 'page_transitions_theme', subExamples: <Example>[
+      Example(
+          name: 'page_transitions_theme.0.dart',
+          widget: const material_page_transition_0.PageTransitionsThemeApp()),
+      Example(
+          name: 'page_transitions_theme.1.dart',
+          widget: const material_page_transition_1.PageTransitionsThemeApp()),
+    ]),
+    Example(name: 'paginated_data_table', subExamples: <Example>[
+      Example(
+          name: 'paginated_data_table.0.dart',
+          widget: const material_paginated_table_0.DataTableExampleApp()),
+      Example(
+          name: 'paginated_data_table.1.dart',
+          widget: const material_paginated_table_1.DataTableExampleApp()),
+    ]),
+    Example(name: 'platform_menu_bar', subExamples: <Example>[
+      Example(name: 'platform_menu_bar.0.dart', widget: const material_platform_menu_0.ExampleApp())
+    ]),
+    Example(name: 'popup_menu', subExamples: <Example>[
+      Example(name: 'popup_menu.0.dart', widget: const material_popup_menu_0.PopupMenuApp()),
+      Example(name: 'popup_menu.1.dart', widget: const material_popup_menu_1.PopupMenuApp()),
+      Example(name: 'popup_menu.2.dart', widget: const material_popup_menu_2.PopupMenuApp()),
+    ]),
+    Example(name: 'progress_indicator', subExamples: <Example>[
+      Example(
+          name: 'circular_progress_indicator.0.dart',
+          widget: const material_progress_indicator_0.ProgressIndicatorApp()),
+      Example(
+          name: 'circular_progress_indicator.1.dart',
+          widget: const material_progress_indicator_1.ProgressIndicatorApp()),
+      Example(
+          name: 'linear_progress_indicator.0.dart',
+          widget: const material_progress_indicator_2.ProgressIndicatorApp()),
+      Example(
+          name: 'linear_progress_indicator.1.dart',
+          widget: const material_progress_indicator_3.ProgressIndicatorApp()),
+    ]),
+    Example(name: 'radio', subExamples: <Example>[
+      Example(name: 'radio.0.dart', widget: const material_radio_0.RadioExampleApp()),
+      Example(
+          name: 'radio.toggleable.0.dart', widget: const material_radio_1.ToggleableExampleApp()),
+    ]),
+    Example(name: 'radio_list_tile', subExamples: <Example>[
+      Example(
+          name: 'custom_labeled_radio.0.dart',
+          widget: const material_radio_tile_0.LabeledRadioApp()),
+      Example(
+          name: 'custom_labeled_radio.1.dart',
+          widget: const material_radio_tile_1.LabeledRadioApp()),
+      Example(
+          name: 'radio_list_tile.0.dart', widget: const material_radio_tile_2.RadioListTileApp()),
+      Example(
+          name: 'radio_list_tile.1.dart', widget: const material_radio_tile_3.RadioListTileApp()),
+      Example(
+          name: 'radio_list_tile.toggleable.0.dart',
+          widget: const material_radio_tile_4.RadioListTileApp()),
+    ]),
+    Example(name: 'range_slider', subExamples: <Example>[
+      Example(name: 'range_slider.0.dart', widget: const RangeSliderExampleApp())
+    ]),
+    Example(name: 'refresh_indicator', subExamples: <Example>[
+      Example(
+          name: 'refresh_indicator.0.dart',
+          widget: const material_refresh_0.RefreshIndicatorExampleApp()),
+      Example(
+          name: 'refresh_indicator.1.dart',
+          widget: const material_refresh_1.RefreshIndicatorExampleApp()),
+    ]),
+    Example(name: 'reorderable_list', subExamples: <Example>[
+      Example(
+          name: 'reorderable_list_view.0.dart',
+          widget: const material_reorderable_0.ReorderableApp()),
+      Example(
+          name: 'reorderable_list_view.1.dart',
+          widget: const material_reorderable_1.ReorderableApp()),
+      Example(
+          name: 'reorderable_list_view.2.dart',
+          widget: const material_reorderable_2.ReorderableApp()),
+      Example(
+          name: 'reorderable_list_view.build_default_drag_handles.0.dart',
+          widget: const material_reorderable_3.ReorderableApp()),
+      Example(
+          name: 'reorderable_list_view.reorderable_list_view_builder.0.dart',
+          widget: const material_reorderable_4.ReorderableApp()),
+    ]),
+    Example(name: 'scaffold', subExamples: <Example>[
+      Example(name: 'scaffold.0.dart', widget: const material_scaffold_0.ScaffoldExampleApp()),
+      Example(name: 'scaffold.1.dart', widget: const material_scaffold_1.ScaffoldExampleApp()),
+      Example(name: 'scaffold.2.dart', widget: const material_scaffold_2.ScaffoldExampleApp()),
+      Example(name: 'scaffold.drawer.0.dart', widget: const material_scaffold_3.DrawerExampleApp()),
+      Example(
+          name: 'scaffold.end_drawer.0.dart',
+          widget: const material_scaffold_4.EndDrawerExampleApp()),
+      Example(
+          name: 'scaffold.floating_action_button_animator.0.dart',
+          widget: const material_scaffold_5.ScaffoldFloatingActionButtonAnimatorApp()),
+      Example(
+          name: 'scaffold_messenger.0.dart',
+          widget: const material_scaffold_6.ScaffoldMessengerExampleApp()),
+      Example(
+          name: 'scaffold_messenger.of.0.dart', widget: const material_scaffold_7.OfExampleApp()),
+      Example(
+          name: 'scaffold_messenger.of.1.dart', widget: const material_scaffold_8.OfExampleApp()),
+      Example(
+          name: 'scaffold_messenger_state.show_material_banner.0.dart',
+          widget: const material_scaffold_9.ShowMaterialBannerExampleApp()),
+      Example(
+          name: 'scaffold_messenger_state.show_snack_bar.0.dart',
+          widget: const material_scaffold_10.ShowSnackBarExampleApp()),
+      Example(
+          name: 'scaffold_messenger_state.show_snack_bar.1.dart',
+          widget: const material_scaffold_11.SnackBarApp()),
+      Example(
+          name: 'scaffold_messenger_state.show_snack_bar.2.dart',
+          widget: const material_scaffold_12.SnackBarApp()),
+      Example(name: 'scaffold.of.0.dart', widget: const material_scaffold_13.MyScaffoldBody()),
+      Example(name: 'scaffold.of.1.dart', widget: const material_scaffold_14.OfExampleApp()),
+      Example(
+          name: 'scaffold_state.show_bottom_sheet.0.dart',
+          widget: const material_scaffold_15.ShowBottomSheetExampleApp()),
+      Example(
+          name: 'scaffold_state.show_bottom_sheet.1.dart',
+          widget: const material_scaffold_16.ShowBottomSheetExampleApp()),
+    ]),
+    Example(name: 'scrollbar', subExamples: <Example>[
+      Example(name: 'scrollbar.0.dart', widget: const material_scrollbar_0.ScrollbarExampleApp()),
+      Example(name: 'scrollbar.1.dart', widget: const material_scrollbar_1.ScrollbarExampleApp()),
+    ]),
+    Example(name: 'search_anchor', subExamples: <Example>[
+      Example(name: 'search_anchor.0.dart', widget: const material_search_anchor_0.SearchBarApp()),
+      Example(
+          name: 'search_anchor.1.dart',
+          widget: const material_search_anchor_1.PinnedSearchBarApp()),
+      Example(name: 'search_anchor.2.dart', widget: const material_search_anchor_2.SearchBarApp()),
+      Example(
+          name: 'search_anchor.3.dart',
+          widget: const material_search_anchor_3.SearchAnchorAsyncExampleApp()),
+      Example(
+          name: 'search_anchor.4.dart',
+          widget: const material_search_anchor_4.SearchAnchorAsyncExampleApp()),
+      Example(name: 'search_bar.0.dart', widget: const material_search_anchor_5.SearchBarApp()),
+    ]),
+    Example(name: 'segmented_button', subExamples: <Example>[
+      Example(
+          name: 'segmented_button.0.dart',
+          widget: const material_segmented_button_0.SegmentedButtonApp()),
+      Example(
+          name: 'segmented_button.1.dart',
+          widget: const material_segmented_button_1.SegmentedButtonApp()),
+    ]),
+    Example(name: 'selectable_region', subExamples: <Example>[
+      Example(name: 'selectable_region.0.dart', widget: const SelectableRegionExampleApp())
+    ]),
+    Example(name: 'selection_area', subExamples: <Example>[
+      Example(name: 'selection_area.0.dart', widget: const SelectionAreaExampleApp())
+    ]),
+    Example(name: 'selection_container', subExamples: <Example>[
+      Example(
+          name: 'selection_container.0.dart',
+          widget: const material_selection_container_0.SelectionContainerExampleApp()),
+      Example(
+          name: 'selection_container_disabled.0.dart',
+          widget: const material_selection_container_1.SelectionContainerDisabledExampleApp()),
+    ]),
+    Example(name: 'slider', subExamples: <Example>[
+      Example(name: 'slider.0.dart', widget: const material_slider_0.SliderApp()),
+      Example(name: 'slider.1.dart', widget: const material_slider_1.SliderApp()),
+      Example(name: 'slider.2.dart', widget: const material_slider_2.SliderApp()),
+    ]),
+    Example(name: 'snack_bar', subExamples: <Example>[
+      Example(name: 'snack_bar.0.dart', widget: const material_snack_bar_0.SnackBarExampleApp()),
+      Example(name: 'snack_bar.1.dart', widget: const material_snack_bar_1.SnackBarExampleApp()),
+      Example(name: 'snack_bar.2.dart', widget: const material_snack_bar_2.SnackBarExampleApp()),
+    ]),
+    Example(name: 'stepper', subExamples: <Example>[
+      Example(name: 'stepper.0.dart', widget: const material_stepper_0.StepperExampleApp()),
+      Example(
+          name: 'stepper.controls_builder.0.dart',
+          widget: const material_stepper_1.ControlsBuilderExampleApp()),
+      Example(name: 'step_style.0.dart', widget: const material_stepper_2.StepStyleExampleApp()),
+    ]),
+    Example(name: 'switch', subExamples: <Example>[
+      Example(name: 'switch.0.dart', widget: const material_switch_0.SwitchApp()),
+      Example(name: 'switch.1.dart', widget: const material_switch_1.SwitchApp()),
+      Example(name: 'switch.2.dart', widget: const material_switch_2.SwitchApp()),
+      Example(name: 'switch.3.dart', widget: const material_switch_3.SwitchApp()),
+      Example(name: 'switch.4.dart', widget: const material_switch_4.SwitchApp()),
+    ]),
+    Example(name: 'switch_list_tile', subExamples: <Example>[
+      Example(
+          name: 'custom_labeled_switch.0.dart',
+          widget: const material_swith_tile_0.LabeledSwitchApp()),
+      Example(
+          name: 'custom_labeled_switch.1.dart',
+          widget: const material_swith_tile_1.LabeledSwitchApp()),
+      Example(
+          name: 'switch_list_tile.0.dart', widget: const material_swith_tile_2.SwitchListTileApp()),
+      Example(
+          name: 'switch_list_tile.1.dart', widget: const material_swith_tile_3.SwitchListTileApp()),
+    ]),
+    Example(name: 'tab_controller', subExamples: <Example>[
+      Example(name: 'tab_controller.1.dart', widget: const TabControllerExampleApp())
+    ]),
+    Example(name: 'tabs', subExamples: <Example>[
+      Example(name: 'tab_bar.0.dart', widget: const material_tabs_0.TabBarApp()),
+      Example(name: 'tab_bar.1.dart', widget: const material_tabs_1.TabBarApp()),
+      Example(name: 'tab_bar.2.dart', widget: const material_tabs_2.TabBarApp()),
+    ]),
+    Example(name: 'text_button', subExamples: <Example>[
+      Example(
+          name: 'text_button.0.dart', widget: const material_text_button_0.TextButtonExampleApp()),
+      Example(
+          name: 'text_button.1.dart', widget: const material_text_button_1.TextButtonExampleApp()),
+    ]),
+    Example(name: 'text_field', subExamples: <Example>[
+      Example(name: 'text_field.0.dart', widget: const material_text_field_0.TextFieldExampleApp()),
+      Example(name: 'text_field.1.dart', widget: const material_text_field_1.TextFieldExampleApp()),
+      Example(
+          name: 'text_field.2.dart', widget: const material_text_field_2.TextFieldExamplesApp()),
+    ]),
+    Example(name: 'text_form_field', subExamples: <Example>[
+      Example(
+          name: 'text_form_field.1.dart',
+          widget: const material_text_form_0.TextFormFieldExampleApp()),
+      Example(
+          name: 'text_form_field.2.dart',
+          widget: const material_text_form_1.TextFormFieldExampleApp()),
+    ]),
+    Example(name: 'theme', subExamples: <Example>[
+      Example(name: 'theme_extension.1.dart', widget: const ThemeExtensionExampleApp())
+    ]),
+    Example(name: 'theme_data', subExamples: <Example>[
+      Example(name: 'theme_data.0.dart', widget: const ThemeDataExampleApp())
+    ]),
+    Example(name: 'time_picker', subExamples: <Example>[
+      Example(name: 'show_time_picker.0.dart', widget: const ShowTimePickerApp())
+    ]),
+    Example(name: 'toggle_buttons', subExamples: <Example>[
+      Example(
+          name: 'toggle_buttons.0.dart',
+          widget: const material_toggle_button_0.ToggleButtonsExampleApp()),
+      Example(
+          name: 'toggle_buttons.1.dart', widget: const material_toggle_button_1.ToggleButtonsApp()),
+    ]),
+    Example(name: 'tooltip', subExamples: <Example>[
+      Example(name: 'tooltip.0.dart', widget: const material_tooltip_0.TooltipExampleApp()),
+      Example(name: 'tooltip.1.dart', widget: const material_tooltip_1.TooltipExampleApp()),
+      Example(name: 'tooltip.2.dart', widget: const material_tooltip_2.TooltipExampleApp()),
+      Example(name: 'tooltip.3.dart', widget: const material_tooltip_3.TooltipExampleApp()),
+    ]),
   ]),
   Example(name: 'painting'),
   Example(name: 'rendering'),

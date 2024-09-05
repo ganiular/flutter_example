@@ -7,7 +7,18 @@ import 'package:flutter/material.dart';
 /// Flutter code sample for [TextButton].
 
 void main() {
-  runApp(const MaterialApp(home: Home()));
+  runApp(const TextButtonExampleApp());
+}
+
+class TextButtonExampleApp extends StatelessWidget {
+  const TextButtonExampleApp({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(home: Home());
+  }
 }
 
 class SelectableButton extends StatefulWidget {
@@ -34,7 +45,8 @@ class _SelectableButtonState extends State<SelectableButton> {
   @override
   void initState() {
     super.initState();
-    statesController = MaterialStatesController(<MaterialState>{if (widget.selected) MaterialState.selected});
+    statesController =
+        MaterialStatesController(<MaterialState>{if (widget.selected) MaterialState.selected});
   }
 
   @override

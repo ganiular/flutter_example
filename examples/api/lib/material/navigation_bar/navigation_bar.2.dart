@@ -7,7 +7,18 @@ import 'package:flutter/material.dart';
 /// Flutter code sample for [NavigationBar] with nested [Navigator] destinations.
 
 void main() {
-  runApp(const MaterialApp(home: Home()));
+  runApp(const NavigationBarApp());
+}
+
+class NavigationBarApp extends StatelessWidget {
+  const NavigationBarApp({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(home: Home());
+  }
 }
 
 class Home extends StatefulWidget {
@@ -36,10 +47,10 @@ class _HomeState extends State<Home> with TickerProviderStateMixin<Home> {
       vsync: this,
       duration: const Duration(milliseconds: 300),
     )..addStatusListener((AnimationStatus status) {
-      if (status.isDismissed) {
-        setState(() {}); // Rebuild unselected destinations offstage.
-      }
-    });
+        if (status.isDismissed) {
+          setState(() {}); // Rebuild unselected destinations offstage.
+        }
+      });
   }
 
   @override
@@ -280,11 +291,7 @@ class ListPage extends StatelessWidget {
               child: OutlinedButton(
                 style: buttonStyle.copyWith(
                   backgroundColor: MaterialStatePropertyAll<Color>(
-                    Color.lerp(
-                      destination.color[100],
-                      Colors.white,
-                      index / itemCount
-                    )!,
+                    Color.lerp(destination.color[100], Colors.white, index / itemCount)!,
                   ),
                 ),
                 onPressed: () {
