@@ -1,10 +1,12 @@
 import 'dart:async';
 import 'dart:math';
-import 'package:async/async.dart'; // For cancelable operations
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
 import 'examples.dart';
+
+const Duration debounceDuration = Duration(milliseconds: 300);
+String? _newQuery;
 
 @immutable
 class SearchItem {
@@ -36,27 +38,16 @@ abstract class SearchListener {
 }
 
 class SearchManager {
-  SearchManager(this.examples, this.listener);
-  Timer? _debounce;
-  CancelableOperation<void>? _searchOperation;
+  SearchManager(this.examples, this.listener) {
+    _debouncedSearch = _debounceOperation<void, String>(_searchQuery);
+  }
   final List<Example> examples;
   final SearchListener listener;
+  late final _Debounceable<void, String> _debouncedSearch;
 
-  void searchQuary(String value) {
-    // Cancel previous search if still running
-    if (_searchOperation != null && !_searchOperation!.isCompleted) {
-      _searchOperation!.cancel();
-    }
-
-    // Ensure interval between requests (debouncing)
-    if (_debounce?.isActive ?? false) {
-      _debounce?.cancel();
-    }
-
-    _debounce = Timer(const Duration(milliseconds: 400), () {
-      // Start a cancelable search operation
-      _searchOperation = CancelableOperation<void>.fromFuture(_searchQuery(value));
-    });
+  void searchQuary(String query) {
+    _newQuery = query;
+    _debouncedSearch(query);
   }
 
   Future<void> _searchQuery(String query) async {
@@ -65,16 +56,11 @@ class SearchManager {
       return;
     }
 
-    final List<Future<void>> searchFutures = [];
-
     for (final Example example in examples) {
       for (final Example subExample in example.subExamples) {
-        searchFutures.add(_searchExample(subExample, query, example.path));
+        _searchExample(subExample, query, example.path);
       }
     }
-
-    // Wait for all searches to complete
-    await Future.wait(searchFutures);
   }
 
   Future<void> _searchExample(Example example, String query, String directory) async {
@@ -109,17 +95,14 @@ class SearchManager {
     }
 
     if (example.subExamples.isNotEmpty) {
-      final List<Future<void>> subSearchFutures = [];
       for (final Example subExample in example.subExamples) {
-        subSearchFutures.add(_searchExample(subExample, query, '$directory/${example.path}'));
+        _searchExample(subExample, query, '$directory/${example.path}');
       }
-
-      // Wait for all sub-searches to complete
-      await Future.wait(subSearchFutures);
     }
   }
 
   TextSpan? _searchText(String text, String query, RegExp pattern) {
+    _testIsCancled(query);
     final RegExpMatch? match = pattern.firstMatch(text);
     const int maxLeftPadLenght = 25;
     if (match != null) {
@@ -135,4 +118,66 @@ class SearchManager {
     }
     return null;
   }
+}
+
+typedef _Debounceable<S, T> = Future<S?> Function(T parameter);
+
+/// Returns a new function that is a debounced version of the given function.
+///
+/// This means that the original function will be called only after no calls
+/// have been made for the given Duration.
+_Debounceable<S, T> _debounceOperation<S, T>(_Debounceable<S?, T> function) {
+  _DebounceTimer? debounceTimer;
+
+  return (T parameter) async {
+    if (debounceTimer != null && !debounceTimer!.isCompleted) {
+      debounceTimer!.cancel();
+    }
+    debounceTimer = _DebounceTimer();
+    try {
+      await debounceTimer!.future;
+    } catch (error) {
+      if (error is _CancelException) {
+        debugPrint('Cancel running search operation for a new query');
+        return null;
+      }
+      rethrow;
+    }
+    return function(parameter);
+  };
+}
+
+// A wrapper around Timer used for debouncing.
+class _DebounceTimer {
+  _DebounceTimer() {
+    _timer = Timer(debounceDuration, _onComplete);
+  }
+
+  late final Timer _timer;
+  final Completer<void> _completer = Completer<void>();
+
+  void _onComplete() {
+    _completer.complete();
+  }
+
+  Future<void> get future => _completer.future;
+
+  bool get isCompleted => _completer.isCompleted;
+
+  void cancel() {
+    _timer.cancel();
+    _completer.completeError(const _CancelException());
+  }
+}
+
+// An exception indicating that the timer was canceled.
+class _CancelException implements Exception {
+  const _CancelException();
+}
+
+// TODO: Remove after all
+
+/// Test if cancel of previous search operation on a query really works
+void _testIsCancled(String currentQuery) {
+  assert(_newQuery == currentQuery, "Unexpected");
 }
