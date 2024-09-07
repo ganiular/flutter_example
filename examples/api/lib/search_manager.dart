@@ -56,20 +56,41 @@ class SearchManager {
       return;
     }
 
-    for (final Example example in examples) {
-      for (final Example subExample in example.subExamples) {
-        _searchExample(subExample, query, example.path);
-      }
-    }
+    Future.forEach<Example>(
+      examples,
+      (Example example) async {
+        await Future.forEach(
+          example.subExamples,
+          (Example subExample) async {
+            await _searchExample(subExample, query, example.path);
+          },
+        );
+      },
+    );
   }
 
   Future<void> _searchExample(Example example, String query, String directory) async {
+    if (query != _newQuery) {
+      return;
+    }
     final RegExp pattern = RegExp(RegExp.escape(query), caseSensitive: false);
     final TextSpan? highlight = _searchText(example.name, query, pattern);
 
     if (highlight != null) {
-      listener
-          .addSearchItem(SearchItem(directory: directory, example: example, highlight: highlight));
+      listener.addSearchItem(SearchItem(
+        directory: directory,
+        example: example,
+        highlight: highlight,
+      ));
+    }
+
+    if (example.subExamples.isNotEmpty) {
+      await Future.forEach(
+        example.subExamples,
+        (Example subExample) async {
+          await _searchExample(subExample, query, '$directory/${example.path}');
+        },
+      );
     }
 
     if (example.widget != null) {
@@ -93,16 +114,12 @@ class SearchManager {
         debugPrint(e.toString());
       }
     }
-
-    if (example.subExamples.isNotEmpty) {
-      for (final Example subExample in example.subExamples) {
-        _searchExample(subExample, query, '$directory/${example.path}');
-      }
-    }
   }
 
   TextSpan? _searchText(String text, String query, RegExp pattern) {
-    _testIsCancled(query);
+    if (query != _newQuery) {
+      return null;
+    }
     final RegExpMatch? match = pattern.firstMatch(text);
     const int maxLeftPadLenght = 25;
     if (match != null) {
@@ -173,11 +190,4 @@ class _DebounceTimer {
 // An exception indicating that the timer was canceled.
 class _CancelException implements Exception {
   const _CancelException();
-}
-
-// TODO: Remove after all
-
-/// Test if cancel of previous search operation on a query really works
-void _testIsCancled(String currentQuery) {
-  assert(_newQuery == currentQuery, "Unexpected");
 }

@@ -558,6 +558,11 @@ class Example {
   String _toTitle(String name) {
     return name.split('_').map((String e) => e[0].toUpperCase() + e.substring(1)).join(' ');
   }
+
+  @override
+  String toString() {
+    return name;
+  }
 }
 
 final List<Example> examples = <Example>[

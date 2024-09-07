@@ -53,6 +53,7 @@ class _SearchPageState extends State<SearchPage> implements SearchListener {
                   ),
                   Expanded(
                       child: TextField(
+                    autofocus: true,
                     controller: _controller,
                     onChanged: _searchManager.searchQuary,
                     decoration: InputDecoration(
