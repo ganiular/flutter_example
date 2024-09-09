@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:flutter/rendering.dart';
-import 'package:flutter_api_samples/widgets/overlay/overlay_portal.0.dart' as example;
+import 'package:flutter_api_samples/examples/widgets/overlay/overlay_portal.0.dart' as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -38,7 +38,8 @@ void main() {
     await tester.tap(find.byType(example.ClickableTooltipWidget));
     await tester.pump();
 
-    final TextSpan textSpan = tester.renderObject<RenderParagraph>(find.text(tooltipText)).text as TextSpan;
+    final TextSpan textSpan =
+        tester.renderObject<RenderParagraph>(find.text(tooltipText)).text as TextSpan;
     expect(textSpan.style?.fontSize, 50);
   });
 }

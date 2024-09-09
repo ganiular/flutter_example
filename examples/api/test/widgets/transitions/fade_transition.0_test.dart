@@ -5,8 +5,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_api_samples/widgets/transitions/fade_transition.0.dart'
-    as example;
+import 'package:flutter_api_samples/examples/widgets/transitions/fade_transition.0.dart' as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

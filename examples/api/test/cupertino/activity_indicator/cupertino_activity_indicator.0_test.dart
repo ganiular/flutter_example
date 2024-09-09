@@ -3,7 +3,8 @@
 // found in the LICENSE file.
 
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_api_samples/cupertino/activity_indicator/cupertino_activity_indicator.0.dart' as example;
+import 'package:flutter_api_samples/examples/cupertino/activity_indicator/cupertino_activity_indicator.0.dart'
+    as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -21,7 +22,8 @@ void main() {
     final Finder secondIndicator = find.byType(CupertinoActivityIndicator).at(1);
     expect(tester.widget<CupertinoActivityIndicator>(secondIndicator).animating, true);
     expect(tester.widget<CupertinoActivityIndicator>(secondIndicator).radius, 20.0);
-    expect(tester.widget<CupertinoActivityIndicator>(secondIndicator).color, CupertinoColors.activeBlue);
+    expect(tester.widget<CupertinoActivityIndicator>(secondIndicator).color,
+        CupertinoColors.activeBlue);
 
     // Cupertino activity indicator with custom radius and disabled animation.
     final Finder thirdIndicator = find.byType(CupertinoActivityIndicator).at(2);

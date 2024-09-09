@@ -4,7 +4,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter_api_samples/rendering/scroll_direction/scroll_direction.0.dart' as example;
+import 'package:flutter_api_samples/examples/rendering/scroll_direction/scroll_direction.0.dart'
+    as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -22,11 +23,9 @@ void main() {
     expect(find.byIcon(Icons.arrow_downward_rounded), findsNWidgets(2));
     expect(viewport.axisDirection, AxisDirection.down);
 
-    await tester.tap(
-        find.byWidgetPredicate((Widget widget) {
-          return widget is Radio<AxisDirection> && widget.value == AxisDirection.up;
-        })
-    );
+    await tester.tap(find.byWidgetPredicate((Widget widget) {
+      return widget is Radio<AxisDirection> && widget.value == AxisDirection.up;
+    }));
     await tester.pumpAndSettle();
 
     expect(find.text('AxisDirection.up'), findsOneWidget);

@@ -3,11 +3,13 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_api_samples/material/bottom_sheet/show_bottom_sheet.0.dart' as example;
+import 'package:flutter_api_samples/examples/material/bottom_sheet/show_bottom_sheet.0.dart'
+    as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  testWidgets('Bottom sheet animation can be customized using AnimationStyle', (WidgetTester tester) async {
+  testWidgets('Bottom sheet animation can be customized using AnimationStyle',
+      (WidgetTester tester) async {
     await tester.pumpWidget(
       const example.BottomSheetExampleApp(),
     );

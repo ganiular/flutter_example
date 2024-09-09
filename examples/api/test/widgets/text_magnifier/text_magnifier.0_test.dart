@@ -4,12 +4,11 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter_api_samples/widgets/text_magnifier/text_magnifier.0.dart'
+import 'package:flutter_api_samples/examples/widgets/text_magnifier/text_magnifier.0.dart'
     as example;
 import 'package:flutter_test/flutter_test.dart';
 
-List<TextSelectionPoint> _globalize(
-    Iterable<TextSelectionPoint> points, RenderBox box) {
+List<TextSelectionPoint> _globalize(Iterable<TextSelectionPoint> points, RenderBox box) {
   return points.map<TextSelectionPoint>((TextSelectionPoint point) {
     return TextSelectionPoint(
       box.localToGlobal(point.point),
@@ -19,8 +18,7 @@ List<TextSelectionPoint> _globalize(
 }
 
 RenderEditable _findRenderEditable<T extends State<StatefulWidget>>(WidgetTester tester) {
-  return (tester.state(find.byType(TextField))
-          as TextSelectionGestureDetectorBuilderDelegate)
+  return (tester.state(find.byType(TextField)) as TextSelectionGestureDetectorBuilderDelegate)
       .editableTextKey
       .currentState!
       .renderEditable;
@@ -60,9 +58,8 @@ void main() {
     await testGesture.up();
     await tester.pumpAndSettle();
 
-    final TextEditingController controller = tester
-      .firstWidget<TextField>(find.byType(TextField))
-      .controller!;
+    final TextEditingController controller =
+        tester.firstWidget<TextField>(find.byType(TextField)).controller!;
 
     final TextSelection selection = controller.selection;
     final RenderEditable renderEditable = _findRenderEditable(tester);
@@ -84,31 +81,33 @@ void main() {
     await tester.pump();
   }
 
-  testWidgets('should show custom magnifier on drag', (WidgetTester tester) async {
-    await tester.pumpWidget(const example.TextMagnifierExampleApp(text: defaultText));
+  testWidgets(
+    'should show custom magnifier on drag',
+    (WidgetTester tester) async {
+      await tester.pumpWidget(const example.TextMagnifierExampleApp(text: defaultText));
 
-    await showMagnifier(tester, defaultText.indexOf('e'));
-    expect(find.byType(example.CustomMagnifier), findsOneWidget);
+      await showMagnifier(tester, defaultText.indexOf('e'));
+      expect(find.byType(example.CustomMagnifier), findsOneWidget);
 
-    await expectLater(
-      find.byType(example.TextMagnifierExampleApp),
-      matchesGoldenFile('text_magnifier.0_test.png'),
-    );
-  },
-    variant: const TargetPlatformVariant(<TargetPlatform>{ TargetPlatform.iOS, TargetPlatform.android }),
+      await expectLater(
+        find.byType(example.TextMagnifierExampleApp),
+        matchesGoldenFile('text_magnifier.0_test.png'),
+      );
+    },
+    variant:
+        const TargetPlatformVariant(<TargetPlatform>{TargetPlatform.iOS, TargetPlatform.android}),
     skip: true, // This image is flaky. https://github.com/flutter/flutter/issues/144350
   );
-
 
   testWidgets('should show custom magnifier in RTL', (WidgetTester tester) async {
     const String text = 'أثارت زر';
     const String textToTapOn = 'ت';
 
-    await tester.pumpWidget(const example.TextMagnifierExampleApp(textDirection: TextDirection.rtl, text: text));
+    await tester.pumpWidget(
+        const example.TextMagnifierExampleApp(textDirection: TextDirection.rtl, text: text));
 
     await showMagnifier(tester, text.indexOf(textToTapOn));
 
     expect(find.byType(example.CustomMagnifier), findsOneWidget);
   });
-
 }

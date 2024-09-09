@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_api_samples/widgets/pop_scope/pop_scope.1.dart' as example;
+import 'package:flutter_api_samples/examples/widgets/pop_scope/pop_scope.1.dart' as example;
 import 'package:flutter_test/flutter_test.dart';
 
 import '../navigator_utils.dart';

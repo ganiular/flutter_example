@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_api_samples/material/app_bar/sliver_app_bar.1.dart' as example;
+import 'package:flutter_api_samples/examples/material/app_bar/sliver_app_bar.1.dart' as example;
 import 'package:flutter_test/flutter_test.dart';
 
 const Offset _kOffset = Offset(0.0, -200.0);

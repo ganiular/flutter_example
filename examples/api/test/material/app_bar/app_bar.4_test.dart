@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_api_samples/material/app_bar/app_bar.4.dart' as example;
+import 'package:flutter_api_samples/examples/material/app_bar/app_bar.4.dart' as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -13,9 +13,9 @@ void main() {
     );
 
     Material getMaterial() => tester.widget<Material>(find.descendant(
-      of: find.byType(AppBar),
-      matching: find.byType(Material),
-    ));
+          of: find.byType(AppBar),
+          matching: find.byType(Material),
+        ));
     expect(getMaterial().shape, const example.CustomAppBarShape());
   });
 

@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_api_samples/widgets/shared_app_data/shared_app_data.0.dart'
+import 'package:flutter_api_samples/examples/widgets/shared_app_data/shared_app_data.0.dart'
     as example;
 import 'package:flutter_test/flutter_test.dart';
 
@@ -60,7 +60,8 @@ void main() {
     }
   });
 
-  testWidgets('foo and bar values update independently of one another', (WidgetTester tester) async {
+  testWidgets('foo and bar values update independently of one another',
+      (WidgetTester tester) async {
     await tester.pumpWidget(
       const example.SharedAppDataExampleApp(),
     );

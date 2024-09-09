@@ -3,11 +3,13 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_api_samples/material/ink_well/ink_well.0.dart' as example;
+import 'package:flutter_api_samples/examples/material/ink_well/ink_well.0.dart' as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  testWidgets('Clicking on InkWell changes the Size of 50x50 AnimatedContainer to 100x100 and vice versa', (WidgetTester tester) async {
+  testWidgets(
+      'Clicking on InkWell changes the Size of 50x50 AnimatedContainer to 100x100 and vice versa',
+      (WidgetTester tester) async {
     await tester.pumpWidget(
       const example.InkWellExampleApp(),
     );

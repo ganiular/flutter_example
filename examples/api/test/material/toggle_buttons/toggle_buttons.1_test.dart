@@ -3,7 +3,8 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_api_samples/material/toggle_buttons/toggle_buttons.1.dart' as example;
+import 'package:flutter_api_samples/examples/material/toggle_buttons/toggle_buttons.1.dart'
+    as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -134,4 +135,4 @@ void main() {
   });
 }
 
-Set<MaterialState> enabled = <MaterialState>{ };
+Set<MaterialState> enabled = <MaterialState>{};

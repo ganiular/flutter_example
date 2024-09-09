@@ -3,11 +3,12 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_api_samples/widgets/overlay/overlay.0.dart' as example;
+import 'package:flutter_api_samples/examples/widgets/overlay/overlay.0.dart' as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  testWidgets('Can use Overlay to highlight NavigationBar destination', (WidgetTester tester) async {
+  testWidgets('Can use Overlay to highlight NavigationBar destination',
+      (WidgetTester tester) async {
     const String explorePage = 'Explore page';
     const String commutePage = 'Commute page';
     const String savedPage = 'Saved page';

@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_api_samples/material/text_field/text_field.1.dart' as example;
+import 'package:flutter_api_samples/examples/material/text_field/text_field.1.dart' as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -16,7 +16,8 @@ void main() {
     expect(find.byType(AlertDialog), findsNothing);
     expect(find.text('Thanks!'), findsNothing);
     expect(find.widgetWithText(TextButton, 'OK'), findsNothing);
-    expect(find.text('You typed "$sampleText", which has the length ${sampleText.length}.'), findsNothing);
+    expect(find.text('You typed "$sampleText", which has the length ${sampleText.length}.'),
+        findsNothing);
 
     await tester.enterText(find.byType(TextField), sampleText);
     await tester.testTextInput.receiveAction(TextInputAction.done);
@@ -24,6 +25,7 @@ void main() {
     expect(find.byType(AlertDialog), findsOneWidget);
     expect(find.text('Thanks!'), findsOneWidget);
     expect(find.widgetWithText(TextButton, 'OK'), findsOneWidget);
-    expect(find.text('You typed "$sampleText", which has length ${sampleText.characters.length}.'), findsOneWidget);
+    expect(find.text('You typed "$sampleText", which has length ${sampleText.characters.length}.'),
+        findsOneWidget);
   });
 }

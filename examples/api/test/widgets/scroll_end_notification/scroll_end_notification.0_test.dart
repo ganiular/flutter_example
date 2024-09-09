@@ -3,7 +3,8 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_api_samples/widgets/scroll_end_notification/scroll_end_notification.0.dart' as example;
+import 'package:flutter_api_samples/examples/widgets/scroll_end_notification/scroll_end_notification.0.dart'
+    as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

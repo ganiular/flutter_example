@@ -5,11 +5,10 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_api_samples/material/text_button/text_button.0.dart' as example;
+import 'package:flutter_api_samples/examples/material/text_button/text_button.0.dart' as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-
   // The app being tested loads images via HTTP which the test
   // framework defeats by default.
   setUpAll(() {
@@ -37,7 +36,6 @@ void main() {
 
     await tester.tap(find.widgetWithText(TextButton, 'TextButton #3'));
     await tester.pumpAndSettle();
-
 
     await tester.tap(find.widgetWithText(TextButton, 'TextButton #4'));
     await tester.pumpAndSettle();

@@ -3,7 +3,8 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_api_samples/material/radio_list_tile/radio_list_tile.0.dart' as example;
+import 'package:flutter_api_samples/examples/material/radio_list_tile/radio_list_tile.0.dart'
+    as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -16,7 +17,8 @@ void main() {
     expect(find.byType(RadioListTile<example.SingingCharacter>), findsNWidgets(2));
 
     // The initial group value is lafayette for the first RadioListTile.
-    RadioListTile<example.SingingCharacter> radioListTile = tester.widget(find.byType(RadioListTile<example.SingingCharacter>).first);
+    RadioListTile<example.SingingCharacter> radioListTile =
+        tester.widget(find.byType(RadioListTile<example.SingingCharacter>).first);
     expect(radioListTile.groupValue, example.SingingCharacter.lafayette);
 
     // The initial group value is lafayette for the last RadioListTile.

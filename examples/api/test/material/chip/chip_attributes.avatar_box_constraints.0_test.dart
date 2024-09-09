@@ -3,11 +3,13 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_api_samples/material/chip/chip_attributes.avatar_box_constraints.0.dart' as example;
+import 'package:flutter_api_samples/examples/material/chip/chip_attributes.avatar_box_constraints.0.dart'
+    as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  testWidgets('RawChip.avatarBoxConstraints updates avatar size constraints', (WidgetTester tester) async {
+  testWidgets('RawChip.avatarBoxConstraints updates avatar size constraints',
+      (WidgetTester tester) async {
     const double border = 1.0;
     const double iconSize = 18.0;
     const double padding = 8.0;

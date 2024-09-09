@@ -3,11 +3,13 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_api_samples/material/scaffold/scaffold_messenger.0.dart' as example;
+import 'package:flutter_api_samples/examples/material/scaffold/scaffold_messenger.0.dart'
+    as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  testWidgets('The snack bar should be visible after tapping the button', (WidgetTester tester) async {
+  testWidgets('The snack bar should be visible after tapping the button',
+      (WidgetTester tester) async {
     await tester.pumpWidget(
       const example.ScaffoldMessengerExampleApp(),
     );

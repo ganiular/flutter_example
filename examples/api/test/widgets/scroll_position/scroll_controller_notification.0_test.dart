@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_api_samples/widgets/scroll_position/scroll_controller_notification.0.dart'
+import 'package:flutter_api_samples/examples/widgets/scroll_position/scroll_controller_notification.0.dart'
     as example;
 import 'package:flutter_test/flutter_test.dart';
 
@@ -17,11 +17,9 @@ void main() {
     expect(find.text('Last notification: Null'), findsNothing);
 
     // Toggle to use NotificationListener
-    await tester.tap(
-      find.byWidgetPredicate((Widget widget) {
-        return widget is Radio<bool> && !widget.value;
-      })
-    );
+    await tester.tap(find.byWidgetPredicate((Widget widget) {
+      return widget is Radio<bool> && !widget.value;
+    }));
     await tester.pumpAndSettle();
 
     expect(find.text('Last notification: Null'), findsOneWidget);

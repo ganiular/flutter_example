@@ -3,11 +3,13 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_api_samples/material/refresh_indicator/refresh_indicator.1.dart' as example;
+import 'package:flutter_api_samples/examples/material/refresh_indicator/refresh_indicator.1.dart'
+    as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  testWidgets('Pulling from nested scroll view triggers refresh indicator', (WidgetTester tester) async {
+  testWidgets('Pulling from nested scroll view triggers refresh indicator',
+      (WidgetTester tester) async {
     await tester.pumpWidget(
       const example.RefreshIndicatorExampleApp(),
     );

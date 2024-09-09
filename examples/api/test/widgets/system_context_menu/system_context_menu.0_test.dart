@@ -4,11 +4,13 @@
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_api_samples/widgets/system_context_menu/system_context_menu.0.dart' as example;
+import 'package:flutter_api_samples/examples/widgets/system_context_menu/system_context_menu.0.dart'
+    as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  testWidgets('only shows the system context menu on iOS when MediaQuery says it is supported', (WidgetTester tester) async {
+  testWidgets('only shows the system context menu on iOS when MediaQuery says it is supported',
+      (WidgetTester tester) async {
     await tester.pumpWidget(
       Builder(
         builder: (BuildContext context) {
@@ -47,7 +49,8 @@ void main() {
     }
   }, variant: TargetPlatformVariant.all(), skip: kIsWeb); // [intended]
 
-  testWidgets('does not show the system context menu when not supported', (WidgetTester tester) async {
+  testWidgets('does not show the system context menu when not supported',
+      (WidgetTester tester) async {
     await tester.pumpWidget(
       // By default, MediaQueryData.supportsShowingSystemContextMenu is false.
       const example.SystemContextMenuExampleApp(),

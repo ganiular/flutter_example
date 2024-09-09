@@ -5,7 +5,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_api_samples/widgets/implicit_animations/animated_positioned.0.dart'
+import 'package:flutter_api_samples/examples/widgets/implicit_animations/animated_positioned.0.dart'
     as example;
 import 'package:flutter_test/flutter_test.dart';
 
@@ -46,8 +46,7 @@ void main() {
       // Advance animation to the middle.
       await tester.pump(example.AnimatedPositionedExampleApp.duration ~/ 2);
 
-      final double t =
-          example.AnimatedPositionedExampleApp.curve.transform(0.5);
+      final double t = example.AnimatedPositionedExampleApp.curve.transform(0.5);
 
       positioned = tester.widget(positionedFinder);
       expect(positioned.width, lerpDouble(beginWidth, endWidth, t));

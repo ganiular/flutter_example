@@ -5,7 +5,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_api_samples/widgets/implicit_animations/sliver_animated_opacity.0.dart'
+import 'package:flutter_api_samples/examples/widgets/implicit_animations/sliver_animated_opacity.0.dart'
     as example;
 import 'package:flutter_test/flutter_test.dart';
 

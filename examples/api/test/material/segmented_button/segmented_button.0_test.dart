@@ -4,7 +4,7 @@
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_api_samples/material/segmented_button/segmented_button.0.dart'
+import 'package:flutter_api_samples/examples/material/segmented_button/segmented_button.0.dart'
     as example;
 import 'package:flutter_test/flutter_test.dart';
 
@@ -17,7 +17,9 @@ void main() {
     void expectOneCalendarButton(example.Calendar period) {
       expect(
         find.byWidgetPredicate(
-          (Widget widget) => widget is SegmentedButton<example.Calendar> && setEquals(widget.selected, <example.Calendar>{period}),
+          (Widget widget) =>
+              widget is SegmentedButton<example.Calendar> &&
+              setEquals(widget.selected, <example.Calendar>{period}),
         ),
         findsOne,
       );
@@ -62,7 +64,8 @@ void main() {
     expectOneCalendarButton(example.Calendar.day);
   });
 
-  testWidgets('Segmented button can be used with a multiple selection', (WidgetTester tester) async {
+  testWidgets('Segmented button can be used with a multiple selection',
+      (WidgetTester tester) async {
     await tester.pumpWidget(
       const example.SegmentedButtonApp(),
     );
@@ -70,7 +73,8 @@ void main() {
     void expectSizeButtons(Set<example.Sizes> sizes) {
       expect(
         find.byWidgetPredicate(
-          (Widget widget) => widget is SegmentedButton<example.Sizes> && setEquals(widget.selected, sizes),
+          (Widget widget) =>
+              widget is SegmentedButton<example.Sizes> && setEquals(widget.selected, sizes),
         ),
         findsOne,
       );

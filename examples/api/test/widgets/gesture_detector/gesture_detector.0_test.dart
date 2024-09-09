@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_api_samples/widgets/gesture_detector/gesture_detector.0.dart'
+import 'package:flutter_api_samples/examples/widgets/gesture_detector/gesture_detector.0.dart'
     as example;
 import 'package:flutter_test/flutter_test.dart';
 

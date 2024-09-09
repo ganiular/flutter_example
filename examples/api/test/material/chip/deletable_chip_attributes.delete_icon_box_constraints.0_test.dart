@@ -3,11 +3,13 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_api_samples/material/chip/deletable_chip_attributes.delete_icon_box_constraints.0.dart' as example;
+import 'package:flutter_api_samples/examples/material/chip/deletable_chip_attributes.delete_icon_box_constraints.0.dart'
+    as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  testWidgets('RawChip.deleteIconBoxConstraints updates delete icon size constraints', (WidgetTester tester) async {
+  testWidgets('RawChip.deleteIconBoxConstraints updates delete icon size constraints',
+      (WidgetTester tester) async {
     const double border = 1.0;
     const double iconSize = 18.0;
     const double padding = 8.0;

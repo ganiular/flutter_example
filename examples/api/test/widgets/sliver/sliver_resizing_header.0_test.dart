@@ -3,7 +3,8 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_api_samples/widgets/sliver/sliver_resizing_header.0.dart' as example;
+import 'package:flutter_api_samples/examples/widgets/sliver/sliver_resizing_header.0.dart'
+    as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -12,7 +13,8 @@ void main() {
       const example.SliverResizingHeaderApp(),
     );
 
-    final Finder headerMaterial = find.text('SliverResizingHeader\nWith Two Optional\nLines of Text');
+    final Finder headerMaterial =
+        find.text('SliverResizingHeader\nWith Two Optional\nLines of Text');
     final double initialHeight = tester.getSize(headerMaterial).height;
 
     await tester.drag(find.byType(CustomScrollView), const Offset(0, -200));

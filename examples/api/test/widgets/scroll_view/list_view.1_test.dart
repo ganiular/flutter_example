@@ -3,8 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_api_samples/widgets/scroll_view/list_view.1.dart'
-    as example;
+import 'package:flutter_api_samples/examples/widgets/scroll_view/list_view.1.dart' as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

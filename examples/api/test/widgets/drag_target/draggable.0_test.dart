@@ -3,8 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_api_samples/widgets/drag_target/draggable.0.dart'
-    as example;
+import 'package:flutter_api_samples/examples/widgets/drag_target/draggable.0.dart' as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -44,7 +43,8 @@ void main() {
     );
   });
 
-  testWidgets('Verify correct containers are displayed while dragging', (WidgetTester tester) async {
+  testWidgets('Verify correct containers are displayed while dragging',
+      (WidgetTester tester) async {
     await tester.pumpWidget(
       const example.DraggableExampleApp(),
     );
@@ -90,7 +90,8 @@ void main() {
     expect(feedbackContainer, findsNothing);
   });
 
-  testWidgets('Dropping Draggable over DragTarget updates the counter', (WidgetTester tester) async {
+  testWidgets('Dropping Draggable over DragTarget updates the counter',
+      (WidgetTester tester) async {
     await tester.pumpWidget(
       const example.DraggableExampleApp(),
     );

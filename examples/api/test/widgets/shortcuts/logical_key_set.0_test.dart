@@ -3,8 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:flutter/services.dart';
-import 'package:flutter_api_samples/widgets/shortcuts/logical_key_set.0.dart'
-    as example;
+import 'package:flutter_api_samples/examples/widgets/shortcuts/logical_key_set.0.dart' as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -33,7 +32,8 @@ void main() {
     expect(find.text('count: 0'), findsOneWidget);
   });
 
-  testWidgets('CtrlLeft+C or C+CtrlLeft key combination updates counter', (WidgetTester tester) async {
+  testWidgets('CtrlLeft+C or C+CtrlLeft key combination updates counter',
+      (WidgetTester tester) async {
     await tester.pumpWidget(
       const example.LogicalKeySetExampleApp(),
     );
@@ -44,14 +44,14 @@ void main() {
       await sendKeyCombination(
         tester,
         counter.isEven
-          ? <LogicalKeyboardKey>[
-              LogicalKeyboardKey.controlLeft,
-              LogicalKeyboardKey.keyC,
-            ]
-          : <LogicalKeyboardKey>[
-              LogicalKeyboardKey.keyC,
-              LogicalKeyboardKey.controlLeft,
-            ],
+            ? <LogicalKeyboardKey>[
+                LogicalKeyboardKey.controlLeft,
+                LogicalKeyboardKey.keyC,
+              ]
+            : <LogicalKeyboardKey>[
+                LogicalKeyboardKey.keyC,
+                LogicalKeyboardKey.controlLeft,
+              ],
       );
       await tester.pump();
     }

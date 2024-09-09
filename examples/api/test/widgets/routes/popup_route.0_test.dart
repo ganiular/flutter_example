@@ -4,7 +4,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_api_samples/widgets/routes/popup_route.0.dart' as example;
+import 'package:flutter_api_samples/examples/widgets/routes/popup_route.0.dart' as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

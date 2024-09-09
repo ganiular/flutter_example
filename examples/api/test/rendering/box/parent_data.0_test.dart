@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_api_samples/rendering/box/parent_data.0.dart';
+import 'package:flutter_api_samples/examples/rendering/box/parent_data.0.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

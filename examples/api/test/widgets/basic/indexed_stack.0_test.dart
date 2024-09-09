@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_api_samples/widgets/basic/indexed_stack.0.dart' as example;
+import 'package:flutter_api_samples/examples/widgets/basic/indexed_stack.0.dart' as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -11,11 +11,14 @@ void main() {
     await tester.pumpWidget(const example.IndexedStackApp());
 
     final Finder gesture2 = find.byKey(const Key('gesture2'));
-    final Element containerFinder = find.byKey(const Key('Dash'), skipOffstage: false).evaluate().first;
+    final Element containerFinder =
+        find.byKey(const Key('Dash'), skipOffstage: false).evaluate().first;
     expect(containerFinder.renderObject!.debugNeedsPaint, false);
-    final Element containerFinder1 = find.byKey(const Key('John'), skipOffstage: false).evaluate().first;
+    final Element containerFinder1 =
+        find.byKey(const Key('John'), skipOffstage: false).evaluate().first;
     expect(containerFinder1.renderObject!.debugNeedsPaint, true);
-    final Element containerFinder2 = find.byKey(const Key('Mary'), skipOffstage: false).evaluate().first;
+    final Element containerFinder2 =
+        find.byKey(const Key('Mary'), skipOffstage: false).evaluate().first;
     expect(containerFinder2.renderObject!.debugNeedsPaint, true);
 
     await tester.tap(gesture2);
@@ -34,9 +37,12 @@ void main() {
     await tester.pumpWidget(const example.IndexedStackApp());
 
     final Finder gesture1 = find.byKey(const Key('gesture1'));
-    final Element containerFinder = find.byKey(const Key('Dash'), skipOffstage: false).evaluate().first;
-    final Element containerFinder1 = find.byKey(const Key('John'), skipOffstage: false).evaluate().first;
-    final Element containerFinder2 = find.byKey(const Key('Mary'), skipOffstage: false).evaluate().first;
+    final Element containerFinder =
+        find.byKey(const Key('Dash'), skipOffstage: false).evaluate().first;
+    final Element containerFinder1 =
+        find.byKey(const Key('John'), skipOffstage: false).evaluate().first;
+    final Element containerFinder2 =
+        find.byKey(const Key('Mary'), skipOffstage: false).evaluate().first;
 
     await tester.tap(gesture1);
     await tester.pump();

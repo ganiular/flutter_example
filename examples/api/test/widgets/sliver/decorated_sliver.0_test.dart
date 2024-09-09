@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_api_samples/widgets/sliver/decorated_sliver.0.dart' as example;
+import 'package:flutter_api_samples/examples/widgets/sliver/decorated_sliver.0.dart' as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -19,7 +19,8 @@ void main() {
     expect(blueSkyText, findsOneWidget);
   });
 
-  testWidgets('Verify the sliver with key `radial-gradient` has a RadialGradient', (WidgetTester tester) async {
+  testWidgets('Verify the sliver with key `radial-gradient` has a RadialGradient',
+      (WidgetTester tester) async {
     await tester.pumpWidget(
       const example.SliverDecorationExampleApp(),
     );
@@ -43,7 +44,8 @@ void main() {
     );
   });
 
-  testWidgets('Verify that the sliver with key `linear-gradient` has a LinearGradient', (WidgetTester tester) async {
+  testWidgets('Verify that the sliver with key `linear-gradient` has a LinearGradient',
+      (WidgetTester tester) async {
     await tester.pumpWidget(
       const example.SliverDecorationExampleApp(),
     );

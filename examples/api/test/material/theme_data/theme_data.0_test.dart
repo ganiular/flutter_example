@@ -3,11 +3,10 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_api_samples/material/theme_data/theme_data.0.dart' as example;
+import 'package:flutter_api_samples/examples/material/theme_data/theme_data.0.dart' as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-
   testWidgets('ThemeData basics', (WidgetTester tester) async {
     await tester.pumpWidget(const example.ThemeDataExampleApp());
 

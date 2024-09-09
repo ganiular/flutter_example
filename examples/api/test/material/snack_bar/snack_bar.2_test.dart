@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_api_samples/material/snack_bar/snack_bar.2.dart' as example;
+import 'package:flutter_api_samples/examples/material/snack_bar/snack_bar.2.dart' as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -48,10 +48,7 @@ void main() {
     expect(find.text('Single Line Snack Bar'), findsOneWidget);
     expect(find.text('Action'), findsOneWidget);
     expect(find.byIcon(Icons.close), findsOneWidget);
-    expect(tester
-      .widget<SnackBar>(find.byType(SnackBar))
-      .behavior,
-      SnackBarBehavior.floating);
+    expect(tester.widget<SnackBar>(find.byType(SnackBar)).behavior, SnackBarBehavior.floating);
 
     await tester.tap(find.byIcon(Icons.close));
     await tester.pumpAndSettle();
@@ -73,10 +70,7 @@ void main() {
     expect(find.textContaining('spans across multiple lines'), findsOneWidget);
     expect(find.text('Long Action Text'), findsOneWidget);
     expect(find.byIcon(Icons.close), findsOneWidget);
-    expect(tester
-      .widget<SnackBar>(find.byType(SnackBar))
-      .behavior,
-      SnackBarBehavior.fixed);
+    expect(tester.widget<SnackBar>(find.byType(SnackBar)).behavior, SnackBarBehavior.fixed);
 
     await tester.tap(find.byIcon(Icons.close));
     await tester.pumpAndSettle();
@@ -128,8 +122,7 @@ void main() {
     await tester.tap(find.text('Show Snackbar'));
     await tester.pumpAndSettle();
 
-    expect(tester.getSize(find.byType(SnackBar)).height,
-      lessThan(highSnackBar));
+    expect(tester.getSize(find.byType(SnackBar)).height, lessThan(highSnackBar));
   });
 
   testWidgets('Disable unusable elements', (WidgetTester tester) async {
@@ -138,17 +131,25 @@ void main() {
     );
 
     expect(find.text('Long Action Label'), findsOneWidget);
-    expect(tester.widget<SwitchListTile>(find.ancestor(
-      of: find.text('Long Action Label'),
-      matching: find.byType(SwitchListTile),
-    )).onChanged, isNotNull);
+    expect(
+        tester
+            .widget<SwitchListTile>(find.ancestor(
+              of: find.text('Long Action Label'),
+              matching: find.byType(SwitchListTile),
+            ))
+            .onChanged,
+        isNotNull);
 
     await tester.tap(find.text('Include Action'));
     await tester.pumpAndSettle();
 
-    expect(tester.widget<SwitchListTile>(find.ancestor(
-      of: find.text('Long Action Label'),
-      matching: find.byType(SwitchListTile),
-    )).onChanged, isNull);
+    expect(
+        tester
+            .widget<SwitchListTile>(find.ancestor(
+              of: find.text('Long Action Label'),
+              matching: find.byType(SwitchListTile),
+            ))
+            .onChanged,
+        isNull);
   });
 }

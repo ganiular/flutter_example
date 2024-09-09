@@ -3,7 +3,8 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_api_samples/material/scaffold/scaffold_messenger_state.show_material_banner.0.dart' as example;
+import 'package:flutter_api_samples/examples/material/scaffold/scaffold_messenger_state.show_material_banner.0.dart'
+    as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -18,7 +19,8 @@ void main() {
 
     expect(find.widgetWithText(MaterialBanner, 'This is a MaterialBanner'), findsOne);
     expect(
-      find.descendant(of: find.byType(MaterialBanner), matching: find.widgetWithText(TextButton, 'DISMISS')),
+      find.descendant(
+          of: find.byType(MaterialBanner), matching: find.widgetWithText(TextButton, 'DISMISS')),
       findsOne,
     );
   });

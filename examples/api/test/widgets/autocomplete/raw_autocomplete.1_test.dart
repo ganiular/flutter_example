@@ -3,7 +3,8 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_api_samples/widgets/autocomplete/raw_autocomplete.1.dart' as example;
+import 'package:flutter_api_samples/examples/widgets/autocomplete/raw_autocomplete.1.dart'
+    as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -39,10 +40,12 @@ void main() {
     await tester.pump();
 
     expect(find.byType(ListTile), findsNothing);
-    expect(find.descendant(
-      of: find.byType(TextFormField),
-      matching: find.text('Bob'),
-    ), findsOneWidget);
+    expect(
+        find.descendant(
+          of: find.byType(TextFormField),
+          matching: find.text('Bob'),
+        ),
+        findsOneWidget);
   });
 
   testWidgets('Finds users by email address', (WidgetTester tester) async {
@@ -68,9 +71,11 @@ void main() {
     await tester.pump();
 
     expect(find.byType(ListTile), findsNothing);
-    expect(find.descendant(
-      of: find.byType(TextFormField),
-      matching: find.text('Charlie'),
-    ), findsOneWidget);
+    expect(
+        find.descendant(
+          of: find.byType(TextFormField),
+          matching: find.text('Charlie'),
+        ),
+        findsOneWidget);
   });
 }

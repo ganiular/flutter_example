@@ -5,7 +5,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_api_samples/widgets/tween_animation_builder/tween_animation_builder.0.dart'
+import 'package:flutter_api_samples/examples/widgets/tween_animation_builder/tween_animation_builder.0.dart'
     as example;
 import 'package:flutter_test/flutter_test.dart';
 

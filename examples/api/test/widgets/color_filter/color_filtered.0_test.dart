@@ -6,8 +6,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter_api_samples/widgets/color_filter/color_filtered.0.dart'
-    as example;
+import 'package:flutter_api_samples/examples/widgets/color_filter/color_filtered.0.dart' as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -30,8 +29,7 @@ void main() {
     RenderObject renderObject = tester.firstRenderObject(
       find.byType(ColorFiltered).first,
     );
-    ColorFilterLayer colorFilterLayer =
-        renderObject.debugLayer! as ColorFilterLayer;
+    ColorFilterLayer colorFilterLayer = renderObject.debugLayer! as ColorFilterLayer;
 
     // Verify that red colored filter with modulate blend mode is applied to the first image.
     expect(

@@ -3,11 +3,13 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_api_samples/widgets/undo_history/undo_history_controller.0.dart' as example;
+import 'package:flutter_api_samples/examples/widgets/undo_history/undo_history_controller.0.dart'
+    as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  testWidgets('The undo history controller should undo and redo the history changes', (WidgetTester tester) async {
+  testWidgets('The undo history controller should undo and redo the history changes',
+      (WidgetTester tester) async {
     await tester.pumpWidget(
       const example.UndoHistoryControllerExampleApp(),
     );

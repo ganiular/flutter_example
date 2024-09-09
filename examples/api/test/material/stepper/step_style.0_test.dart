@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_api_samples/material/stepper/step_style.0.dart' as example;
+import 'package:flutter_api_samples/examples/material/stepper/step_style.0.dart' as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -40,12 +40,14 @@ void main() {
     expect(secondStep.isActive, true);
     expect(secondStep.stepStyle?.connectorThickness, 10);
     expect(secondStep.stepStyle?.connectorColor, Colors.orange);
-    expect(secondStep.stepStyle?.gradient, const LinearGradient(
-      colors: <Color>[
-                Colors.white,
-                Colors.black,
-              ],
-    ));
+    expect(
+        secondStep.stepStyle?.gradient,
+        const LinearGradient(
+          colors: <Color>[
+            Colors.white,
+            Colors.black,
+          ],
+        ));
 
     // Check that the third step has the correct properties.
     final Step thirdStep = stepper.steps[2];

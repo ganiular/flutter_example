@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_api_samples/material/card/card.0.dart' as example;
+import 'package:flutter_api_samples/examples/material/card/card.0.dart' as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -14,7 +14,8 @@ void main() {
     expect(find.byType(Card), findsOneWidget);
     expect(find.widgetWithIcon(Card, Icons.album), findsOneWidget);
     expect(find.widgetWithText(Card, 'The Enchanted Nightingale'), findsOneWidget);
-    expect(find.widgetWithText(Card, 'Music by Julie Gable. Lyrics by Sidney Stein.'), findsOneWidget);
+    expect(
+        find.widgetWithText(Card, 'Music by Julie Gable. Lyrics by Sidney Stein.'), findsOneWidget);
     expect(find.widgetWithText(Card, 'BUY TICKETS'), findsOneWidget);
     expect(find.widgetWithText(Card, 'LISTEN'), findsOneWidget);
   });

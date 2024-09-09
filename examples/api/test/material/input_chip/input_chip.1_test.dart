@@ -3,13 +3,12 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_api_samples/material/input_chip/input_chip.1.dart'
-    as example;
+import 'package:flutter_api_samples/examples/material/input_chip/input_chip.1.dart' as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  final String replacementChar = String.fromCharCode(
-      example.ChipsInputEditingController.kObjectReplacementChar);
+  final String replacementChar =
+      String.fromCharCode(example.ChipsInputEditingController.kObjectReplacementChar);
 
   testWidgets('User input generates InputChips', (WidgetTester tester) async {
     await tester.pumpWidget(
@@ -21,8 +20,7 @@ void main() {
     expect(find.byType(example.ChipsInput<String>), findsOneWidget);
     expect(find.byType(InputChip), findsOneWidget);
 
-    example.ChipsInputState<String> state =
-        tester.state(find.byType(example.ChipsInput<String>));
+    example.ChipsInputState<String> state = tester.state(find.byType(example.ChipsInput<String>));
     expect(state.controller.textWithoutReplacements.isEmpty, true);
 
     await tester.tap(find.byType(example.ChipsInput<String>));

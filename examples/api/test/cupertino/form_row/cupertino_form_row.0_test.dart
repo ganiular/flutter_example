@@ -3,7 +3,8 @@
 // found in the LICENSE file.
 
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_api_samples/cupertino/form_row/cupertino_form_row.0.dart' as example;
+import 'package:flutter_api_samples/examples/cupertino/form_row/cupertino_form_row.0.dart'
+    as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

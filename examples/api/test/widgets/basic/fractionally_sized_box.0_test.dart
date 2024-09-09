@@ -3,7 +3,8 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_api_samples/widgets/basic/fractionally_sized_box.0.dart' as example;
+import 'package:flutter_api_samples/examples/widgets/basic/fractionally_sized_box.0.dart'
+    as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -16,7 +17,8 @@ void main() {
       const example.FractionallySizedBoxApp(),
     );
 
-    final FractionallySizedBox fractionallySizedBox = tester.widget(find.byType(FractionallySizedBox));
+    final FractionallySizedBox fractionallySizedBox =
+        tester.widget(find.byType(FractionallySizedBox));
     expect(fractionallySizedBox.widthFactor, widthFactor);
     expect(fractionallySizedBox.heightFactor, heightFactor);
 

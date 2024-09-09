@@ -4,7 +4,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_api_samples/services/system_chrome/system_chrome.set_system_u_i_overlay_style.1.dart' as example;
+import 'package:flutter_api_samples/examples/services/system_chrome/system_chrome.set_system_u_i_overlay_style.1.dart'
+    as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

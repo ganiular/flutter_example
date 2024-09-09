@@ -3,14 +3,16 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_api_samples/widgets/transitions/listenable_builder.3.dart' as example;
+import 'package:flutter_api_samples/examples/widgets/transitions/listenable_builder.3.dart'
+    as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   testWidgets('Tapping FAB adds to values', (WidgetTester tester) async {
     await tester.pumpWidget(const example.ListenableBuilderExample());
 
-    final Finder listContent = find.byWidgetPredicate((Widget widget) => widget is example.ListBody);
+    final Finder listContent =
+        find.byWidgetPredicate((Widget widget) => widget is example.ListBody);
 
     expect(find.text('Current values:'), findsOneWidget);
     expect(find.byIcon(Icons.add), findsOneWidget);

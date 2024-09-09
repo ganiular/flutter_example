@@ -3,13 +3,12 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_api_samples/material/navigation_drawer/navigation_drawer.0.dart'
+import 'package:flutter_api_samples/examples/material/navigation_drawer/navigation_drawer.0.dart'
     as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  testWidgets('Navigation bar updates destination on tap',
-      (WidgetTester tester) async {
+  testWidgets('Navigation bar updates destination on tap', (WidgetTester tester) async {
     await tester.pumpWidget(
       const example.NavigationDrawerApp(),
     );
@@ -17,7 +16,8 @@ void main() {
     await tester.tap(find.text('Open Drawer'));
     await tester.pumpAndSettle();
 
-    final NavigationDrawer navigationDrawerWidget = tester.firstWidget(find.byType(NavigationDrawer));
+    final NavigationDrawer navigationDrawerWidget =
+        tester.firstWidget(find.byType(NavigationDrawer));
 
     /// NavigationDestinations must be rendered
     expect(find.text('Messages'), findsNWidgets(2));

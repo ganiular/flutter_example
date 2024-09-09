@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_api_samples/material/radio/radio.0.dart' as example;
+import 'package:flutter_api_samples/examples/material/radio/radio.0.dart' as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -23,11 +23,15 @@ void main() {
 
     await tester.tap(radioButton1);
     await tester.pumpAndSettle();
-    expect(tester.widget<Radio<example.SingingCharacter>>(radioButton1).groupValue, tester.widget<Radio<example.SingingCharacter>>(radioButton1).value);
-    expect(tester.widget<Radio<example.SingingCharacter>>(radioButton2).groupValue, isNot(tester.widget<Radio<example.SingingCharacter>>(radioButton2).value));
+    expect(tester.widget<Radio<example.SingingCharacter>>(radioButton1).groupValue,
+        tester.widget<Radio<example.SingingCharacter>>(radioButton1).value);
+    expect(tester.widget<Radio<example.SingingCharacter>>(radioButton2).groupValue,
+        isNot(tester.widget<Radio<example.SingingCharacter>>(radioButton2).value));
     await tester.tap(radioButton2);
     await tester.pumpAndSettle();
-    expect(tester.widget<Radio<example.SingingCharacter>>(radioButton1).groupValue, isNot(tester.widget<Radio<example.SingingCharacter>>(radioButton1).value));
-    expect(tester.widget<Radio<example.SingingCharacter>>(radioButton2).groupValue, tester.widget<Radio<example.SingingCharacter>>(radioButton2).value);
+    expect(tester.widget<Radio<example.SingingCharacter>>(radioButton1).groupValue,
+        isNot(tester.widget<Radio<example.SingingCharacter>>(radioButton1).value));
+    expect(tester.widget<Radio<example.SingingCharacter>>(radioButton2).groupValue,
+        tester.widget<Radio<example.SingingCharacter>>(radioButton2).value);
   });
 }

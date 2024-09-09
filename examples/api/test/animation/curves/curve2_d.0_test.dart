@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_api_samples/animation/curves/curve2_d.0.dart' as example;
+import 'package:flutter_api_samples/examples/animation/curves/curve2_d.0.dart' as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -15,7 +15,7 @@ void main() {
     final Finder textFinder = find.widgetWithText(CircleAvatar, 'B');
     expect(tester.getCenter(textFinder), const Offset(58, 440));
 
-    const List<Offset> expectedOffsets= <Offset>[
+    const List<Offset> expectedOffsets = <Offset>[
       Offset(43, 407),
       Offset(81, 272),
       Offset(185, 103),

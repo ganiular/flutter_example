@@ -5,7 +5,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_api_samples/widgets/basic/fitted_box.0.dart' as example;
+import 'package:flutter_api_samples/examples/widgets/basic/fitted_box.0.dart' as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -13,7 +13,8 @@ void main() {
     HttpOverrides.global = null;
   });
 
-  testWidgets('FittedBox scales the image to fill the parent container', (WidgetTester tester) async {
+  testWidgets('FittedBox scales the image to fill the parent container',
+      (WidgetTester tester) async {
     await tester.pumpWidget(
       const example.FittedBoxApp(),
     );

@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_api_samples/widgets/shared_app_data/shared_app_data.1.dart'
+import 'package:flutter_api_samples/examples/widgets/shared_app_data/shared_app_data.1.dart'
     as example;
 import 'package:flutter_test/flutter_test.dart';
 

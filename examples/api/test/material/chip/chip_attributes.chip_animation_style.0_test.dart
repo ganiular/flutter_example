@@ -3,11 +3,13 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_api_samples/material/chip/chip_attributes.chip_animation_style.0.dart' as example;
+import 'package:flutter_api_samples/examples/material/chip/chip_attributes.chip_animation_style.0.dart'
+    as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  testWidgets('ChipAnimationStyle.enableAnimation overrides chip enable animation', (WidgetTester tester) async {
+  testWidgets('ChipAnimationStyle.enableAnimation overrides chip enable animation',
+      (WidgetTester tester) async {
     await tester.pumpWidget(
       const example.ChipAnimationStyleExampleApp(),
     );
@@ -42,7 +44,8 @@ void main() {
     expect(materialBox, paints..rrect(color: const Color(0xffffc107)));
   });
 
-  testWidgets('ChipAnimationStyle.selectAnimation overrides chip select animation', (WidgetTester tester) async {
+  testWidgets('ChipAnimationStyle.selectAnimation overrides chip select animation',
+      (WidgetTester tester) async {
     await tester.pumpWidget(
       const example.ChipAnimationStyleExampleApp(),
     );
@@ -77,7 +80,8 @@ void main() {
     expect(materialBox, paints..rrect(color: const Color(0xffffc107)));
   });
 
-  testWidgets('ChipAnimationStyle.avatarDrawerAnimation overrides chip checkmark animation', (WidgetTester tester) async {
+  testWidgets('ChipAnimationStyle.avatarDrawerAnimation overrides chip checkmark animation',
+      (WidgetTester tester) async {
     await tester.pumpWidget(
       const example.ChipAnimationStyleExampleApp(),
     );
@@ -105,7 +109,8 @@ void main() {
     expect(tester.getSize(find.widgetWithText(RawChip, 'Checked')).width, closeTo(152.6, 0.1));
   });
 
-  testWidgets('ChipAnimationStyle.deleteDrawerAnimation overrides chip delete icon animation', (WidgetTester tester) async {
+  testWidgets('ChipAnimationStyle.deleteDrawerAnimation overrides chip delete icon animation',
+      (WidgetTester tester) async {
     await tester.pumpWidget(
       const example.ChipAnimationStyleExampleApp(),
     );

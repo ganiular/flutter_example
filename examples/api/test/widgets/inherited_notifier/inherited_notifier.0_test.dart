@@ -5,7 +5,8 @@
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
-import 'package:flutter_api_samples/widgets/inherited_notifier/inherited_notifier.0.dart' as example;
+import 'package:flutter_api_samples/examples/widgets/inherited_notifier/inherited_notifier.0.dart'
+    as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -22,7 +23,8 @@ void main() {
     );
 
     Matcher transformMatcher(Matrix4 matrix) {
-      return everyElement(isA<Transform>().having((Transform widget) => widget.transform, 'transform', matrix));
+      return everyElement(
+          isA<Transform>().having((Transform widget) => widget.transform, 'transform', matrix));
     }
 
     expect(widgets, transformMatcher(Matrix4.identity()));
@@ -40,7 +42,11 @@ void main() {
     expect(widgets, transformMatcher(Matrix4.rotationZ(0.8 * math.pi)));
 
     await tester.pump(const Duration(seconds: 1));
-    expect(widgets, transformMatcher(Matrix4.identity()..storage[0] = -1..storage[5] = -1));
+    expect(
+        widgets,
+        transformMatcher(Matrix4.identity()
+          ..storage[0] = -1
+          ..storage[5] = -1));
 
     await tester.pump(const Duration(seconds: 1));
     expect(widgets, transformMatcher(Matrix4.rotationZ(1.2 * math.pi)));

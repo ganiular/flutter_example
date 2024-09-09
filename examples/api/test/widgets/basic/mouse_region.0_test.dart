@@ -4,11 +4,12 @@
 
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_api_samples/widgets/basic/mouse_region.0.dart' as example;
+import 'package:flutter_api_samples/examples/widgets/basic/mouse_region.0.dart' as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  testWidgets('MouseRegion detects mouse entries, exists, and location', (WidgetTester tester) async {
+  testWidgets('MouseRegion detects mouse entries, exists, and location',
+      (WidgetTester tester) async {
     await tester.pumpWidget(
       const example.MouseRegionApp(),
     );

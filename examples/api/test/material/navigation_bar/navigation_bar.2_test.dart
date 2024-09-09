@@ -3,7 +3,8 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_api_samples/material/navigation_bar/navigation_bar.2.dart' as example;
+import 'package:flutter_api_samples/examples/material/navigation_bar/navigation_bar.2.dart'
+    as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -75,7 +76,6 @@ void main() {
     await tester.pumpAndSettle();
     expect(find.text('Teal ListPage - /list'), findsOneWidget);
   });
-
 
   testWidgets('ListPage', (WidgetTester tester) async {
     await tester.pumpWidget(const MaterialApp(home: example.Home()));

@@ -3,7 +3,8 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_api_samples/material/input_decorator/input_decoration.2.dart' as example;
+import 'package:flutter_api_samples/examples/material/input_decorator/input_decoration.2.dart'
+    as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -18,9 +19,7 @@ void main() {
     expect(find.text('Error Text'), findsOneWidget);
 
     expect(
-      tester.widget<TextField>(find.byType(TextField))
-          .decoration
-          ?.border,
+      tester.widget<TextField>(find.byType(TextField)).decoration?.border,
       isNotNull,
     );
   });

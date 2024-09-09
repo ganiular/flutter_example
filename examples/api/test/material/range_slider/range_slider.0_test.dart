@@ -4,18 +4,20 @@
 
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_api_samples/material/range_slider/range_slider.0.dart' as example;
+import 'package:flutter_api_samples/examples/material/range_slider/range_slider.0.dart' as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  testWidgets('The range slider should have 5 divisions from 0 to 100', (WidgetTester tester) async {
+  testWidgets('The range slider should have 5 divisions from 0 to 100',
+      (WidgetTester tester) async {
     await tester.pumpWidget(
       const example.RangeSliderExampleApp(),
     );
 
     expect(find.widgetWithText(AppBar, 'RangeSlider Sample'), findsOne);
     expect(
-      find.byWidgetPredicate((Widget widget) => widget is RangeSlider && widget.values == const RangeValues(40, 80)),
+      find.byWidgetPredicate(
+          (Widget widget) => widget is RangeSlider && widget.values == const RangeValues(40, 80)),
       findsOne,
     );
 
@@ -33,7 +35,8 @@ void main() {
     await tester.pump();
 
     expect(
-      find.byWidgetPredicate((Widget widget) => widget is RangeSlider && widget.values == const RangeValues(0, 80)),
+      find.byWidgetPredicate(
+          (Widget widget) => widget is RangeSlider && widget.values == const RangeValues(0, 80)),
       findsOne,
     );
 
@@ -45,7 +48,8 @@ void main() {
     await tester.pump();
 
     expect(
-      find.byWidgetPredicate((Widget widget) => widget is RangeSlider && widget.values == const RangeValues(20, 80)),
+      find.byWidgetPredicate(
+          (Widget widget) => widget is RangeSlider && widget.values == const RangeValues(20, 80)),
       findsOne,
     );
 
@@ -57,7 +61,8 @@ void main() {
     await tester.pump();
 
     expect(
-      find.byWidgetPredicate((Widget widget) => widget is RangeSlider && widget.values == const RangeValues(20, 60)),
+      find.byWidgetPredicate(
+          (Widget widget) => widget is RangeSlider && widget.values == const RangeValues(20, 60)),
       findsOne,
     );
 
@@ -69,7 +74,8 @@ void main() {
     await tester.pump();
 
     expect(
-      find.byWidgetPredicate((Widget widget) => widget is RangeSlider && widget.values == const RangeValues(20, 100)),
+      find.byWidgetPredicate(
+          (Widget widget) => widget is RangeSlider && widget.values == const RangeValues(20, 100)),
       findsOne,
     );
   });

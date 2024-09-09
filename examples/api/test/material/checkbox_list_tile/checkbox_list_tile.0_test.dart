@@ -4,7 +4,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:flutter_api_samples/material/checkbox_list_tile/checkbox_list_tile.0.dart' as example;
+import 'package:flutter_api_samples/examples/material/checkbox_list_tile/checkbox_list_tile.0.dart'
+    as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

@@ -3,7 +3,8 @@
 // found in the LICENSE file.
 
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_api_samples/cupertino/list_section/list_section_base.0.dart' as example;
+import 'package:flutter_api_samples/examples/cupertino/list_section/list_section_base.0.dart'
+    as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -15,7 +16,8 @@ void main() {
     final Finder listSectionFinder = find.byType(CupertinoListSection);
     expect(listSectionFinder, findsOneWidget);
 
-    final CupertinoListSection listSectionWidget = tester.widget<CupertinoListSection>(listSectionFinder);
+    final CupertinoListSection listSectionWidget =
+        tester.widget<CupertinoListSection>(listSectionFinder);
     expect(listSectionWidget.type, equals(CupertinoListSectionType.base));
   });
 

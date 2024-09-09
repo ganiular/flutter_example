@@ -3,7 +3,8 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_api_samples/widgets/transitions/align_transition.0.dart' as example;
+import 'package:flutter_api_samples/examples/widgets/transitions/align_transition.0.dart'
+    as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -11,8 +12,8 @@ void main() {
     await tester.pumpWidget(const example.AlignTransitionExampleApp());
     expect(find.byType(ColoredBox), findsOneWidget);
     expect(
-      find.byWidgetPredicate((Widget padding) => padding is Padding
-        && padding.padding == const EdgeInsets.all(8.0)),
+      find.byWidgetPredicate(
+          (Widget padding) => padding is Padding && padding.padding == const EdgeInsets.all(8.0)),
       findsOneWidget,
     );
     expect(find.byType(FlutterLogo), findsOneWidget);
@@ -22,8 +23,7 @@ void main() {
   testWidgets('Animates repeatedly every 2 seconds', (WidgetTester tester) async {
     await tester.pumpWidget(const example.AlignTransitionExampleApp());
     final Finder paddingFinder = find.byWidgetPredicate(
-      (Widget padding) => padding is Padding
-        && padding.padding == const EdgeInsets.all(8.0));
+        (Widget padding) => padding is Padding && padding.padding == const EdgeInsets.all(8.0));
 
     expect(
       tester.getBottomLeft(paddingFinder),

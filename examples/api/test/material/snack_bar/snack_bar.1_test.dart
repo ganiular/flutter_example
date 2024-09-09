@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_api_samples/material/snack_bar/snack_bar.1.dart' as example;
+import 'package:flutter_api_samples/examples/material/snack_bar/snack_bar.1.dart' as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -21,9 +21,8 @@ void main() {
     expect(find.text('Awesome SnackBar!'), findsOneWidget);
     expect(find.widgetWithText(SnackBarAction, 'Action'), findsOneWidget);
 
-    final SnackBar bar = tester.widget<SnackBar>(find.ancestor(
-      of: find.text('Awesome SnackBar!'),
-      matching: find.byType(SnackBar)));
+    final SnackBar bar = tester.widget<SnackBar>(
+        find.ancestor(of: find.text('Awesome SnackBar!'), matching: find.byType(SnackBar)));
     expect(bar.behavior, SnackBarBehavior.floating);
   });
 
@@ -39,8 +38,10 @@ void main() {
     final SnackBar bar = tester.widget<SnackBar>(find.byType(SnackBar));
     expect(bar.behavior, SnackBarBehavior.floating);
     expect(bar.width, 280.0);
-    expect(bar.shape, isA<RoundedRectangleBorder>()
-        .having((RoundedRectangleBorder b) => b.borderRadius, 'radius', BorderRadius.circular(10.0)));
+    expect(
+        bar.shape,
+        isA<RoundedRectangleBorder>().having(
+            (RoundedRectangleBorder b) => b.borderRadius, 'radius', BorderRadius.circular(10.0)));
   });
 
   testWidgets('Snackbar should disappear after timeout', (WidgetTester tester) async {

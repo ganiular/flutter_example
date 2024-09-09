@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_api_samples/material/menu_anchor/menu_anchor.2.dart' as example;
+import 'package:flutter_api_samples/examples/material/menu_anchor/menu_anchor.2.dart' as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -14,7 +14,8 @@ void main() {
 
     expect(find.widgetWithText(AppBar, 'MenuAnchorButton'), findsOne);
     expect(
-      find.descendant(of: find.byType(MenuAnchor), matching: find.widgetWithIcon(IconButton, Icons.more_horiz)),
+      find.descendant(
+          of: find.byType(MenuAnchor), matching: find.widgetWithIcon(IconButton, Icons.more_horiz)),
       findsOne,
     );
 

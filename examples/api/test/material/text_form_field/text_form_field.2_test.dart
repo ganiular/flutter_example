@@ -3,12 +3,14 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_api_samples/material/text_form_field/text_form_field.2.dart' as example;
+import 'package:flutter_api_samples/examples/material/text_form_field/text_form_field.2.dart'
+    as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   group('TextFormFieldExample2 Widget Tests', () {
-    testWidgets('Input validation handles empty, incorrect, and short usernames', (WidgetTester tester) async {
+    testWidgets('Input validation handles empty, incorrect, and short usernames',
+        (WidgetTester tester) async {
       await tester.pumpWidget(const example.TextFormFieldExampleApp());
       final Finder textFormField = find.byType(TextFormField);
       final Finder saveButton = find.byType(TextButton);

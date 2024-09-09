@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_api_samples/material/slider/slider.2.dart' as example;
+import 'package:flutter_api_samples/examples/material/slider/slider.2.dart' as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -23,7 +23,8 @@ void main() {
 
     const double targetValue = 0.8;
     final Rect rect = tester.getRect(slider2Finder);
-    final Offset target = Offset(rect.left + (rect.right - rect.left) * targetValue, rect.top + (rect.bottom - rect.top) / 2);
+    final Offset target = Offset(rect.left + (rect.right - rect.left) * targetValue,
+        rect.top + (rect.bottom - rect.top) / 2);
     await tester.tapAt(target);
     await tester.pump();
 

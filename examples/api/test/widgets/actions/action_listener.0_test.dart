@@ -4,11 +4,12 @@
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_api_samples/widgets/actions/action_listener.0.dart' as example;
+import 'package:flutter_api_samples/examples/widgets/actions/action_listener.0.dart' as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  testWidgets('ActionListener can be enabled, triggered, and disabled', (WidgetTester tester) async {
+  testWidgets('ActionListener can be enabled, triggered, and disabled',
+      (WidgetTester tester) async {
     final List<String?> log = <String?>[];
 
     final DebugPrintCallback originalDebugPrint = debugPrint;

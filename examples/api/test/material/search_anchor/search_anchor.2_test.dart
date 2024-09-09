@@ -3,7 +3,8 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_api_samples/material/search_anchor/search_anchor.2.dart' as example;
+import 'package:flutter_api_samples/examples/material/search_anchor/search_anchor.2.dart'
+    as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

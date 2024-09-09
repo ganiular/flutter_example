@@ -6,11 +6,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_api_samples/material/context_menu/editable_text_toolbar_builder.2.dart' as example;
+import 'package:flutter_api_samples/examples/material/context_menu/editable_text_toolbar_builder.2.dart'
+    as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  testWidgets('showing and hiding the context menu in TextField with a custom toolbar', (WidgetTester tester) async {
+  testWidgets('showing and hiding the context menu in TextField with a custom toolbar',
+      (WidgetTester tester) async {
     await tester.pumpWidget(
       const example.EditableTextToolbarBuilderExampleApp(),
     );

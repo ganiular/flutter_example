@@ -4,7 +4,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_api_samples/material/menu_anchor/radio_menu_button.0.dart' as example;
+import 'package:flutter_api_samples/examples/material/menu_anchor/radio_menu_button.0.dart'
+    as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -53,7 +54,12 @@ void main() {
     // update the overlay entry.
     await tester.pump();
 
-    expect(tester.widget<Radio<Color>>(find.descendant(of: find.byType(RadioMenuButton<Color>).at(0), matching: find.byType(Radio<Color>))).groupValue, equals(Colors.green));
+    expect(
+        tester
+            .widget<Radio<Color>>(find.descendant(
+                of: find.byType(RadioMenuButton<Color>).at(0), matching: find.byType(Radio<Color>)))
+            .groupValue,
+        equals(Colors.green));
     expect(tester.widget<Container>(find.byType(Container)).color, equals(Colors.green));
 
     await tester.sendKeyDownEvent(LogicalKeyboardKey.controlLeft);
@@ -62,7 +68,12 @@ void main() {
     await tester.pump();
     await tester.pump();
 
-    expect(tester.widget<Radio<Color>>(find.descendant(of: find.byType(RadioMenuButton<Color>).at(1), matching: find.byType(Radio<Color>))).groupValue, equals(Colors.red));
+    expect(
+        tester
+            .widget<Radio<Color>>(find.descendant(
+                of: find.byType(RadioMenuButton<Color>).at(1), matching: find.byType(Radio<Color>)))
+            .groupValue,
+        equals(Colors.red));
     expect(tester.widget<Container>(find.byType(Container)).color, equals(Colors.red));
 
     await tester.sendKeyDownEvent(LogicalKeyboardKey.controlLeft);
@@ -71,7 +82,12 @@ void main() {
     await tester.pump();
     await tester.pump();
 
-    expect(tester.widget<Radio<Color>>(find.descendant(of: find.byType(RadioMenuButton<Color>).at(2), matching: find.byType(Radio<Color>))).groupValue, equals(Colors.blue));
+    expect(
+        tester
+            .widget<Radio<Color>>(find.descendant(
+                of: find.byType(RadioMenuButton<Color>).at(2), matching: find.byType(Radio<Color>)))
+            .groupValue,
+        equals(Colors.blue));
     expect(tester.widget<Container>(find.byType(Container)).color, equals(Colors.blue));
   });
 

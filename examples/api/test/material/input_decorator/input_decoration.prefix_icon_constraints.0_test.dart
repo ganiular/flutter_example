@@ -3,11 +3,13 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_api_samples/material/input_decorator/input_decoration.prefix_icon_constraints.0.dart' as example;
+import 'package:flutter_api_samples/examples/material/input_decorator/input_decoration.prefix_icon_constraints.0.dart'
+    as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  testWidgets('Shows two TextFields decorated with prefix icon sizes matching their hint text', (WidgetTester tester) async {
+  testWidgets('Shows two TextFields decorated with prefix icon sizes matching their hint text',
+      (WidgetTester tester) async {
     await tester.pumpWidget(
       const example.PrefixIconConstraintsExampleApp(),
     );

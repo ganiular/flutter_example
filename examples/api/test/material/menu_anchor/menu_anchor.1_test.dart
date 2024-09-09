@@ -5,16 +5,18 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_api_samples/material/menu_anchor/menu_anchor.1.dart' as example;
+import 'package:flutter_api_samples/examples/material/menu_anchor/menu_anchor.1.dart' as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   testWidgets('Can open menu', (WidgetTester tester) async {
     Finder findMenu() {
-      return find.ancestor(
-        of: find.text(example.MenuEntry.about.label),
-        matching: find.byType(FocusScope),
-      ).first;
+      return find
+          .ancestor(
+            of: find.text(example.MenuEntry.about.label),
+            matching: find.byType(FocusScope),
+          )
+          .first;
     }
 
     await tester.pumpWidget(const example.ContextMenuApp());

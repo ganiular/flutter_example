@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_api_samples/material/text_field/text_field.2.dart' as example;
+import 'package:flutter_api_samples/examples/material/text_field/text_field.2.dart' as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -19,10 +19,10 @@ void main() {
       of: find.byType(example.FilledTextFieldExample),
       matching: find.byType(TextField),
     ));
-    expect(filled.decoration!.prefixIcon, isA<Icon>()
-        .having((Icon icon) => icon.icon, 'icon', Icons.search));
-    expect(filled.decoration!.suffixIcon, isA<Icon>()
-        .having((Icon icon) => icon.icon, 'icon', Icons.clear));
+    expect(filled.decoration!.prefixIcon,
+        isA<Icon>().having((Icon icon) => icon.icon, 'icon', Icons.search));
+    expect(filled.decoration!.suffixIcon,
+        isA<Icon>().having((Icon icon) => icon.icon, 'icon', Icons.clear));
     expect(filled.decoration!.labelText, 'Filled');
     expect(filled.decoration!.hintText, 'hint text');
     expect(filled.decoration!.helperText, 'supporting text');
@@ -32,10 +32,10 @@ void main() {
       of: find.byType(example.OutlinedTextFieldExample),
       matching: find.byType(TextField),
     ));
-    expect(outlined.decoration!.prefixIcon, isA<Icon>()
-        .having((Icon icon) => icon.icon, 'icon', Icons.search));
-    expect(outlined.decoration!.suffixIcon, isA<Icon>()
-        .having((Icon icon) => icon.icon, 'icon', Icons.clear));
+    expect(outlined.decoration!.prefixIcon,
+        isA<Icon>().having((Icon icon) => icon.icon, 'icon', Icons.search));
+    expect(outlined.decoration!.suffixIcon,
+        isA<Icon>().having((Icon icon) => icon.icon, 'icon', Icons.clear));
     expect(outlined.decoration!.labelText, 'Outlined');
     expect(outlined.decoration!.hintText, 'hint text');
     expect(outlined.decoration!.helperText, 'supporting text');

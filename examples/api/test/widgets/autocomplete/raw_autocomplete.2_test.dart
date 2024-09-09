@@ -3,11 +3,13 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_api_samples/widgets/autocomplete/raw_autocomplete.2.dart' as example;
+import 'package:flutter_api_samples/examples/widgets/autocomplete/raw_autocomplete.2.dart'
+    as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  testWidgets('Form is entirely visible and rejects invalid responses', (WidgetTester tester) async {
+  testWidgets('Form is entirely visible and rejects invalid responses',
+      (WidgetTester tester) async {
     await tester.pumpWidget(const example.AutocompleteExampleApp());
     expect(find.text('RawAutocomplete Form'), findsOneWidget);
     expect(find.byType(TextFormField), findsNWidgets(2));

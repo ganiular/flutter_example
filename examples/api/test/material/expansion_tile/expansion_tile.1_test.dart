@@ -2,7 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'package:flutter_api_samples/material/expansion_tile/expansion_tile.1.dart' as example;
+import 'package:flutter_api_samples/examples/material/expansion_tile/expansion_tile.1.dart'
+    as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

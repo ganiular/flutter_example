@@ -3,7 +3,8 @@
 // found in the LICENSE file.
 
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_api_samples/cupertino/dialog/cupertino_alert_dialog.0.dart' as example;
+import 'package:flutter_api_samples/examples/cupertino/dialog/cupertino_alert_dialog.0.dart'
+    as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

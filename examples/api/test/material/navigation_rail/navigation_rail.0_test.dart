@@ -3,18 +3,16 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_api_samples/material/navigation_rail/navigation_rail.0.dart'
+import 'package:flutter_api_samples/examples/material/navigation_rail/navigation_rail.0.dart'
     as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  testWidgets('Navigation rail updates destination on tap',
-      (WidgetTester tester) async {
+  testWidgets('Navigation rail updates destination on tap', (WidgetTester tester) async {
     await tester.pumpWidget(
       const example.NavigationRailExampleApp(),
     );
-    final NavigationRail navigationRailWidget =
-        tester.firstWidget(find.byType(NavigationRail));
+    final NavigationRail navigationRailWidget = tester.firstWidget(find.byType(NavigationRail));
 
     /// NavigationRailDestinations must be rendered
     expect(find.text('First'), findsOneWidget);

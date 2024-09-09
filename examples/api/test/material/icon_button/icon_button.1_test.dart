@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_api_samples/material/icon_button/icon_button.1.dart' as example;
+import 'package:flutter_api_samples/examples/material/icon_button/icon_button.1.dart' as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -27,6 +27,6 @@ void main() {
     expect(decoration.shape, const CircleBorder());
 
     final IconButton iconButton = ink.child! as IconButton;
-    expect(iconButton.color, Colors.white) ;
+    expect(iconButton.color, Colors.white);
   });
 }

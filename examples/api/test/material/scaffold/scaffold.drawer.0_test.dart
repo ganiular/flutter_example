@@ -3,11 +3,12 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_api_samples/material/scaffold/scaffold.drawer.0.dart' as example;
+import 'package:flutter_api_samples/examples/material/scaffold/scaffold.drawer.0.dart' as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  testWidgets('The page should contain a drawer than can be opened and closed', (WidgetTester tester) async {
+  testWidgets('The page should contain a drawer than can be opened and closed',
+      (WidgetTester tester) async {
     await tester.pumpWidget(
       const example.DrawerExampleApp(),
     );
@@ -19,8 +20,8 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.byType(Drawer), findsOne);
-    expect(tester.getCenter(
-      find.byType(Drawer)).dx,
+    expect(
+      tester.getCenter(find.byType(Drawer)).dx,
       lessThan(400),
       reason: 'The drawer should be on the left side of the screen',
     );
@@ -33,8 +34,8 @@ void main() {
     expect(find.byType(Drawer), findsNothing);
 
     // Open the drawer by tapping the drawer button in the app bar.
-    expect(tester.getCenter(
-      find.byType(DrawerButton)).dx,
+    expect(
+      tester.getCenter(find.byType(DrawerButton)).dx,
       lessThan(400),
       reason: 'The drawer button should be on the left side of the app bar',
     );

@@ -5,7 +5,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_api_samples/widgets/implicit_animations/animated_fractionally_sized_box.0.dart'
+import 'package:flutter_api_samples/examples/widgets/implicit_animations/animated_fractionally_sized_box.0.dart'
     as example;
 import 'package:flutter_test/flutter_test.dart';
 
@@ -53,8 +53,7 @@ void main() {
         example.AnimatedFractionallySizedBoxExampleApp.duration ~/ 2,
       );
 
-      final double t =
-          example.AnimatedFractionallySizedBoxExampleApp.curve.transform(0.5);
+      final double t = example.AnimatedFractionallySizedBoxExampleApp.curve.transform(0.5);
 
       fractionallySizedBox = tester.widget(fractionallySizedBoxFinder);
       expect(

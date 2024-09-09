@@ -3,8 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:flutter/services.dart';
-import 'package:flutter_api_samples/widgets/shortcuts/single_activator.0.dart'
-    as example;
+import 'package:flutter_api_samples/examples/widgets/shortcuts/single_activator.0.dart' as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

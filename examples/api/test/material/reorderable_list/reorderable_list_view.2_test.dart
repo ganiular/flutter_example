@@ -4,7 +4,8 @@
 
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_api_samples/material/reorderable_list/reorderable_list_view.2.dart' as example;
+import 'package:flutter_api_samples/examples/material/reorderable_list/reorderable_list_view.2.dart'
+    as example;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -14,7 +15,8 @@ void main() {
     );
 
     Card findCardOne() {
-      return tester.widget<Card>(find.ancestor(of: find.text('Card 1'), matching: find.byType(Card)));
+      return tester
+          .widget<Card>(find.ancestor(of: find.text('Card 1'), matching: find.byType(Card)));
     }
 
     // Card has default elevation when not dragged.
