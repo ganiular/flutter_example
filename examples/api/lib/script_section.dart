@@ -39,7 +39,7 @@ class _ScriptSectionState extends State<ScriptSection> with AutomaticKeepAliveCl
 
   Future<void> _loadScript() async {
     try {
-      final String script = await rootBundle.loadString('assets/scripts${widget.scriptPath}');
+      final String script = await rootBundle.loadString('assets/scripts/${widget.scriptPath}');
       setState(() {
         _script = script;
         _lineString = List<String>.generate(_script.count('\n') + 1, (int index) => '${index + 1}')

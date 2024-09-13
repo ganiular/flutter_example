@@ -213,7 +213,7 @@ class _SearchPageState extends State<SearchPage> implements SearchListener {
           return ExamplePage(
               view: example.widget!,
               name: example.name,
-              scriptPath: '/${item.directory}',
+              scriptPath: item.directory,
               directToScriptLine: item.line);
         } else {
           return ExampleFolders(

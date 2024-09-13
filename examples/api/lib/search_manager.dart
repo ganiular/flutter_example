@@ -78,7 +78,7 @@ class SearchManager {
 
     if (highlight != null) {
       listener.addSearchItem(SearchItem(
-        directory: directory,
+        directory: '$directory/${example.path}',
         example: example,
         highlight: highlight,
       ));
