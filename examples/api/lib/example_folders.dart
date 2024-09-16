@@ -106,7 +106,8 @@ class _ExampleFoldersState extends State<ExampleFolders> {
           return ExampleFolders(
             title: example.name,
             examples: example.subExamples,
-            directory: '${widget.directory}/${example.path}',
+            directory:
+                widget.directory.isEmpty ? example.path : '${widget.directory}/${example.path}',
           );
         }
       },
