@@ -17,6 +17,8 @@ class _SearchPageState extends State<SearchPage> implements SearchListener {
   final List<SearchItem> _searchItems = <SearchItem>[];
   SearchItem? _selectedSearchItem;
   int? _hoverIndex;
+  bool _regExpEnabled = false;
+  bool _caseSensitive = false;
   late SearchManager _searchManager;
 
   @override
@@ -51,16 +53,53 @@ class _SearchPageState extends State<SearchPage> implements SearchListener {
                   BackButton(
                     color: colors.primary,
                   ),
+                  const SizedBox(width: 8),
                   Expanded(
                       child: TextField(
                     autofocus: true,
                     controller: _controller,
-                    onChanged: _searchManager.searchQuary,
+                    onChanged: _search,
                     decoration: InputDecoration(
                       hintText: 'Search',
-                      prefixIcon: const Icon(Icons.search, size: 18),
-                      border: InputBorder.none,
-                      suffixIcon: IconButton(
+                      // prefixIcon: const Icon(Icons.search, size: 18),
+                      // border: InputBorder.none,
+                      suffixIcon: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          IconButton(
+                            tooltip: 'Case Sensitivity',
+                            onPressed: () {
+                              _caseSensitive = !_caseSensitive;
+                              _search(_controller.text);
+                            },
+                            splashRadius: 18,
+                            icon: Icon(
+                              Icons.format_color_text_rounded,
+                              size: 18,
+                              color: _caseSensitive
+                                  ? Theme.of(context).colorScheme.primary
+                                  : Colors.grey,
+                            ),
+                          ),
+                          IconButton(
+                            tooltip: 'RegExp',
+                            onPressed: () {
+                              _regExpEnabled = !_regExpEnabled;
+                              _search(_controller.text);
+                            },
+                            splashRadius: 18,
+                            icon: Icon(
+                              Icons.text_fields_rounded,
+                              size: 18,
+                              color: _regExpEnabled
+                                  ? Theme.of(context).colorScheme.primary
+                                  : Colors.grey,
+                            ),
+                          ),
+                        ],
+                      ),
+                      suffix: IconButton(
+                          tooltip: 'Clear',
                           onPressed: () {
                             _controller.clear();
                             clearSearchItems();
@@ -163,6 +202,11 @@ class _SearchPageState extends State<SearchPage> implements SearchListener {
         ],
       ),
     );
+  }
+
+  void _search(String value) {
+    _searchManager.searchQuary(
+        query: value, useRegExp: _regExpEnabled, caseSensitive: _caseSensitive);
   }
 
   Widget _buildItem(int index, SearchItem item, Widget text, ColorScheme colors) {

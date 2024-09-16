@@ -44,8 +44,12 @@ class SearchManager {
   final List<Example> examples;
   final SearchListener listener;
   late final _Debounceable<void, String> _debouncedSearch;
+  late bool _useRegExp;
+  late bool _caseSensitive;
 
-  void searchQuary(String query) {
+  void searchQuary({required String query, required bool useRegExp, required bool caseSensitive}) {
+    _useRegExp = useRegExp;
+    _caseSensitive = caseSensitive;
     _newQuery = query;
     _debouncedSearch(query);
   }
@@ -73,7 +77,18 @@ class SearchManager {
     if (query != _newQuery) {
       return;
     }
-    final RegExp pattern = RegExp(RegExp.escape(query), caseSensitive: false);
+    late final RegExp pattern;
+
+    try {
+      pattern = RegExp(
+        _useRegExp ? query : RegExp.escape(query),
+        caseSensitive: _caseSensitive,
+      );
+    } catch (e) {
+      // RegExp Error
+      return;
+    }
+
     final TextSpan? highlight = _searchText(example.name, query, pattern);
 
     if (highlight != null) {
