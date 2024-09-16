@@ -45,7 +45,10 @@ class ExamplePage extends StatelessWidget {
         ),
         body: TabBarView(children: <Widget>[
           PreviewSection(view: view),
-          ScriptSection(scriptPath: scriptPath),
+          ScriptSection(
+            scriptPath: scriptPath,
+            directToScriptLine: directToScriptLine,
+          ),
         ]),
       ),
     );
