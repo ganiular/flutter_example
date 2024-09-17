@@ -71,36 +71,47 @@ class _SearchPageState extends State<SearchPage> implements SearchListener {
                       suffixIcon: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          IconButton(
-                            tooltip: 'Case Sensitivity',
-                            onPressed: () {
-                              _caseSensitive = !_caseSensitive;
-                              _search(_controller.text);
-                            },
-                            splashRadius: 18,
-                            icon: Icon(
-                              Icons.format_color_text_rounded,
-                              size: 18,
-                              color: _caseSensitive
-                                  ? Theme.of(context).colorScheme.primary
-                                  : Colors.grey,
-                            ),
+                          SizedBox(
+                            width: 40,
+                            height: 40,
+                            child: IconButton(
+                                tooltip: 'Case Sensitivity',
+                                splashRadius: 20,
+                                onPressed: () {
+                                  _caseSensitive = !_caseSensitive;
+                                  _search(_controller.text);
+                                },
+                                icon: Text(
+                                  'Aa',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w700,
+                                    color: _caseSensitive
+                                        ? Theme.of(context).colorScheme.primary
+                                        : Colors.grey,
+                                  ),
+                                )),
                           ),
-                          IconButton(
-                            tooltip: 'RegExp',
-                            onPressed: () {
-                              _regExpEnabled = !_regExpEnabled;
-                              _search(_controller.text);
-                            },
-                            splashRadius: 18,
-                            icon: Icon(
-                              Icons.text_fields_rounded,
-                              size: 18,
-                              color: _regExpEnabled
-                                  ? Theme.of(context).colorScheme.primary
-                                  : Colors.grey,
-                            ),
+                          SizedBox(
+                            width: 40,
+                            height: 40,
+                            child: IconButton(
+                                tooltip: 'Regular Expression',
+                                splashRadius: 20,
+                                onPressed: () {
+                                  _regExpEnabled = !_regExpEnabled;
+                                  _search(_controller.text);
+                                },
+                                icon: Text(
+                                  '(.*)',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w700,
+                                    color: _regExpEnabled
+                                        ? Theme.of(context).colorScheme.primary
+                                        : Colors.grey,
+                                  ),
+                                )),
                           ),
+                          const SizedBox(width: 4),
                         ],
                       ),
                       suffix: IconButton(
