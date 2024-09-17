@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'preview_section.dart';
 import 'script_section.dart';
 
-class ExamplePage extends StatelessWidget {
+class ExamplePage extends StatefulWidget {
   const ExamplePage(
       {super.key,
       required this.view,
@@ -16,9 +16,16 @@ class ExamplePage extends StatelessWidget {
   final int? directToScriptLine;
 
   @override
+  State<ExamplePage> createState() => _ExamplePageState();
+}
+
+class _ExamplePageState extends State<ExamplePage> {
+  Key widgetKey = UniqueKey();
+
+  @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      initialIndex: directToScriptLine == null ? 0 : 1,
+      initialIndex: widget.directToScriptLine == null ? 0 : 1,
       length: 2,
       child: Scaffold(
         appBar: AppBar(
@@ -28,7 +35,7 @@ class ExamplePage extends StatelessWidget {
               const Text('Flutter Examples'),
               const SizedBox(height: 4),
               Text(
-                name,
+                widget.name,
                 style: const TextStyle(
                   fontSize: 12,
                   color: Color(0xFFDAD7D7),
@@ -36,6 +43,17 @@ class ExamplePage extends StatelessWidget {
               )
             ],
           ),
+          actions: [
+            IconButton(
+                tooltip: 'Restart',
+                splashRadius: 20,
+                onPressed: () {
+                  setState(() {
+                    widgetKey = UniqueKey();
+                  });
+                },
+                icon: const Icon(Icons.replay_rounded)),
+          ],
           bottom: const TabBar(
             tabs: <Widget>[
               Tab(text: 'Preview'),
@@ -44,10 +62,10 @@ class ExamplePage extends StatelessWidget {
           ),
         ),
         body: TabBarView(children: <Widget>[
-          PreviewSection(view: view),
+          PreviewSection(key: widgetKey, view: widget.view),
           ScriptSection(
-            scriptPath: scriptPath,
-            directToScriptLine: directToScriptLine,
+            scriptPath: widget.scriptPath,
+            directToScriptLine: widget.directToScriptLine,
           ),
         ]),
       ),
