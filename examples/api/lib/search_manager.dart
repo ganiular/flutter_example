@@ -6,7 +6,7 @@ import 'package:flutter/services.dart' show rootBundle;
 import 'examples.dart';
 
 const Duration debounceDuration = Duration(milliseconds: 300);
-String? _newQuery;
+late String _newQuery;
 
 @immutable
 class SearchItem {
@@ -35,28 +35,36 @@ class SearchItem {
 abstract class SearchListener {
   void addSearchItem(SearchItem item);
   void clearSearchItems();
+  void onErrorQuery();
 }
 
 class SearchManager {
   SearchManager(this.examples, this.listener) {
-    _debouncedSearch = _debounceOperation<void, String>(_searchQuery);
+    _debouncedSearch = _debounceOperation<void, _SearchParameter>(_searchQuery);
   }
   final List<Example> examples;
   final SearchListener listener;
-  late final _Debounceable<void, String> _debouncedSearch;
-  late bool _useRegExp;
-  late bool _caseSensitive;
+  late final _Debounceable<void, _SearchParameter> _debouncedSearch;
 
   void searchQuary({required String query, required bool useRegExp, required bool caseSensitive}) {
-    _useRegExp = useRegExp;
-    _caseSensitive = caseSensitive;
     _newQuery = query;
-    _debouncedSearch(query);
+    _debouncedSearch(
+        _SearchParameter(query: query, useRegExp: useRegExp, caseSensitive: caseSensitive));
   }
 
-  Future<void> _searchQuery(String query) async {
+  Future<void> _searchQuery(_SearchParameter search) async {
     listener.clearSearchItems();
+    final query = search.query;
     if (query.isEmpty) {
+      return;
+    }
+
+    late final RegExp regExp;
+    try {
+      regExp = RegExp(search.useRegExp ? query : RegExp.escape(query),
+          caseSensitive: search.caseSensitive);
+    } catch (e) {
+      listener.onErrorQuery();
       return;
     }
 
@@ -66,30 +74,19 @@ class SearchManager {
         await Future.forEach(
           example.subExamples,
           (Example subExample) async {
-            await _searchExample(subExample, query, example.path);
+            await _searchExample(subExample, regExp, example.path);
           },
         );
       },
     );
   }
 
-  Future<void> _searchExample(Example example, String query, String directory) async {
-    if (query != _newQuery) {
-      return;
-    }
-    late final RegExp pattern;
-
-    try {
-      pattern = RegExp(
-        _useRegExp ? query : RegExp.escape(query),
-        caseSensitive: _caseSensitive,
-      );
-    } catch (e) {
-      // RegExp Error
+  Future<void> _searchExample(Example example, RegExp query, String directory) async {
+    if (query.pattern != _newQuery) {
       return;
     }
 
-    final TextSpan? highlight = _searchText(example.name, query, pattern);
+    final TextSpan? highlight = _searchText(example.name, query);
 
     if (highlight != null) {
       listener.addSearchItem(SearchItem(
@@ -115,7 +112,7 @@ class SearchManager {
         final List<String> lines = script.split('\n');
 
         for (int i = 0; i < lines.length; i++) {
-          final TextSpan? highlight = _searchText(lines[i].trim(), query, pattern);
+          final TextSpan? highlight = _searchText(lines[i].trim(), query);
           if (highlight != null) {
             listener.addSearchItem(SearchItem(
               directory: '$directory/${example.path}',
@@ -131,11 +128,11 @@ class SearchManager {
     }
   }
 
-  TextSpan? _searchText(String text, String query, RegExp pattern) {
-    if (query != _newQuery) {
+  TextSpan? _searchText(String text, RegExp query) {
+    if (query.pattern != _newQuery) {
       return null;
     }
-    final RegExpMatch? match = pattern.firstMatch(text);
+    final RegExpMatch? match = query.firstMatch(text);
     const int maxLeftPadLenght = 25;
     if (match != null) {
       final int start = max(0, match.start - maxLeftPadLenght);
@@ -150,6 +147,14 @@ class SearchManager {
     }
     return null;
   }
+}
+
+class _SearchParameter {
+  _SearchParameter({required this.query, required this.useRegExp, required this.caseSensitive});
+
+  final String query;
+  final bool useRegExp;
+  final bool caseSensitive;
 }
 
 typedef _Debounceable<S, T> = Future<S?> Function(T parameter);

@@ -19,6 +19,7 @@ class _SearchPageState extends State<SearchPage> implements SearchListener {
   int? _hoverIndex;
   bool _regExpEnabled = false;
   bool _caseSensitive = false;
+  bool _hasErrorRegExp = false;
   late SearchManager _searchManager;
 
   @override
@@ -49,6 +50,7 @@ class _SearchPageState extends State<SearchPage> implements SearchListener {
             child: Padding(
               padding: const EdgeInsets.symmetric(vertical: 4),
               child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   BackButton(
                     color: colors.primary,
@@ -60,9 +62,12 @@ class _SearchPageState extends State<SearchPage> implements SearchListener {
                     controller: _controller,
                     onChanged: _search,
                     decoration: InputDecoration(
+                      isCollapsed: true,
                       hintText: 'Search',
+                      errorText: _hasErrorRegExp ? 'Invalid regular expression' : null,
                       // prefixIcon: const Icon(Icons.search, size: 18),
                       // border: InputBorder.none,
+
                       suffixIcon: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
@@ -205,6 +210,7 @@ class _SearchPageState extends State<SearchPage> implements SearchListener {
   }
 
   void _search(String value) {
+    _hasErrorRegExp = false;
     _searchManager.searchQuary(
         query: value, useRegExp: _regExpEnabled, caseSensitive: _caseSensitive);
   }
@@ -281,6 +287,13 @@ class _SearchPageState extends State<SearchPage> implements SearchListener {
   void clearSearchItems() {
     setState(() {
       _searchItems.clear();
+    });
+  }
+
+  @override
+  void onErrorQuery() {
+    setState(() {
+      _hasErrorRegExp = true;
     });
   }
 }
