@@ -83,7 +83,7 @@ class _ScriptSectionState extends State<ScriptSection>
         _lineNumbers = List.generate(
           _script.count('\n') + 1,
           (int index) {
-            bool isTarget = index + 1 == widget.directToScriptLine;
+            final bool isTarget = index + 1 == widget.directToScriptLine;
             return Container(
                 key: isTarget ? _targetKey : null,
                 padding: const EdgeInsets.symmetric(horizontal: 6),

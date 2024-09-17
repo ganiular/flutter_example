@@ -13,7 +13,9 @@ mixin ScrollToTargetMixin<T extends StatefulWidget> on State<T> {
     double topOffset = 32,
   }) {
     // Check if the target widget is in the widget tree
-    if (targetKey.currentContext == null) return;
+    if (targetKey.currentContext == null) {
+      return;
+    }
 
     // Find the RenderBox of the target widget
     final RenderBox renderBox = targetKey.currentContext!.findRenderObject()! as RenderBox;

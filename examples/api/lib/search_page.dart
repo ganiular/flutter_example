@@ -71,9 +71,8 @@ class _SearchPageState extends State<SearchPage> implements SearchListener {
                       suffixIcon: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          SizedBox(
-                            width: 40,
-                            height: 40,
+                          SizedBox.square(
+                            dimension: 40,
                             child: IconButton(
                                 tooltip: 'Case Sensitivity',
                                 splashRadius: 20,
@@ -91,9 +90,8 @@ class _SearchPageState extends State<SearchPage> implements SearchListener {
                                   ),
                                 )),
                           ),
-                          SizedBox(
-                            width: 40,
-                            height: 40,
+                          SizedBox.square(
+                            dimension: 40,
                             child: IconButton(
                                 tooltip: 'Regular Expression',
                                 splashRadius: 20,
@@ -114,18 +112,21 @@ class _SearchPageState extends State<SearchPage> implements SearchListener {
                           const SizedBox(width: 4),
                         ],
                       ),
-                      suffix: IconButton(
-                          tooltip: 'Clear',
-                          onPressed: () {
-                            _controller.clear();
-                            clearSearchItems();
-                          },
-                          splashRadius: 16,
-                          icon: const Icon(
-                            Icons.clear,
-                            size: 18,
-                            color: Colors.grey,
-                          )),
+                      suffix: SizedBox(
+                        width: 40,
+                        child: IconButton(
+                            tooltip: 'Clear',
+                            onPressed: () {
+                              _controller.clear();
+                              clearSearchItems();
+                            },
+                            splashRadius: 16,
+                            icon: const Icon(
+                              Icons.clear,
+                              size: 18,
+                              color: Colors.grey,
+                            )),
+                      ),
                     ),
                   ))
                 ],
