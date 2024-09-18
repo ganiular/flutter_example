@@ -130,11 +130,9 @@ class _ScriptSectionState extends State<ScriptSection>
                     width: 40,
                     child: Padding(
                       padding: const EdgeInsets.symmetric(vertical: 2),
-                      child: Flexible(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.stretch,
-                          children: _lineNumbers,
-                        ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: _lineNumbers,
                       ),
                     ),
                   ),
