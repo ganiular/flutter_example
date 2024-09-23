@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'example_folders.dart';
 import 'example_page.dart';
 import 'examples.dart';
+import 'search_field.dart';
 import 'search_manager.dart';
 
 class SearchPage extends StatefulWidget {
@@ -12,28 +13,10 @@ class SearchPage extends StatefulWidget {
   State<SearchPage> createState() => _SearchPageState();
 }
 
-class _SearchPageState extends State<SearchPage> implements SearchListener {
-  late final TextEditingController _controller;
+class _SearchPageState extends State<SearchPage> {
   final List<SearchItem> _searchItems = <SearchItem>[];
   SearchItem? _selectedSearchItem;
   int? _hoverIndex;
-  bool _regExpEnabled = false;
-  bool _caseSensitive = false;
-  bool _hasErrorRegExp = false;
-  late SearchManager _searchManager;
-
-  @override
-  void initState() {
-    super.initState();
-    _controller = TextEditingController();
-    _searchManager = SearchManager(examples, this);
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -56,79 +39,10 @@ class _SearchPageState extends State<SearchPage> implements SearchListener {
                     color: colors.primary,
                   ),
                   const SizedBox(width: 8),
-                  Expanded(
-                      child: TextField(
-                    autofocus: true,
-                    controller: _controller,
-                    onChanged: _search,
-                    decoration: InputDecoration(
-                      isCollapsed: true,
-                      hintText: 'Search',
-                      errorText: _hasErrorRegExp ? 'Invalid regular expression' : null,
-                      // prefixIcon: const Icon(Icons.search, size: 18),
-                      // border: InputBorder.none,
-
-                      suffixIcon: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          SizedBox.square(
-                            dimension: 40,
-                            child: IconButton(
-                                tooltip: 'Case Sensitivity',
-                                splashRadius: 20,
-                                onPressed: () {
-                                  _caseSensitive = !_caseSensitive;
-                                  _search(_controller.text);
-                                },
-                                icon: Text(
-                                  'Aa',
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.w700,
-                                    color: _caseSensitive
-                                        ? Theme.of(context).colorScheme.primary
-                                        : Colors.grey,
-                                  ),
-                                )),
-                          ),
-                          SizedBox.square(
-                            dimension: 40,
-                            child: IconButton(
-                                tooltip: 'Regular Expression',
-                                splashRadius: 20,
-                                onPressed: () {
-                                  _regExpEnabled = !_regExpEnabled;
-                                  _search(_controller.text);
-                                },
-                                icon: Text(
-                                  '(.*)',
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.w700,
-                                    color: _regExpEnabled
-                                        ? Theme.of(context).colorScheme.primary
-                                        : Colors.grey,
-                                  ),
-                                )),
-                          ),
-                          const SizedBox(width: 4),
-                        ],
-                      ),
-                      suffix: SizedBox(
-                        width: 40,
-                        child: IconButton(
-                            tooltip: 'Clear',
-                            onPressed: () {
-                              _controller.clear();
-                              clearSearchItems();
-                            },
-                            splashRadius: 16,
-                            icon: const Icon(
-                              Icons.clear,
-                              size: 18,
-                              color: Colors.grey,
-                            )),
-                      ),
-                    ),
-                  ))
+                  MySearchField(
+                    addSearchItem: addSearchItem,
+                    clearSearchItems: clearSearchItems,
+                  ),
                 ],
               ),
             ),
@@ -221,12 +135,6 @@ class _SearchPageState extends State<SearchPage> implements SearchListener {
     );
   }
 
-  void _search(String value) {
-    _hasErrorRegExp = false;
-    _searchManager.searchQuary(
-        query: value, useRegExp: _regExpEnabled, caseSensitive: _caseSensitive);
-  }
-
   Widget _buildItem(int index, SearchItem item, Widget text, ColorScheme colors) {
     if (item.line == null) {
       return ListTile(
@@ -288,24 +196,15 @@ class _SearchPageState extends State<SearchPage> implements SearchListener {
     ));
   }
 
-  @override
   void addSearchItem(SearchItem item) {
     setState(() {
       _searchItems.add(item);
     });
   }
 
-  @override
   void clearSearchItems() {
     setState(() {
       _searchItems.clear();
-    });
-  }
-
-  @override
-  void onErrorQuery() {
-    setState(() {
-      _hasErrorRegExp = true;
     });
   }
 }

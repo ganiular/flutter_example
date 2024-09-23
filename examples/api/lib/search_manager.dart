@@ -39,10 +39,9 @@ abstract class SearchListener {
 }
 
 class SearchManager {
-  SearchManager(this.examples, this.listener) {
+  SearchManager(this.listener) {
     _debouncedSearch = _debounceOperation<void, _SearchParameter>(_searchQuery);
   }
-  final List<Example> examples;
   final SearchListener listener;
   late final _Debounceable<void, _SearchParameter> _debouncedSearch;
 
